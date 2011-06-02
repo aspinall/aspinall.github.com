@@ -1,8 +1,23 @@
-<html>
-	<head>
-		<title>craigaspinall.com</title>
-	</head>
-	<body>
-		<h1>craigaspinall.com</h1>
-	</body>
-</html>
+---
+layout: default
+title: Craig Aspinall 
+---
+
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h1>Interviews, Talks, Etc</h1>
+  <ul class="posts">
+    <li><span>14 Apr 2011</span> &raquo; <a href="http://skillsmatter.com/podcast/agile-testing/optimizing-for-happiness">Video: ACCU Conference - Optimizing For Happiness</a></li>
+  </ul>
+
+  <h1>Prominent Open Source Projects</h1>
+  <ul class="posts">
+    <li><a href="http://github.com/github/gollum/">Gollum:</a> A simple, Git-powered wiki with a sweet API and local frontend.</li>
+  </ul>
+</div>
