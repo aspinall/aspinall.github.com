@@ -12,11 +12,17 @@ h1 {
 a {
   color: #b58900;
   font-weight: bold;
-  margin: 0.2em 0.5em 0 0;
+  margin: 0 0 0.25em 0;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #cb4b16;
 }
 
 .title {
   color: #cb4b16;
+  margin: 1em 0 1em 0;
   text-align: center;
 }
 
@@ -27,6 +33,7 @@ a {
 
 #left {
   float: left;
+  margin: 1em 1em 1em 1em;
   text-align: right;
   width: 15em;
 }
