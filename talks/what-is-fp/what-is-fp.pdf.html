@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>What is Functional Programming?</title>
+   
+   
+
+<style>
+html, body { margin: 0; padding: 0; }
+
+body { font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+
+a:link, a:visited { color: black; }
+
+h1 { font-size: 30pt;  }
+h2 { font-size: 28pt;  }
+h3 { font-size: 25pt;  }
+p, li, dt, dd, td, th { font-size: 18pt; }
+
+pre { font-size: 14pt;  }
+pre.small { font-size: 11pt; }
+
+pre.code {
+        background-color: azure;
+        padding: 5px;
+      }
+     
+ul { list-style-type: square; }    
+   
+.center { text-align: center; }   
+     
+.slide { page-break-after: always;
+         min-height: 100mm;
+         padding: 40px;
+         
+         border: 1px dotted black;
+
+/*      
+  background: -moz-linear-gradient( top, maroon, red);
+*/
+       }
+
+
+
+/*
+for princexml (CSS3 paged media support)
+@page { size: A4 landscape }
+*/
+</style>
+
+</head>
+<body>
+
+<div class="presentation">
+
+<div class='slide '>
+<h1>What is Functional Programming?</h1><p>There is a lot of misinformation and misinterpretation around this question. Let us start by defining some of the things that functional programming is not!</p>
+<p>It is not about type systems. The question of strong or weak, static or dynamic, applies to both functional and imperative programming.</p>
+<p>It is not about lazy or strict evaluation either!</p>
+<p>It is not about higher order functions.</p>
+<p>And it is certainly not about <strong>monads</strong>!</p>
+<p>To find out what functional programming is really about, we need to go back in time&#8230;</p>
+
+
+</div>
+<div class='slide '>
+<h1>History Lesson</h1><p>In the 1930s at Princeton university, there were a number of people trying to answer questions related to <strong>computation</strong>, such as <em>&#8220;if we had infinite computing power, what problems would we be able to solve?&#8221;</em></p>
+<p>One of those people was Alonzo Church. He developed a formal system called <strong>lambda calculus</strong>, essentially a programming language for a machine with infinite power. It was based on <strong>functions</strong> that took other <strong>functions</strong> as parameters and returned <strong>functions</strong>. Using this he was able to provide conclusive answers to the many of the computation questions.</p>
+<p>Another was Alan Turing, who independently developed a different formal system now known as the <strong>Turing machine</strong>, and using it he came to similar conclusions as Alonzo Church.</p>
+<p>It was later shown that Turing machines and lambda calculus were equivalent in power.</p>
+<p>The third person was John von Neumann. In 1949 the EDVAC (Electronic Discrete Variable Automatic Computer) was unveiled and was the first example of von Neumanns architecture, effectively a real world implementation of a Turing machine.</p>
+<p>In 1958, John McCarthy (a Princeton graduate) unveiled LISP (LISt Processing language), an implementation of lambda calculus that worked on von Neumann computers.</p>
+
+</div>
+<div class='slide '>
+<h1>So&#8230; What is Functional Programming?</h1><p>Functional programming is a practical implementation of lambda calculus. (Practical in the sense that not all lambda calculus ideas can be implemented under physical limitations!)</p>
+<p>At the core of functional programming is the <strong>function</strong> (unsurprisingly). They are used for almost everything.</p>
+<p>A function takes one or more arguments and returns a result.</p>
+<p>A <strong>pure</strong> function does not use anything outside of its own scope, which means it is guaranteed to return the same result given the same argument values.</p>
+<p>In functional programming variables are simply aliases for expressions. They can only be assigned to once and cannot be modified. Since they are immutable, they are really variables in the mathematical sense rather than the imperative programming sense you might be used to.</p>
+
+</div>
+<div class='slide '>
+<h1>OK&#8230; Why should we consider Functional Programming?</h1><p>The combination of pure functions and immutable data leads to <strong>referential transparency</strong>, which means that the result of the function can be calculated at any time and substituted for the function call without affecting the result of the program. This is because the function does not rely on, or affect, any external state, only its arguments.</p>
+<p>This has huge implications for testing your code. You can unit test every function just by calling it with different arguments.</p>
+<p>Similarly, debugging a function that isn&#8217;t behaving the way you expect is much easier because its behaviour is not dependent on code that has been executed before it.</p>
+<p>No shared state or mutable data means that your functions are automatically thread safe too!</p>
+<p>Hang on a minute&#8230; no shared state? How can you possible write a meaningful program with no shared state?</p>
+<p>OK, so there is state, but its not state as we know it! State is not held in variables, it is held in function parameters on the stack. To modify the state, you call functions (often recursively) passing different values.</p>
+
+</div>
+<div class='slide '>
+<h1>But don&#8217;t I need to be using a Functional Programming language?</h1><p>In a word, no!</p>
+<p>In fact, it&#8217;s debatable whether there is any such thing as a &#8220;functional programming language&#8221;. Remember that it was proven that lambda calculus and Turing machines were equivalent in power? That means that whatever you can implement in one, you can implement in the other.</p>
+<p>That said, some languages lend themselves to functional programming better than others:</p>
+<p><strong>Better suited to functional programming:</strong> <em>LISP, ML, Haskell, Erlang</em></p>
+<p><strong>Less suited to functional programming:</strong> <em>Java, C#, C, C++, Ruby, Python</em></p>
+<p><strong>Somewhere in the middle:</strong> <em>Scala, F#</em></p>
+<p>So what makes a language more suitable for functional programming?</p>
+
+</div>
+<div class='slide '>
+<h1>Language Traits That Aide Functional Programming</h1><ul>
+	<li>Declarative &#8211; describe what rather than how</li>
+</ul>
+<ul>
+	<li>Functions are first class values &#8211; they can be passed around</li>
+</ul>
+<ul>
+	<li>Higher order functions &#8211; functions that operate on other functions</li>
+</ul>
+<ul>
+	<li>Immutable data &#8211; cannot modify data once initialized</li>
+</ul>
+<ul>
+	<li>Recursive loops &#8211; instead of iteration (for, while, repeat etc.)</li>
+</ul>
+<ul>
+	<li>Algebraic data types &#8211; simple containers that can be recursively defined</li>
+</ul>
+<ul>
+	<li>Pattern matching &#8211; on primitive values and algebraic data types</li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>FizzBuzz</h1><p>This is a simple coding exercise I used to get candidates to complete during telephone interviews using Google Docs. They had five minutes to provide a solution and the sole purpose of the exercise was to check that they could actually code (not to judge how well they coded)!</p>
+<p>Write a program that prints the numbers from 1 to 100 except:</p>
+<ul>
+	<li>for each number that is a multiple of 3, print &#8220;Fizz&#8221; instead of the number</li>
+	<li>for each number that is a multilpe of 5, print &#8220;Buzz&#8221; instead of the number</li>
+	<li>for each number that is a multiple of 3 and 5, print &#8220;FizzBuzz&#8221; instead of the number</li>
+</ul>
+<p><em>Incidentally, you would be amazed at the number of people applying for senior development positions who could not complete this exercise!</em></p>
+
+</div>
+<div class='slide '>
+<h1>Typical &#8220;FizzBuzz&#8221; Answer in Java</h1><!-- begin code{:name=>"FizzBuzz.java", :lang=>"java"} -->
+<div class='code'><pre class='brush: java toolbar: false gutter: true'>public class FizzBuzz {
+	public static void main(String[] args) {
+		for (int i = 1; i &lt;= 100; i++) {
+			if ((i % 3 == 0) &amp;&amp; (i % 5 ==0)) {
+				System.out.println(&quot;FizzBuzz&quot;);
+			} else if (i % 3 == 0) {
+				System.out.println(&quot;Fizz&quot;);
+			} else if (i % 5 == 0) {
+				System.out.println(&quot;Buzz&quot;);
+			} else {
+				System.out.println(i);
+			}
+		}
+	}
+}
+</pre></div>
+<div class="codeurl">FizzBuzz.java</div>
+<!-- end code -->
+
+
+</div>
+<div class='slide '>
+<h1>A More Functional &#8220;Fizzbuzz&#8221; Answer in Java</h1><!-- begin code{:name=>"FunctionalFizzBuzz.java", :lang=>"java"} -->
+<div class='code'><pre class='brush: java toolbar: false gutter: true'>public class FunctionalFizzBuzz {
+	static boolean isMultipleOf3(final int num) {
+		return num % 3 == 0;
+	}
+
+	static boolean isMultipleOf5(final int num) {
+		return num % 5 == 0;
+	}
+
+	static String fizzBuzzOrNumber(final int num) {
+		if (isMultipleOf3(num) &amp;&amp; isMultipleOf5(num)) {
+			return &quot;FizzBuzz&quot;;
+		} else if (isMultipleOf3(num)) {
+			return &quot;Fizz&quot;;
+		} else if (isMultipleOf5(num)) {
+			return &quot;Buzz&quot;;
+		} else {
+			return String.valueOf(num);
+		}
+	}
+
+	static java.util.List&lt;String&gt; fizzBuzz() {
+		java.util.ArrayList&lt;String&gt; results = new java.util.ArrayList&lt;String&gt;();
+		for (int i = 1; i &lt;= 100; i++) {
+			results.add(fizzBuzzOrNumber(i));
+		}
+		return results;
+	}
+
+	public static void main(String[] args) {
+		for(String line: fizzBuzz()) {
+			System.out.println(line);
+		}
+	}
+}
+</pre></div>
+<div class="codeurl">FunctionalFizzBuzz.java</div>
+<!-- end code -->
+
+
+</div>
+<div class='slide '>
+<h1>A Functional &#8220;FizzBuzz&#8221; Answer in Haskell</h1><p>Note that I wrote this, so it may not be the most idiomatic Haskell example you will find!</p>
+<!-- begin code{:name=>"FizzBuzz.hs", :lang=>"haskell"} -->
+<div class='code'><pre class='brush: haskell toolbar: false gutter: true'>import Control.Monad
+
+multipleOf3 num = num `mod` 3 == 0
+
+multipleOf5 num = num `mod` 5 == 0
+
+fizzBuzzOrNumber num =
+	if multipleOf3 num &amp;&amp; multipleOf5 num then &quot;FizzBuzz&quot; else
+		if multipleOf3 num then &quot;Fizz&quot; else
+			if multipleOf5 num then &quot;Buzz&quot;
+				else show num
+
+fizzBuzz = map fizzBuzzOrNumber [1..100]
+
+main = forM_ fizzBuzz (putStrLn . show)
+</pre></div>
+<div class="codeurl">FizzBuzz.hs</div>
+<!-- end code -->
+
+
+</div>
+<div class='slide '>
+<h1>Useful Links/Further Reading</h1><h3>Used For This Presentation</h3>
+<ul>
+	<li><a href="http://www.defmacro.org/ramblings/fp.html">Functional Programming For The Rest of Us</a> &#8211; Slava Akhmechet at defmacro.org</li>
+	<li><a href="http://projects.tmorris.net/public/what-does-fp-mean/artifacts/0.3/chunk-html/index.html">What Does Functional Programming Mean?</a> &#8211; Tony Morris at BFPG</li>
+	<li><a href="http://files.meetup.com/1443989/Intro%20to%20FP.pdf">Introduction to FP</a> &#8211; Brad Clow at BFPG</li>
+</ul>
+<h3>General Links</h3>
+<ul>
+	<li><a href="http://www.bfpg.org/">Brisbane Functional Programming Group</a></li>
+	<li><a href="http://blog.tmorris.net/category/programming/">Tony Morris&#8217; Programming Blog</a></li>
+</ul>
+<h3>Haskell Resources</h3>
+<ul>
+	<li><a href="http://haskell.org">haskell.org</a></li>
+	<li><a href="http://learnyouahaskell.com/">Learn you a Haskell</a></li>
+	<li><a href="http://book.realworldhaskell.org/">Real World Haskell</a></li>
+</ul></div>
+
+
+  </div> <!-- presentation -->
+</body>
+</html> 
+
