@@ -189,14 +189,12 @@ $(document).ready( function() {
 </div>
 <div class='slide '>
 <h1>A More Functional &#8220;Fizzbuzz&#8221; Answer in Java</h1><!-- begin code{:name=>"FunctionalFizzBuzz.java", :lang=>"java"} -->
-<div class='code'><pre class='brush: java toolbar: false gutter: true'>public class FunctionalFizzBuzz {
-	static boolean isMultipleOf3(final int num) {
-		return num % 3 == 0;
-	}
+<div class='code'><pre class='brush: java toolbar: false gutter: true'>import java.util.*;
 
-	static boolean isMultipleOf5(final int num) {
-		return num % 5 == 0;
-	}
+public class FunctionalFizzBuzz {
+	static boolean isMultipleOf3(final int num) { return num % 3 == 0; }
+
+	static boolean isMultipleOf5(final int num) { return num % 5 == 0; }
 
 	static String fizzBuzzOrNumber(final int num) {
 		if (isMultipleOf3(num) &amp;&amp; isMultipleOf5(num)) {
@@ -210,12 +208,12 @@ $(document).ready( function() {
 		}
 	}
 
-	static java.util.List&lt;String&gt; fizzBuzz() {
-		java.util.ArrayList&lt;String&gt; results = new java.util.ArrayList&lt;String&gt;();
+	static List&lt;String&gt; fizzBuzz() {
+		ArrayList&lt;String&gt; results = new ArrayList&lt;String&gt;();
 		for (int i = 1; i &lt;= 100; i++) {
 			results.add(fizzBuzzOrNumber(i));
 		}
-		return results;
+		return Collections.unmodifiableList(results);
 	}
 
 	public static void main(String[] args) {
