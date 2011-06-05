@@ -168,21 +168,49 @@ $(document).ready( function() {
 <h1>Typical &#8220;FizzBuzz&#8221; Answer in Java</h1><!-- begin code{:name=>"FizzBuzz.java", :lang=>"java"} -->
 <div class='code'><pre class='brush: java toolbar: false gutter: true'>public class FizzBuzz {
 	public static void main(String[] args) {
-		for (int i = 1; i &lt;= 100; i++) {
-			if ((i % 3 == 0) &amp;&amp; (i % 5 ==0)) {
+		for (int i = 1; i &lt;= 100; i++)
+			if ((i % 3 == 0) &amp;&amp; (i % 5 ==0))
 				System.out.println(&quot;FizzBuzz&quot;);
-			} else if (i % 3 == 0) {
+			else if (i % 3 == 0)
 				System.out.println(&quot;Fizz&quot;);
-			} else if (i % 5 == 0) {
+			else if (i % 5 == 0)
 				System.out.println(&quot;Buzz&quot;);
-			} else {
+			else
 				System.out.println(i);
-			}
-		}
 	}
 }
 </pre></div>
 <div class="codeurl">FizzBuzz.java</div>
+<!-- end code -->
+
+
+</div>
+<div class='slide '>
+<h1>A Testable (Functional) &#8220;FizzBuzz&#8221; Answer</h1><!-- begin code{:name=>"TestableFizzBuzz.java", :lang=>"java"} -->
+<div class='code'><pre class='brush: java toolbar: false gutter: true'>import java.util.*;
+
+public class TestableFizzBuzz {
+	static List&lt;String&gt; fizzBuzz(int upperBound) {
+		ArrayList&lt;String&gt; results = new ArrayList&lt;String&gt;();
+		for (int i = 1; i &lt;= upperBound; i++)
+			if ((i % 3 == 0) &amp;&amp; (i % 5 ==0))
+				results.add(&quot;FizzBuzz&quot;);
+			else if (i % 3 == 0)
+				results.add(&quot;Fizz&quot;);
+			else if (i % 5 == 0)
+				results.add(&quot;Buzz&quot;);
+			else
+				results.add(String.valueOf(i));
+		return results;
+	}
+
+	public static void main(String[] args) {
+		for(String line: fizzBuzz(100))
+			System.out.println(line);
+	}
+}
+</pre></div>
+<div class="codeurl">TestableFizzBuzz.java</div>
 <!-- end code -->
 
 
@@ -197,29 +225,26 @@ public class FunctionalFizzBuzz {
 	static boolean isMultipleOf5(final int num) { return num % 5 == 0; }
 
 	static String fizzBuzzOrNumber(final int num) {
-		if (isMultipleOf3(num) &amp;&amp; isMultipleOf5(num)) {
+		if (isMultipleOf3(num) &amp;&amp; isMultipleOf5(num))
 			return &quot;FizzBuzz&quot;;
-		} else if (isMultipleOf3(num)) {
+		else if (isMultipleOf3(num))
 			return &quot;Fizz&quot;;
-		} else if (isMultipleOf5(num)) {
+		else if (isMultipleOf5(num))
 			return &quot;Buzz&quot;;
-		} else {
+		else
 			return String.valueOf(num);
-		}
 	}
 
-	static List&lt;String&gt; fizzBuzz() {
+	static List&lt;String&gt; fizzBuzz(final int upperBound) {
 		ArrayList&lt;String&gt; results = new ArrayList&lt;String&gt;();
-		for (int i = 1; i &lt;= 100; i++) {
+		for (int i = 1; i &lt;= upperBound; i++)
 			results.add(fizzBuzzOrNumber(i));
-		}
 		return Collections.unmodifiableList(results);
 	}
 
 	public static void main(String[] args) {
-		for(String line: fizzBuzz()) {
+		for(String line: fizzBuzz(100))
 			System.out.println(line);
-		}
 	}
 }
 </pre></div>
@@ -243,9 +268,9 @@ fizzBuzzOrNumber num =
 			if multipleOf5 num then &quot;Buzz&quot;
 				else show num
 
-fizzBuzz = map fizzBuzzOrNumber [1..100]
+fizzBuzz upperBound = map fizzBuzzOrNumber [1..upperBound]
 
-main = forM_ fizzBuzz (putStrLn . show)
+main = forM_ (fizzBuzz 100) putStrLn
 </pre></div>
 <div class="codeurl">FizzBuzz.hs</div>
 <!-- end code -->
