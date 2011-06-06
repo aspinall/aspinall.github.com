@@ -3,4 +3,9 @@ layout: default
 title: Craig Aspinall 
 ---
 
+{% for post in site.posts limit:1 %}
+<h2 class="postTitle">{{ post.title }}</h2>
+<h4 class="postDate">Posted on {{ post.date | date_to_string }}</h3>
+{{ post.content }}
+{% endfor %}
 
