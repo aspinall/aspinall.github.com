@@ -1,11 +1,25 @@
 ---
-layout: default
-title: Craig Aspinall 
+layout: blog
+title: Blog - Craig Aspinall
 ---
 
 {% for post in site.posts limit:1 %}
-<h2 class="postTitle">{{ post.title }}</h2>
-<h4 class="postDate">Posted on {{ post.date | date_to_string }}</h3>
+<h5 class="postDate">{{ post.date | date_to_string }}</h5>
+<a href={{ post.url }}>
+	<h3 class="postTitle">{{ post.title }}</h3>
+</a>
 {{ post.content }}
 {% endfor %}
 
+<div id="earlierPosts">
+	<h5>Earlier Posts</h5>
+	<ul>
+		{% for post in site.posts offset:1 %}
+			<li>
+				{{ post.date | date_to_string }} - <a href={{ post.url }}>
+					{{ post.title }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
