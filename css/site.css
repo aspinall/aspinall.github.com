@@ -8,18 +8,6 @@ body {
   width: 800px;
 }
 
-a {
-  text-decoration: none;
-}
-
-#earlierPosts h5 {
-	margin-bottom: 0.5em;
-}
-
-#earlierPosts ul {
-  list-style: none;
-}
-
 h1 {
   font-size: 200%;
 }
@@ -44,7 +32,23 @@ h6 {
   font-size: 100%;
 }
 
-#copyright {
+#nav a {
+  text-decoration: none;
+}
+
+#nav ul {
+  list-style: none;
+}
+
+#earlierPosts h5 {
+	margin-bottom: 0.5em;
+}
+
+#earlierPosts ul {
+  list-style: none;
+}
+
+#footer * {
   clear: both;
   font-size: 80%;
   text-align: center;
