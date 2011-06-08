@@ -1,21 +1,18 @@
 ---
 layout: post
-title: The Role of Automated Testing
+title: The role of automated testing
 ---
-
-h1. {{ page.title }}
-
-Over the last week I’ve had a lot of discussions about the underlying motive of the roles that my colleagues and I are currently performing. We are responsible for improving the quality of software being produced by the teams we are involved with, and the main focus of our recent work has been creating automation tools to assist the testers. There are three possible motives for our roles:
+Over the last week I've had a lot of discussions about the underlying motive of the roles that my colleagues and I are currently performing. We are responsible for improving the quality of software being produced by the teams we are involved with, and the main focus of our recent work has been creating automation tools to assist the testers. There are three possible motives for our roles:
 
 # to reduce costs
 # to increase productivity
 # to improve quality
 
-For us it’s a simple case of improving quality but that doesn’t necessarily mean that our leaders have the same motives. In fairness they do overlap, but focusing too much on any one of them can be to the detriment of the others.
+For us it's a simple case of improving quality but that doesn't necessarily mean that our leaders have the same motives. In fairness they do overlap, but focusing too much on any one of them can be to the detriment of the others.
 
 For example, if you want to reduce costs and automated testing makes the testers four times more productive, then in theory you can remove three quarters of your testers without any loss of quality or productivity. Of course the theory and reality are quite different! Similarly, if you go all out for quality, you may need more people or tools or equipment which will result in increased costs, and progress may be slower.
 
-The catalyst for the discussions was that we just found out that the number of testers is being reduced on one of the projects we’re working on and we were horrified. We were very concerned that the work we have been doing was being used to justify cost reductions but fortunately that isn’t the case (at least not this time).
+The catalyst for the discussions was that we just found out that the number of testers is being reduced on one of the projects we're working on and we were horrified. We were very concerned that the work we have been doing was being used to justify cost reductions but fortunately that isn't the case (at least not this time).
 
 Since our goal is to improve quality we expect that any cost savings we enable during development are re-investing into improving quality in other ways. This should include freeing up the testers to do more exploratory testing, but could also include things like performance, security or usability testing that often get overlooked.
 

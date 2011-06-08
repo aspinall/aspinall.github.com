@@ -2,19 +2,16 @@
 layout: post
 title: What did I learn from my 30 day challenge?
 ---
-
-h1. {{ page.title}}
-
-I missed my goal of 30 posts in 30 days by 5. In the end, working, blogging, podcasting and parenting took it’s toll and I spent most of last weekend sleeping instead of doing anything meaningful or useful! However I did learn a lot in the 25 posts I did manage to get out.
+I missed my goal of 30 posts in 30 days by 5. In the end, working, blogging, podcasting and parenting took it's toll and I spent most of last weekend sleeping instead of doing anything meaningful or useful! However I did learn a lot in the 25 posts I did manage to get out.
 
 On average it took me about an hour to complete each post. This is much longer than I was hoping to achieve. Some of the shorter opinion pieces were done in less time but all the technical posts took at least that long.
 
-It’s good to get things off your chest but the posts I enjoyed the most were the technical ones. And even then, it wasn’t so much the writing of post as the learning experience. I’ve already referred back to some of the technical posts to look at my own example code for things I am doing at work, so the objective of being a memory jogger has been fulfilled. It’s certainly convinced me to publish all the random experiments I do somewhere, either in free and open source projects or on the blog, just so that I don’t lose them.
+It's good to get things off your chest but the posts I enjoyed the most were the technical ones. And even then, it wasn't so much the writing of post as the learning experience. I've already referred back to some of the technical posts to look at my own example code for things I am doing at work, so the objective of being a memory jogger has been fulfilled. It's certainly convinced me to publish all the random experiments I do somewhere, either in free and open source projects or on the blog, just so that I don't lose them.
 
-There’s been a surprising amount of reaction to the blog in terms of likes and comments. I’ve gained a bunch of Twitter followers as a result. I say it’s surprising because:
+There's been a surprising amount of reaction to the blog in terms of likes and comments. I've gained a bunch of Twitter followers as a result. I say it's surprising because:
 
-# that wasn’t a goal
-# I didn’t expect anybody to read it and
-# I didn’t really expect anybody to enjoy it that much!
+# that wasn't a goal
+# I didn't expect anybody to read it and
+# I didn't really expect anybody to enjoy it that much!
 
-If you followed along and have any constructive criticism then please feel free to comment. I’ll probably continue to post the technical content and the odd opinion piece (when something gets me fired up), but don’t expect a post a day from now on!
+If you followed along and have any constructive criticism then please feel free to comment. I'll probably continue to post the technical content and the odd opinion piece (when something gets me fired up), but don't expect a post a day from now on!

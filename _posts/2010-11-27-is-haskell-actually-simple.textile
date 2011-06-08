@@ -1,15 +1,12 @@
 ---
 layout: post
-title: Is Haskell Actually a Simple Language?
+title: Is Haskell actually a simple language?
 ---
-
-h1. {{ page.title }}
-
 Whilst I was writing the previous post about learning Haskell, I was reminded of "a post by Martin Odersky":http://lamp.epfl.ch/~odersky/blogs/isscalacomplex.html about the complexity or otherwise of Scala. In that post he tries several metaphors to determine what _simple_ really means, finally settling on Duplo versus Technics Lego. You can build anything with either (just as you can with turing complete languages) but a solution built with Duplo is unlikely to be as elegant as a solution built with Technics.
 
-I like his comparison because it shows how much _simplicity_ is a concept that means different things to different people. I’m starting to think that Haskell is a really simple language, even though I’m finding it difficult to learn!
+I like his comparison because it shows how much _simplicity_ is a concept that means different things to different people. I'm starting to think that Haskell is a really simple language, even though I'm finding it difficult to learn!
 
-One of the relative measures of complexity used in the article is the number of keywords in a language. Carlos Quintanilla’s "comparison of CLR and JVM languages":http://carlosqt.blogspot.com/2010/07/how-many-keywords-do-you-type-in-your.html ranges from 139 to 31 keywords. Haskell has just 20!
+One of the relative measures of complexity used in the article is the number of keywords in a language. Carlos Quintanilla's "comparison of CLR and JVM languages":http://carlosqt.blogspot.com/2010/07/how-many-keywords-do-you-type-in-your.html ranges from 139 to 31 keywords. Haskell has just 20!
 
 And the more I use the language, the more it strikes me as being ruthlessly consistent. Take functions for example:
 
@@ -18,19 +15,19 @@ add :: Int -> Int -> Int
 add x y = x + y
 {% endhighlight %}
 
-Nominally you can read this as a function called @add@ that takes two @Int@ parameters and returns an @Int@. Except it isn’t. It’s a function that takes an @Int@ and returns another function that takes an @Int@ and returns an @Int@! Which means you can do this:
+Nominally you can read this as a function called @add@ that takes two @Int@ parameters and returns an @Int@. Except it isn't. It's a function that takes an @Int@ and returns another function that takes an @Int@ and returns an @Int@! Which means you can do this:
 
 {% highlight haskell %}
 plusOne :: Int -> Int
 plusOne = add 1
 {% endhighlight %}
 
-I’ve defined a @plusOne@ function by fixing the first parameter of @add@ to @1@, which returns a function that will always add 1 to whatever value is passed to it. By applying the same principle again we have a function that takes no arguments and returns an @Int@.
+I've defined a @plusOne@ function by fixing the first parameter of @add@ to @1@, which returns a function that will always add 1 to whatever value is passed to it. By applying the same principle again we have a function that takes no arguments and returns an @Int@.
 
 {% highlight haskell %}
 two = plusOne 1
 {% endhighlight %}
 
-This concept is one of the reasons why I’m struggling with Functors. It seems mind numbingly simple to me and yet so mind bogglingly powerful at the same time!
+This concept is one of the reasons why I'm struggling with Functors. It seems mind numbingly simple to me and yet so mind bogglingly powerful at the same time!
 
 And that is the paradox I keep banging my head against!
