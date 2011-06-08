@@ -5,7 +5,9 @@ layout: default
 <a href={{ page.url }}>
 	<h3 class="title-of-post">{{ page.title }}</h3>
 </a>
-{{ content }}
+<div id="article">
+	{{ content }}
+</div>
 {%  if page.previous %}
 	<div id="previous-post">
 		<< <a href={{ page.previous.url}}>{{ page.previous.title }}</a>
