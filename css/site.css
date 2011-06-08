@@ -32,14 +32,6 @@ h6 {
   font-size: 100%;
 }
 
-#nav a {
-  text-decoration: none;
-}
-
-#nav ul {
-  list-style: none;
-}
-
 #earlierPosts h5 {
 	margin-bottom: 0.5em;
 }
@@ -54,9 +46,22 @@ h6 {
   text-align: center;
 }
 
-#menu a {
-  font-weight: bold;
-  font-size: 120%;
+#nav a {
+  text-decoration: none;
+}
+
+#nav h5 {
+	margin-top: 0;
+}
+
+#nav li {
+	float: left;
+	margin-right: 2em;
+}
+
+#nav ul {
+  list-style: none;
+	padding: 0;
 }
 
 #nextPost {
@@ -74,4 +79,8 @@ h6 {
 
 #previousPost {
 	float:left;
+}
+
+#section {
+	clear: both;
 }
