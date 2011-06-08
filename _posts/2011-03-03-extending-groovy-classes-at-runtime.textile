@@ -2,9 +2,9 @@
 layout: post
 title: Extending classses at runtime with Groovy
 ---
-I gave an introduction to Groovy at our local JUG this week and didn’t quite manage to make it through all the material I wanted to cover, so I decided to add the missing content here! The part I missed out in the meetup was how to extend a class at runtime via it’s metaClass.
+I gave an introduction to Groovy at our local JUG this week and didn't quite manage to make it through all the material I wanted to cover, so I decided to add the missing content here! The part I missed out in the meetup was how to extend a class at runtime via it's metaClass.
 
-If you add a named closure to the metaClass of an existing class, then it essentially becomes available as a method on that class. In this example, I’ve added a @containsOnly(Collection anotherCollection)@ method to the @Collection@ class, which returns @true@ if two collections have the same content but not necessarily in the same order.
+If you add a named closure to the metaClass of an existing class, then it essentially becomes available as a method on that class. In this example, I've added a @containsOnly(Collection anotherCollection)@ method to the @Collection@ class, which returns @true@ if two collections have the same content but not necessarily in the same order.
 
 {% highlight java %}
 Collection.metaClass.containsOnly = { Collection otherCollection ->
@@ -20,7 +20,7 @@ assert !b.containsOnly(c)
 
 @delegate@ is an implicit argument referring to the object on which the @containsOnly()@ method is being called.
 
-In the following case, I have extended the @Collection@ class again to add a @choose(int numberOfElements)@ method, which selects a supplied number of elements from the collection, chosen at random. Note that the @return@ keyword is optional, I’ve used it here for clarity.
+In the following case, I have extended the @Collection@ class again to add a @choose(int numberOfElements)@ method, which selects a supplied number of elements from the collection, chosen at random. Note that the @return@ keyword is optional, I've used it here for clarity.
 
 {% highlight java %}
 Collection.metaClass.choose = { int numberOfElements ->
@@ -58,7 +58,7 @@ My final example extends the @String@ class so that you can easily cast it to a 
 "08/08/1988" as Date
 {% endhighlight %}
 
-Under the hood, Groovy calls the @asType(Class targetType)@ method to perform the conversion, and that already supports casting to a number of different types. To add @Date@ casting I had to replace the existing method definition. So that I didn’t lose the original functionality, I captured the original method and delegated to it if we’re not trying to cast to a @Date@.
+Under the hood, Groovy calls the @asType(Class targetType)@ method to perform the conversion, and that already supports casting to a number of different types. To add @Date@ casting I had to replace the existing method definition. So that I didn't lose the original functionality, I captured the original method and delegated to it if we're not trying to cast to a @Date@.
 
 {% highlight java %}
 def oldAsType = String.metaClass.getMetaMethod("asType", [Class] as Class[])
