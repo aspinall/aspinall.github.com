@@ -6,6 +6,13 @@ layout: default
 	<h3 class="postTitle">{{ page.title }}</h3>
 </a>
 {{ content }}
-<div id="previousPost">Previous: {{ page.previous.title }}</div>
-<div id="nextPost">Next: {{ page.next.title }}</div>
-
+{%  if page.previous %}
+	<div id="previousPost">
+		<< <a href={{ page.previous.url}}>{{ page.previous.title }}</a>
+	</div>
+{%  endif %}
+{%  if page.next %}
+	<div id="nextPost">
+		<a href={{ page.next.url }}>{{ page.next.title }}</a> >>
+	</div>
+{%  endif %}

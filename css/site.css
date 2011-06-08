@@ -45,6 +45,7 @@ h6 {
 }
 
 #copyright {
+  clear: both;
   font-size: 80%;
   text-align: center;
 }
@@ -54,6 +55,10 @@ h6 {
   font-size: 120%;
 }
 
+#nextPost {
+  float: right;
+}
+
 .postDate {
   margin-bottom: 0;
 }
@@ -61,4 +66,8 @@ h6 {
 .postTitle {
   margin-top: 0;
   margin-bottom: 0.5em;
+}
+
+#previousPost {
+	float:left;
 }
