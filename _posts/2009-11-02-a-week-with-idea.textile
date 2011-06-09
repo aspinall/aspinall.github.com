@@ -1,0 +1,19 @@
+---
+layout: post
+title: A week with IntelliJ IDEA
+---
+Since the start of last week I have been using the beta release of "IntelliJ IDEA Community Edition":http://jetbrains.org/ and I have to admit I'm really rather impressed. It hasn't been completely plain sailing but I'm prepared to give it the benefit of the doubt given that it is still in beta and it's only fair to expect a few hiccups along the way.
+
+One of the things I like most about IDEA is it's keyboard centric and code centric approach. To call it a glorified text editor is doing it a disservice, but the feeling I get when I'm using it takes me back to my first job using vi on HP-UX terminals to write software for telephony switches. I don't mean that it's primitive, far from it, just that it gets back to basics and puts the emphasis back on writing code.
+
+And yet it provides a tremendous amount of support. The code insight and refactorings are excellent. The inspections help keep you on the straight and narrow as far as good coding practice goes. It's Maven and version control support is top notch too. The biggest problem is remembering all the keyboard shortcuts in the mammoth keymap.
+
+The distraction free, code and keyboard centric approach means that it also works very well on my 13&quot; MacBook screen, and for the first time I can remember, I'm actually enjoying coding with it's limited screen real estate!
+
+In fact the only thing I'm missing from "NetBeans":http://netbeans.org/ is auto closing a line when you enter a semicolon!
+
+Will it sell more copies? I don't know. As I said in my last post, there's usually the best option and there's the option that's good enough. I think IntelliJ is probably the Apple of the Java IDE world, in that the attention to detail in IDEA is much better than Eclipse and NetBeans. But both those IDEs are good enough for the purposes of most developers. If IntelliJ ever make IDEA Ultimate Edition available for free then the others might be in serious trouble though.
+
+If I were writing web apps every day, then I would definitely trial the Ultimate Edition and if the extra plugins are as good as the Community Edition, I would pay for it out of my own pocket, which is about as big an endorsement as I can give it! I'm also going to continue using it as my preferred Java IDE.
+
+Having said all that I still doubt that this move will significantly increase it's market. I hope I'm wrong, but in the current economic climate especially, people are going to be prepared to compromise!
