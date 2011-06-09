@@ -1,0 +1,13 @@
+---
+layout: post
+title: Take the red pill...
+---
+Right now I feel a bit like Neo being confronted by Morpheus and offered the choice of the blue pill or the red pill. Take the blue pill and I can go back to my comfortable world of Java and object orientation. Take the red pill - I learn Haskell and see how deep functional programming goes!
+
+In a previous post I mentioned that I am in the process of learning functional programming in Haskell. The exercise this week was to write a monadic parser and what struck me about it was how much I was wrestling to keep a single function in my head. With Java I can hold several classes and the interactions between them in my head, and even do a half decent job with multi-threaded code (I'm sure "Tony":http://blog.tmorris.net/ would disagree and he's probably right, but for now I am no more disillusioned than most Java programmers).
+
+I think the part of the reason I struggled is because Haskell code is a lot more dense than Java code i.e. less code does more. The type system in particular, is so rich that trying to keep track of what types were in play at each point in the function was a challenge in itself. Whilst I was working on the exercises, I got to a point where I knew the understanding I needed was just beyond my grasp, and the penny dropped just as I answered the last question!
+
+It was at that point that I began to understand what one of the functions I had written early on actually did. That enabled me to clean up my code considerably because I had been rewriting the same function over and over in the subsequent questions. That in turn made the code a lot easier to reason about.
+
+It really shows the importance of understanding a function before you use it. At the end of today's lesson we had an interesting discussion about unwittingly misunderstanding code, because we think we understand it when actually we don't. Languages like Haskell can reduce the ambiguity which reduces the chance of misunderstanding. Unfortunately, it can also lead to non-understanding for beginners like me, which isn't much help either!

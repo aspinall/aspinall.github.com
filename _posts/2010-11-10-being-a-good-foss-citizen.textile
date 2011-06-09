@@ -1,0 +1,11 @@
+---
+layout: post
+title: Being a good FOSS citizen
+---
+Do you use free and open source software? Do you contribute back? I have to hold my hands up and admit that I have not contributed back as much as I feel I should have and I feel bad about it.
+
+The obvious way to contribute is with code, be that feature enhancements or bug fixes, but there are many ways in which to contribute back. You can work on documentation or subscribe to the mailing list and help out by answering questions and helping people with problems that you might have already solved. Even evangelizing about free and open source software is contributing in some way, and the one in which I have been most active.
+
+However, twice in the last couple of months, I have found and fixed bugs in open source libraries. I depend very heavily on one of those libraries ("WebDriver":http://seleniumhq.org/) for my current project and despite the best of intentions, I still haven't submitted a patch for the fix. My "excuse" is that I haven't had the time to create the patch and a unit test example to demonstrate the problem and solution, but let's face it that is a poor excuse! If I have the time to learn to use someone else's software, and I expect it to be there in the future, then surely I can make the time to send them a fix I've already written?
+
+So my conscience has finally got the better of me! Just as I committed to blogging once a day for 30 days to kill my procrastination about blogging, I am making a commitment to contributing patches for the fixes I have by the end of the week to kill my procrastination about contributing back too!

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Is Apple an abusive partner?
+---
+I have a dilemma. I love Apple products. I love the hardware. I love the software. I love the presentation. I love that their products are "friendly". But I also see an ugly side to Apple. The side that is cold, ruthless and oppressive.The side that decides what is good for it's customers and what isn't. Do I want to continue is a relationship with a partner that gives me beautiful things but makes all my decisions for me?
+
+Alarm bells started ringing when Apple started making arbitrary decisions about approvals to the App Store. "Blocking Google Voice":http://techcrunch.com/2009/07/27/apple-is-growing-rotten-to-the-core-and-its-likely-atts-fault/ was a big mental hurdle for me. Apple's excuse that it replicated functionality that already existed in the incumbent phone application seemed to be stretching the truth.
+
+The next warning was "section 3.3.1":http://daringfireball.net/2010/04/iphone_agreement_bans_flash_compiler of the SDK license, which prevented anyone from using anything other than sanctioned programming languages to create applications for iOS devices. This sent them into a bitter war with Adobe. Apple had already refused to allow Flash into iOS, prompting Adobe to invest in cross compiling to native iOS devices. Almost antagonistically, Apple introduced the new restriction just before Adobe launched their new Creative Suite!
+
+The latest slap in the face was the announcement to "drop support for Java":http://developer.apple.com/library/mac/#releasenotes/Java/JavaSnowLeopardUpdate3LeopardUpdate8RN/NewandNoteworthy/NewandNoteworthy.html%23//apple_ref/doc/uid/TP40010380-CH4-SW1 from OS X 10.7. It felt like Apple was systematically removing anything but it's own technology from their system. Up until now, I liked being in Apple's walled garden because things just work there, but when the walls are closing in, it's time to find a way out!
+
+There are some positive signs however. The restrictions in section 3.3.1 "have been relaxed":http://www.apple.com/pr/library/2010/09/09statement.html and Apple is going to "contribute to the OpenJDK effort":http://www.apple.com/pr/library/2010/11/12openjdk.html, which I think is definitely the "right thing" to do. The question is whether these concessions are just to lull us into a false sense of security before the next sucker punch, like the Mac App Store for example?

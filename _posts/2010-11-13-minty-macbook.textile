@@ -1,0 +1,13 @@
+---
+layout: post
+title: Mmmmm... Minty Macbook!
+---
+When I started on my current project and got a new developer workstation, I took advantage of an official "Ubuntu":http://www.ubuntu.com/ distribution sanctioned for use within the company. Apart from a few wrinkles with the authentication against the Windows domains, it has been a real pleasure to use, so when I rebuilt my MacBook recently, I decided that I would use "Bootcamp":http://www.apple.com/support/bootcamp/ and tri-boot it (Max OS X, Windows 7 and Linux).
+
+I started out with the regular Ubuntu distribution, but it didn't seem to work all that well. It certainly wasn't a slick as it is on my workstation at work. I was having problems with the trackpad and the wifi adapter in particular. Then someone recommended "Linux Mint":http://www.linuxmint.com/, so I scrapped Ubuntu and installed that instead.
+
+It installed straight away and everything aside from the iSight camera worked immediately. It can access the OS X and Windows 7 partitions and even the MP4 video and MP3 audio codecs were installed so I could play back my media from my iTunes library.
+
+On top of that, it performs snappily and it still has the excellent package management of Ubuntu. I was even more pleasantly surprised when it paired with my iPhone and connected to the internet on the first attempt!
+
+So if you've been thinking about giving Linux a whirl, then Linux Mint is a really good, low fuss candidate.

@@ -1,0 +1,61 @@
+---
+layout: post
+title: Mixin it up
+---
+A couple of days ago I talked about using Groovy's @metaClass@ to add a method to the @Collection@ class at runtime. Today, I used Groovy's mixin mechanisms to share common functionality between two classes that don't share the same ancestry.
+
+In my original Java code, one of the classes was actually an inner class of the other. When I converted that code to Groovy I found that Groovy's inner class support was a little bit… iffy (at least in the sense that the behaviour is not exactly the same as Java)! So I promoted the inner class to a top level class. That left me with two functions that both classes needed to share.
+
+The obvious options were copy and paste (over my dead body), try and force a common parent (inheritance), or refactor the shared functions into their own classes (composition). I felt the only reasonable option was composition, but I didn't want my new concise code being messed up with lots of indirect method calls! Having used Scala traits before I figured I would look for the Groovy equivalent.
+
+My first port of call was Groovy's @mixin()@ method, which works like this:
+
+{%  highlight java %}
+class Logger {
+    def log(message) {
+        println "> $message"
+    }
+}
+
+class Foo {
+    static {
+        Foo.class.mixin Logger
+    }
+    
+    def bar() {
+        log "Foo.bar() called"
+    }
+}
+
+foo = new Foo()
+foo.bar() // prints "> Foo.bar() called"
+foo.log "log called directly on Foo instance!"
+{%  endhighlight %}
+
+Perfect! Easy to implement, not too difficult to follow, and no (source code) overhead to calling the mixed in methods. I committed the code and was about to get on with the next task when I discovered another mechanism…
+
+There is an @@Delegate@ annotation you can place on a field within a class. It triggers an AST transformation which injects the interface of the delegate into the enclosing class, giving me the same net result as the @mixin()@ method:
+
+{%  highlight java %}
+class Logger {
+    def log(message) {
+        println "> $message"
+    }
+}
+
+class Foo {
+    @Delegate Logger logger = new Logger()
+    
+    def bar() {
+        log "Foo.bar() called"
+    }
+}
+
+foo = new Foo()
+foo.bar() // prints "> Foo.bar() called"
+foo.log "log called directly on Foo instance!"
+{%  endhighlight %}
+
+I ended up going with the @@Delegate@ mechanism because the IDE (IntelliJ IDEA in my case) can resolve references to the delegated methods (because the transformation is applied at compile time) which it couldn't do using the @mixin()@ method (because it is applied at runtime). I imagine therefore, that it makes sense to use @@Delegate@ on your own classes and @mixin()@ on other peoples.
+
+I didn't delve into them, but there are more mechanisms available than the two I've highlighted here. There are @@Category@ and @@Mixin@ annotations and you can roll your own AST transformations too. They might be the subject of another blog post!
