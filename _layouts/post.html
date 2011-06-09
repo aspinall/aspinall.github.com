@@ -2,9 +2,7 @@
 layout: default
 ---
 <h5 class="date-of-post">{{ page.date | date_to_string }}</h5>
-<a href={{ page.url }}>
-	<h3 class="title-of-post">{{ page.title }}</h3>
-</a>
+<h3 class="title-of-post">{{ page.title }}</h3>
 <div id="article">
 	{{ content }}
 </div>
