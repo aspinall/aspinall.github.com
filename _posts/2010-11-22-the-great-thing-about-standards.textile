@@ -1,0 +1,11 @@
+---
+layout: post
+title: The great thing about standards...
+---
+… is that there's so many of them to choose from. They're like Java frameworks, everyone has got one! I guess it's down to control. People don't want to invest in something that they don't have control over, so they create another standard, manage to get it ratified by some standards body, and then claim that they are standards compliant. But if we're not all using the same standard, how much value does the standard have?
+
+I've spent a considerable amount of time this weekend creating alternative versions of the "Coding By Numbers":http://www.codingbynumbers.com/ podcast. We have been using the "AAC":http://en.wikipedia.org/wiki/Advanced_Audio_Coding format since it gives you the best bang for your buck in terms of quality versus size, but we've had a bunch of feedback asking for an "MP3":http://en.wikipedia.org/wiki/MP3 version because not all media players support AAC.
+
+A few weeks ago, my co-host "Steve":http://dalts.net/ was fortunate enough to meet with "Richard Stallman":http://stallman.org/ from the "Free Software Foundation":http://www.fsf.org/, who won't listen to any digital audio unless it is recorded in an open format such as "Ogg Vorbis":http://www.vorbis.com/. In fact he thinks we shouldn't be offering anything but open formats and he's probably right, but if people are having problems with AAC support, can you imagine the problems people would have if we only offered Ogg Vorbis?
+
+So there's three standards that we now offer for the podcast, but those aren't the only standards we could choose from. There's also "FLAC":http://flac.sourceforge.net/, "MP2":http://en.wikipedia.org/wiki/MP2, "WAV":http://en.wikipedia.org/wiki/WAV, "WMA":http://en.wikipedia.org/wiki/Windows_Media_Audio and that's before we even start on the voice specific codecs we could use! And there's so little real difference between them that you have to question why they all exist. Perhaps standards would be better controlled by a benevolent dictator than committees?
