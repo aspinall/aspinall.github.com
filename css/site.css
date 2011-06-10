@@ -3,6 +3,10 @@ a {
 	text-decoration: none;
 }
 
+a:visited {
+	color: CornflowerBlue;
+}
+
 body {
   background-color: white;
   color: black;
