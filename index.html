@@ -5,9 +5,7 @@ title: Blog - Craig Aspinall
 
 {% for post in site.posts limit:1 %}
 	<h5 class="date-of-post">{{ post.date | date_to_string }}</h5>
-	<a href={{ post.url }}>
-		<h3 class="title-of-post">{{ post.title }}</h3>
-	</a>
+	<h3 class="title-of-post">{{ post.title }}</h3>
 	<div id="article">
 		{{ post.content }}
 	</div>
