@@ -18,7 +18,7 @@ body {
 }
 
 .date-of-post {
-	color: gray;
+  color: gray;
   margin-bottom: 0;
 }
 
@@ -51,6 +51,14 @@ h5 {
 
 h6 {
   font-size: 100%;
+}
+
+#latest-post .date-of-post {
+  margin-top: 0;
+}
+
+#latest-post h5 {
+  margin-bottom: 0.5em;
 }
 
 #nav a {

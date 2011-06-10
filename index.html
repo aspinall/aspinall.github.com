@@ -2,14 +2,16 @@
 layout: blog
 title: Blog - Craig Aspinall
 ---
-
-{% for post in site.posts limit:1 %}
-	<h5 class="date-of-post">{{ post.date | date_to_string }}</h5>
-	<h3 class="title-of-post">{{ post.title }}</h3>
-	<div id="article">
-		{{ post.content }}
-	</div>
-{% endfor %}
+<div id="latest-post">
+	<h5>Latest Post</h5>
+	{% for post in site.posts limit:1 %}
+		<h5 class="date-of-post">{{ post.date | date_to_string }}</h5>
+		<h3 class="title-of-post">{{ post.title }}</h3>
+		<div id="article">
+			{{ post.content }}
+		</div>
+	{% endfor %}
+</div>
 
 <div id="older-posts">
 	<h5>Older Posts</h5>
