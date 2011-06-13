@@ -4,13 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>S5: An Introduction</title>
+<title>{{ page.title }}</title>
 <!-- metadata -->
 <meta name="generator" content="S5" />
 <meta name="version" content="S5 1.1" />
-<meta name="presdate" content="20050728" />
-<meta name="author" content="Eric A. Meyer" />
-<meta name="company" content="Complex Spiral Consulting" />
+<meta name="presdate" content="{{ page.date }}" />
+<meta name="author" content="{{ page.author }}" />
+<meta name="affiliation" content="{{ page.affiliation }}" />
 <!-- configuration parameters -->
 <meta name="defaultView" content="slideshow" />
 <meta name="controlVis" content="hidden" />
@@ -29,8 +29,8 @@
 <div id="currentSlide"><!-- DO NOT EDIT --></div>
 <div id="header"></div>
 <div id="footer">
-<h1>[location/date of presentation]</h1>
-<h2>[slide show title here]</h2>
+<h1>{{ page.location }} - {{ page.date }}</h1>
+<h2>{{ page.title }}</h2>
 </div>
 
 </div>
@@ -39,9 +39,9 @@
 <div class="presentation">
 
 <div class="slide">
-<h1>[slide show title here]</h1>
-<h3>[name of presenter]</h3>
-<h4>[affiliation of presenter]</h4>
+<h1>{{ page.title }}</h1>
+<h3>{{ page.author }}</h3>
+<h4>{{ page.affiliation }}</h4>
 </div>
 
 
