@@ -7,13 +7,37 @@ author: Craig Aspinall
 affiliation: Co-host of Coding By Numbers
 ---
 <div class="slide">
-h1. [slide title]
-* [point one]
-* [point two]
-* [point three]
-* [point four]
-* [point five]
+h1. What is Functional Programming not?
+
+There is a lot of misinformation and misinterpretation around this question. Let us start by defining some of the things that functional programming is not!
+
+It is not about type systems. The question of strong or weak, static or dynamic, applies to both functional and imperative programming.
+
+It is not about lazy or strict evaluation either!
+
+It is not about higher order functions.
+
+And it is certainly not about *monads*!
+
+To find out what functional programming is really about, we need to go back in time...
 <div class="handout">
 [any material that should appear in print but not on the slide]
+</div>
+</div>
+
+<div class="slide">
+h1. History Lesson
+
+In the 1930s at Princeton university, there were a number of people trying to answer questions related to *computation*, such as _"if we had infinite computing power, what problems would we be able to solve?"_
+
+One of those people was Alonzo Church. He developed a formal system called *lambda calculus*, essentially a programming language for a machine with infinite power. It was based on *functions* that took other *functions* as parameters and returned *functions*. Using this he was able to provide conclusive answers to the many of the computation questions.
+
+Another was Alan Turing, who independently developed a different formal system now known as the *Turing machine*, and using it he came to similar conclusions as Alonzo Church.
+
+It was later shown that Turing machines and lambda calculus were equivalent in power.
+
+The third person was John von Neumann. In 1949 the EDVAC (Electronic Discrete Variable Automatic Computer) was unveiled and was the first example of von Neumanns architecture, effectively a real world implementation of a Turing machine.
+
+In 1958, John McCarthy (a Princeton graduate) unveiled LISP (LISt Processing language), an implementation of lambda calculus that worked on von Neumann computers.
 </div>
 </div>
