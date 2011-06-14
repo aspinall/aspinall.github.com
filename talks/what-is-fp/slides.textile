@@ -1,34 +1,84 @@
 ---
 layout: s5
 title: What is functional programming?
-location: Coding By Numbers meetup
-date: 23rd June 2011
 author: Craig Aspinall
 affiliation: Co-host of Coding By Numbers
 ---
 <div class="slide">
-h1. What is Functional Programming not?
+h1. The stuff of myth and legend!
 
-There is a lot of misinformation and misinterpretation around this question. Let us start by defining some of the things that functional programming is not!
+There is a lot of misinformation and misinterpretation around what functional programming is. Let us start by defining some of the things that functional programming is not!
 
-It is not about type systems. The question of strong or weak, static or dynamic, applies to both functional and imperative programming.
-
-It is not about lazy or strict evaluation either!
-
-It is not about higher order functions.
-
-And it is certainly not about *monads*!
-
-To find out what functional programming is really about, we need to go back in time...
 <div class="handout">
-[any material that should appear in print but not on the slide]
+Let's start by dispelling some of the myths. Functional programming is still seen as a black art by some developers, something occult, which of course, it isn't.
+
+It does inherit a lot of terminology from branches of advanced mathematics, such as category theory, but you don't need to know or understand that to get started with functional programming. At it's very essence, it's quite simple so let's start by defining some of the things that functional programming is not about.
 </div>
 </div>
 
 <div class="slide">
-h1. History Lesson
+h1. It is not about...
 
-In the 1930s at Princeton university, there were a number of people trying to answer questions related to *computation*, such as _"if we had infinite computing power, what problems would we be able to solve?"_
+<div style="float: right">
+!/talks/what-is-fp/images/red-cross.png!
+</div>
+* Type systems:
+** strong versus weak
+** static versus dynamic
+* Lazy versus strict evaluation
+* Higher order functions
+* Monads, monoids, functors etc.
+
+These questions apply to both functional and non-functional programming!
+<div class="handout">
+It is not about type systems. The questions of string versus weak, and dynamic versus static typing have nothing to do with functional programming. Neither does the question of lazy versus strict (or eager) evaluation.
+
+There are lots of features that are commonly associated with functional programming like higher order functions, monads, monoids, functors etc. but functional programming is not about those either.
+
+All of these things can apply to both functional and non functional programming.
+</div>
+</div>
+
+<div class="slide">
+h1. So what is functional programming about?
+
+To answer that, we need to go back in time, to the 1930s.
+
+p=. !/talks/what-is-fp/images/depression.jpg!
+<div class="handout">
+So what is functional programming really about? To answer that question we need to look back to where it all began, in 1930s America.
+
+This was of course the time of the great depression. Unemployment was rife and many families were struggling to put food on the table. Even the wealthy had lost a fortune on the stock market and were forced to sell their belongings at knocked down prices.
+</div>
+</div>
+
+<div class="slide">
+h1. Princeton University
+
+<div style="float:left; padding-right: 1em">
+!/talks/what-is-fp/images/princeton.jpg!
+</div>
+
+In the 1930s at Princeton university, there were a number of individuals trying to answer questions related to *computation*, such as:
+
+bq. "If we had infinite computing power, what problems would we be able to solve?"
+
+<div class="handout">
+With industry and society on its knees, many of the best minds of the time worked in academia. The top universities were a haven from what was going on in the rest of the country. 
+
+From a functional programming perspective, we're most interested in Princeton University in New Jersey. There were a number of individuals there who were interested in the subject of computation, and were trying to answer questions such as:
+
+* If we had infinite computing power, what problems would we be able to solve?
+* Would there be any problems we could not solve?
+* Could they be solved in more than one way?
+
+If you come from a computer science background, you may recognize the names of a few of them!
+</div>
+</div>
+
+<div class="slide>
+h1. Alonzo Church
+
 
 One of those people was Alonzo Church. He developed a formal system called *lambda calculus*, essentially a programming language for a machine with infinite power. It was based on *functions* that took other *functions* as parameters and returned *functions*. Using this he was able to provide conclusive answers to the many of the computation questions.
 
@@ -39,5 +89,4 @@ It was later shown that Turing machines and lambda calculus were equivalent in p
 The third person was John von Neumann. In 1949 the EDVAC (Electronic Discrete Variable Automatic Computer) was unveiled and was the first example of von Neumanns architecture, effectively a real world implementation of a Turing machine.
 
 In 1958, John McCarthy (a Princeton graduate) unveiled LISP (LISt Processing language), an implementation of lambda calculus that worked on von Neumann computers.
-</div>
 </div>
