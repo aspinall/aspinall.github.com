@@ -1,5 +1,6 @@
 /* Following are the presentation styles -- edit away! */
 
+* {font-family: Verdana, Helvetica, sans-serif;}
 body {background: #FFF; color: #000; font-size: 2em;}
 :link, :visited {text-decoration: none; color: #00C;}
 #controls :active {color: #88A !important;}
