@@ -76,6 +76,13 @@ html>body .external {border-bottom: none;}
 img.incremental {visibility: hidden;}
 .slide .current {color: #B02;}
 
+#license {
+	bottom: 1em;
+	font-size: 0.5em;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+}
 
 /* diagnostics
 
