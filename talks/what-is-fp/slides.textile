@@ -7,7 +7,15 @@ affiliation: Co-host of Coding By Numbers
 <div class="slide">
 h1. The stuff of myth and legend!
 
-There is a lot of misinformation and misinterpretation around what functional programming is. Let us start by defining some of the things that functional programming is not!
+<div class="image-right">
+!/talks/what-is-fp/images/occult.gif!
+</div>
+
+There is a lot of misinformation and misinterpretation around what functional programming is. 
+
+It's not the black art that some would have you believe!
+
+Let us start by defining some of the things that functional programming is not.
 
 <div class="handout">
 Let's start by dispelling some of the myths. Functional programming is still seen as a black art by some developers, something occult, which of course, it isn't.
@@ -19,7 +27,7 @@ It does inherit a lot of terminology from branches of advanced mathematics, such
 <div class="slide">
 h1. It is not about...
 
-<div style="float: right">
+<div class="image-right">
 !/talks/what-is-fp/images/red-cross.png!
 </div>
 * Type systems:
@@ -55,7 +63,7 @@ This was of course the time of the great depression. Unemployment was rife and m
 <div class="slide">
 h1. Princeton University
 
-<div style="float:left; padding-right: 1em">
+<div class="image-left">
 !/talks/what-is-fp/images/princeton.jpg!
 </div>
 
