@@ -52,7 +52,9 @@ h1. So what is functional programming about?
 
 To answer that, we need to go back in time, to the 1930s.
 
-p=. !/talks/what-is-fp/images/depression.jpg!
+<div style="clear:both; text-align: center;">
+!/talks/what-is-fp/images/depression.jpg!
+</div>
 <div class="handout">
 So what is functional programming really about? To answer that question we need to look back to where it all began, in 1930s America.
 

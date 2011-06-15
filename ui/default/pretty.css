@@ -85,6 +85,11 @@ img.incremental {visibility: hidden;}
 	width: 100%;
 }
 
+.image-center {
+	clear: both;
+	text-align: center;
+}
+
 .image-left {
 	float: left;
 	padding-right: 1em;
