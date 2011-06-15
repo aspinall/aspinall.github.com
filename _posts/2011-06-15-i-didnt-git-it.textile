@@ -1,0 +1,24 @@
+---
+layout: post
+title: I didn't 'git' it
+published: false
+---
+OK, I admit it. I looked at "git":http://git-scm.com/ some time ago when I started playing around with distributed version control, and I dismissed it as being over complicated for what I wanted after about five minutes. Boy, what a mistake! First of all, it isn't that complicated and secondly, it's exactly what I've always wanted in a version control system.
+
+The main reason I was looking at distributed version control systems was because I was doing a lot of work on the train and I wanted something that could track changes locally so I could revert when I inevitably screwed something up. I also wanted to be able to push the changes to a hosted repository when I got home, partly so I had a backup but also to enable me to share the code with others. This ruled out the likes of "Subversion":http://subversion.apache.org and I ended up settling on "Mercurial":http://mercurial.selenic.com with "Bitbucket":http://bitbucket.org for free repository hosting.
+
+Whilst I still think that Mercurial and Bitbucket are fantastic tools, the process of moving this blog to "GitHub Pages":http://pages.github.com has forced me to learn git properly and it has a couple of useful features that make it really interesting to me.
+
+1. You have to add every change to the commit.
+
+At first, this was bugging the life out of me. If I change a file under version control, I usually want it to be included in the commit. That was until I made changes for more than one reason at once. I made changes to the CSS to correct some visual issues whilst I was adding content. Of course, it makes sense to separate these changes, and git operates that way by default. When I checked the status I saw that I had also changed the CSS and was able to commit that change separately to the content addition. Of course you can do this with Subversion by committing specific files, but git forces you to think about it (so long as you stay away from {{git commit -a}}).
+
+2. You can commit part of a change to file.
+
+Using the interactive adding feature, you can reduce the granularity of your commits to changes within a file. You can choose to commit some of the changed lines within a file and leave the other changes lines in your working copy for a later commit (or revert). This is a huge _get out of jail free card_ for me, as I often end up fixing one thing within a file whilst working on something else in the same file. Using this mechanism, the two changes can be committed separately, as they should be but often aren't.
+
+And so I learned another lesson. Evaluate technologies properly before you make a decision about which one to use. As I said when a very enthusiastic graduate colleague recently asked me...
+
+bq. How long does it take to become a good software engineer?
+
+bq. You can never get good at it, only better, therefore you know you're going in the right direction when you know more than you did yesterday, but less then you will tomorrow!
