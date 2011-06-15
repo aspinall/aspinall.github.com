@@ -174,6 +174,61 @@ bq. Practical in the sense that not all lambda calculus ideas can be implemented
 <div class="handout">
 Hopefully you arrived at the answer by now, but functional programming is a practical implementation of Church's lambda calculus. We say practical because lambda calculus was intended for machines with infinite computing power, which we don't have (yet), so not all of the ideas translate to reality.
 
-And the most important part of lambda calculus for practical functional programming is the function itself. Remember that functions were used for nearly everything in lambda calculus. So we should look at what a function is?
+And the most important part of lambda calculus for practical functional programming is the function itself. Remember that functions were used for nearly everything in lambda calculus. So we should look at what a function is and where variables come in?
+</div>
+</div>
+
+<div class="slide">
+h1. So, what is functional programming?
+
+A variable:
+* is an alias for an expression
+* is assigned to once
+* is never modified
+
+<div class="handout">
+Well, in functional programming variables are really just aliases for expressions. We can assign to them once and then we can't modify them.
+
+If we want to mutate a variable then we create a copy with the new value and leave the old one in place. Sometimes this is enforced by the language and the rest of the time we have to be disciplined about it.
+</div>
+</div>
+
+<div class="slide">
+h1. So, what is functional programming?
+
+A function:
+* always takes at least one argument
+* always returns a result
+* does not operate on anything other than its arguments (if it's pure)
+** no side effects
+** guaranteed to return the same result given the same arguments
+
+<div class="handout">
+What are functions?
+
+Functions always take at least one argument and return some result. They do not operate on anything other than its arguments, at least if it's a pure function, which is what we are aiming for. Pure functions have no side effects, and by side effects we mean that the only visible change in the system as a result of calling the function is whatever it returns. Pure functions are therefore guaranteed to return the same result given the same argument values.
+
+Note that there can be no such thing as a void function because that would imply that either:
+# the function doesn't do anything, in which case it is pointless, or
+# it is mutating one of the arguments which we supplied, which means we don't have immutable data and can't guarantee side effect free code, or
+# it's operating on something other than the arguments which we supplied, which also means we can't guarantee sde effect free code!
+</div>
+</div>
+
+<div class="slide">
+h1. Why should we care?
+
+<div class="image-center">
+!/talks/what-is-fp/images/transparency.jpg!
+</div>
+
+bq. "referential transparency"
+
+<div class="handout">
+So at this point you might be thinking that this functional programming lark doesn't sound quite as scary as you thought it was. You're also probably thinking that you and the majority of developers in the last couple of decades have been managing very nicely with imperative object oriented programming thank you very much, so why would you be bothered to fix something that isn't broken?
+
+Well, it all boils down to referential transparency, which is a fancy way of saying the last point on the previous slide. Given a pure function and a set of argument values, we will always get the same result, regardless of when we call it, or how many times we call it, or what other functions we call before it. It guaranteed to return the same result every time.
+
+It's predictable. And that has major implications.
 </div>
 </div>
