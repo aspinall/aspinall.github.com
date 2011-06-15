@@ -172,6 +172,8 @@ Unsurprisingly, functional programming is a practical implementation of lambda c
 bq. Practical in the sense that not all lambda calculus ideas can be implemented under physical limitations!
 
 <div class="handout">
+Hopefully you arrived at the answer by now, but functional programming is a practical implementation of Church's lambda calculus. We say practical because lambda calculus was intended for machines with infinite computing power, which we don't have (yet), so not all of the ideas translate to reality.
 
+And the most important part of lambda calculus for practical functional programming is the function itself. Remember that functions were used for nearly everything in lambda calculus. So we should look at what a function is?
 </div>
 </div>
