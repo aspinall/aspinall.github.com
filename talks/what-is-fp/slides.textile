@@ -159,3 +159,19 @@ Almost 10 years later, in 1958, John McCarthy (a Princeton graduate working at M
 
 There are still ardent supporters of LISP who believe that it is the one true way of programming computers, and yet it still hasn't captured the mindshare of the majority of developers out there.
 </div>
+
+<div class="slide">
+h1. So, what is functional programming?
+
+Unsurprisingly, functional programming is a practical implementation of lambda calculus and at the core of it is the *function*!
+
+<div class="image-center">
+!/talks/what-is-fp/images/Half_Life_Logo.jpg!
+</div>
+
+bq. Practical in the sense that not all lambda calculus ideas can be implemented under physical limitations!
+
+<div class="handout">
+
+</div>
+</div>
