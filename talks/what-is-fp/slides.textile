@@ -52,7 +52,7 @@ h1. So what is functional programming about?
 
 To answer that, we need to go back in time, to the 1930s.
 
-<div style="clear:both; text-align: center;">
+<div class="image-center">
 !/talks/what-is-fp/images/depression.jpg!
 </div>
 <div class="handout">
@@ -86,17 +86,76 @@ If you come from a computer science background, you may recognize the names of a
 </div>
 </div>
 
-<div class="slide>
+<div class="slide">
 h1. Alonzo Church
 
+<div class="image-right">
+!/talks/what-is-fp/images/Alonzo_Church.jpg!
+</div>
+Alonzo Church developed a formal system called *lambda calculus*, essentially a programming language for a machine with infinite power. 
 
-One of those people was Alonzo Church. He developed a formal system called *lambda calculus*, essentially a programming language for a machine with infinite power. It was based on *functions* that took other *functions* as parameters and returned *functions*. Using this he was able to provide conclusive answers to the many of the computation questions.
+It was based on *functions* that took other *functions* as parameters and returned *functions*. 
 
-Another was Alan Turing, who independently developed a different formal system now known as the *Turing machine*, and using it he came to similar conclusions as Alonzo Church.
+Using this he was able to provide conclusive answers to the many of the computation questions.
+<div class="handout">
+One of those individuals was Alonzo Church. He developed a formal system called lambda calculus that was essentially a programming language for one of these imaginary machines with unlimited computing power.
+
+Lambda calculus is based on functions that take other functions as parameters and return functions as results. You can probably guess where we're going with this!
+
+Using lambda calculus, Church was able to provide answers to many of the computation related questions that the academics were asking.
+</div>
+</div>
+
+<div class="slide">
+h1. Alan Turing
+
+<div class="image-right">
+!/talks/what-is-fp/images/Alan_Turing.jpg!
+</div>
+Alan Turing independently developed a different formal system now known as the *Turing machine*. 
+
+Using his system Turing arrived at similar conclusions to Alonzo Church.
 
 It was later shown that Turing machines and lambda calculus were equivalent in power.
+<div class="handout">
+Another one of the individuals at Princeton was Alan Turing. If you haven't heard of Alonzo Church before I'm sure you will have heard of the Turing machine.
 
-The third person was John von Neumann. In 1949 the EDVAC (Electronic Discrete Variable Automatic Computer) was unveiled and was the first example of von Neumanns architecture, effectively a real world implementation of a Turing machine.
+The Turing machine was another formal system that Turing developed independently of the work that Church was doing, and using it he was also able to provide answers to the computation related questions.
 
-In 1958, John McCarthy (a Princeton graduate) unveiled LISP (LISt Processing language), an implementation of lambda calculus that worked on von Neumann computers.
+Unlike lambda calculus, a Turing machine is very much a state based system, reading instructions from a tape and performing actions such as moving the tape head back and forth and writing output. The concept of a function is missing from it.
+
+It was later shown that Turing machines and lambda calculus were equivalent in power. Whatever could be achieved in one could also be achieved in the other. This is important to remember as we look at how we can perform functional programming in different programming languages.
+</div>
+</div>
+
+<div class="slide">
+h1. John von Neumann
+
+<div class="image-right">
+!/talks/what-is-fp/images/John_von_Neumann.jpg!
+</div>
+John von Neumann developed what we now call "von Neumanns architecture". 
+
+In 1949 the EDVAC (Electronic Discrete Variable Automatic Computer) was unveiled and was the first example of von Neumanns architecture, effectively a real world implementation of a Turing machine.
+<div class="handout">
+Another person who was at Princeton at the time and you might have heard of, was John von Neumann. He developed what we now call "von Neumann's architecture", something that is still prevalent in todays CPUs.
+
+In 1949 the EDVAC (Electronic Discrete Variable Automatic Computer) was unveiled and was the first example of von Neumanns architecture, effectively a real world implementation of a Turing machine. So this time Church missed out and Turing claimed the crown, but Church was still to have his day.
+</div>
+</div>
+
+<div class="slide">
+h1. John McCarthy
+
+<div class="image-left">
+!/talks/what-is-fp/images/John_McCarthy.jpg!
+</div>
+In 1958, John McCarthy unveiled the LISP (LISt Processing) language whilst working at MIT.
+
+This was an implementation of lambda calculus that worked on von Neumann architectures.
+
+<div class="handout">
+Almost 10 years later, in 1958, John McCarthy (a Princeton graduate working at MIT at the time) unveiled LISP (LISt Processing language). LISP was an implementation of lambda calculus that worked on von Neumann architectures. This proved that the Turing machine and lambda calculus were equivalent and one could be implemented in terms of the other.
+
+There are still ardent supporters of LISP who believe that it is the one true way of programming computers, and yet it still hasn't captured the mindshare of the majority of developers out there.
 </div>
