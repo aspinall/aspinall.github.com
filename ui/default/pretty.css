@@ -85,6 +85,16 @@ img.incremental {visibility: hidden;}
 	width: 100%;
 }
 
+.image-left {
+	float: left;
+	padding-right: 1em;
+}
+
+.image-right {
+	float: right;
+	padding-left: 1em;
+}
+
 /* diagnostics
 
 li:after {content: " [" attr(class) "]"; color: #F88;}
