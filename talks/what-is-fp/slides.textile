@@ -256,3 +256,18 @@ It also means that your code is implicitly thread safe, because there is no shar
 Whilst there is no shared mutable state, it isn't true to say that there is no state. It's just that the state is held on the stack in the function arguments, rather than a shared location in the heap.
 </div>
 </div>
+
+<div class="slide">
+h1. Don't I need to be using a functional language?
+
+<div class="image-center">
+!/talks/what-is-fp/images/languages.png!
+</div>
+<div class="handout">
+So... do you need to switch to a functional programming language to do functional programming? Well, I hate to disappoint you but the whole functional versus imperative programming argument is really a false dichotomy. The key difference is really whether languages are declarative or imperative and, functional programming should really be contrasted with logic programming or object oriented programming. 
+
+In fact you can use any of these languages to do functional programming, and that makes sense when you think back to the equivalence of lambda calculus and the Turing machine. Anything you can do in one, you can also do in the other.
+
+It is true to say however, that certain languages lend themselves better to functional programming than others, and the languages on the right, Haskell, Erlang, Clojure and other LISPs, lend themselves better to functional programming than the languages on the left, Java, C#, Ruby and Python, with the languages in the middle, Scala, OCaml and F# being somewhere in between.
+</div>
+</div>
