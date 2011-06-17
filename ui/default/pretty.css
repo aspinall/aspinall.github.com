@@ -92,11 +92,13 @@ img.incremental {visibility: hidden;}
 
 .image-left {
 	float: left;
+	margin-right: 1em;
 	padding-right: 1em;
 }
 
 .image-right {
 	float: right;
+	margin-left: 1em;
 	padding-left: 1em;
 }
 
