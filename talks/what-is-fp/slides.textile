@@ -227,8 +227,32 @@ bq. "referential transparency"
 <div class="handout">
 So at this point you might be thinking that this functional programming lark doesn't sound quite as scary as you thought it was. You're also probably thinking that you and the majority of developers in the last couple of decades have been managing very nicely with imperative object oriented programming thank you very much, so why would you be bothered to fix something that isn't broken?
 
-Well, it all boils down to referential transparency, which is a fancy way of saying the last point on the previous slide. Given a pure function and a set of argument values, we will always get the same result, regardless of when we call it, or how many times we call it, or what other functions we call before it. It guaranteed to return the same result every time.
+Well, it all boils down to referential transparency, which is a fancy way of saying the last point on the previous slide. Given a pure function and a set of immutable argument values, we will always get the same result, regardless of when we call it, or how many times we call it, or what other functions we call before it. It guaranteed to return the same result every time.
 
 It's predictable. And that has major implications.
+</div>
+</div>
+
+<div class="slide">
+h1. Referential transparency means...
+
+<div class="image-right">
+!/talks/what-is-fp/images/testing.jpg!
+</div>
+* easier testing
+* easier debugging
+* easier re-use
+* implicit thread safety
+
+<div class="handout">
+Referentially transparency makes it much easier to unit test your code, because you have well defined inputs and outputs to your functions, and the only thing that can affect those output are the inputs.
+
+Debugging your code becomes much simpler too, because the behaviour of your function does not depend on anything that happened before it was called, it only depends on the values of its arguments.
+
+Since your functions don't depend on anything around them, and they tend to have a single, well defined purpose, they are easier to re-use too.
+
+It also means that your code is implicitly thread safe, because there is no shared mutable state, so it is ready to take advantage of all those CPU cores!
+
+Whilst there is no shared mutable state, it isn't true to say that there is no state. It's just that the state is held on the stack in the function arguments, rather than a shared location in the heap.
 </div>
 </div>
