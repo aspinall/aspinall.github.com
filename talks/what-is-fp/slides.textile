@@ -306,6 +306,7 @@ Write a program that prints the numbers from 1 to 100 except:
 
 <div class="slide">
 h1. Typical "FizzBuzz" Answer in Java
+
 {% highlight java %}
 {% include what-is-fp/FizzBuzz.java %}
 {% endhighlight %}

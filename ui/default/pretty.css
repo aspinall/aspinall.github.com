@@ -102,6 +102,18 @@ img.incremental {visibility: hidden;}
 	padding-left: 1em;
 }
 
+code, .highlight {
+		background-color: white !important;
+}
+
+.slide code {
+	font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+	font-size: 1.1em !important;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1.2em !important;
+}
+
 /* diagnostics
 
 li:after {content: " [" attr(class) "]"; color: #F88;}
