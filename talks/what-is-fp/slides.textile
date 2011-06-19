@@ -271,3 +271,108 @@ In fact you can use any of these languages to do functional programming, and tha
 It is true to say however, that certain languages lend themselves better to functional programming than others, and the languages on the right, Haskell, Erlang, Clojure and other LISPs, lend themselves better to functional programming than the languages on the left, Java, C#, Ruby and Python, with the languages in the middle, Scala, OCaml and F# being somewhere in between.
 </div>
 </div>
+
+<div class="slide">
+h1. Language traits that aide functional programming
+
+* Declarative - describe what rather than how
+* Functions are first class values - they can be passed around
+* Higher order functions - functions that operate on other functions
+* Immutable data - cannot modify data once initialized
+* Recursive loops - instead of iteration (for, while, repeat etc.)
+* Algebraic data types - simple containers that can be recursively defined
+* Pattern matching - on primitive values and algebraic data types
+
+<div class="handout">
+
+</div>
+</div>
+
+<div class="slide">
+h1. FizzBuzz
+
+This is a simple coding exercise I used to get candidates to complete in five minutes during telephone interviews using Google Docs.
+
+Write a program that prints the numbers from 1 to 100 except:
+
+* for each number that is a multiple of 3, print "Fizz" instead of the number
+* for each number that is a multilpe of 5, print "Buzz" instead of the number
+* for each number that is a multiple of 3 and 5, print "FizzBuzz" instead of the number
+
+<div class="handout">
+
+</div>
+</div>
+
+<div class="slide">
+h1. Typical "FizzBuzz" Answer in Java
+{% highlight java %}
+{% include FizzBuzz.java %}
+{% endhighlight %}
+<div class="handout">
+
+</div>
+</div>
+
+<div class="slide">
+h1. A Better "FizzBuzz" Answer
+
+{% highlight java %}
+{% include what-is-fp/BetterFizzBuzz.java %}
+{% endhighlight %}
+<div class="handout">
+
+</div>
+</div>
+
+<div class="slide">
+h1. A More Functional "Fizzbuzz" Answer in Java
+
+{% highlight java %}
+{% include what-is-fp/FunctionalFizzBuzz.java %}
+{% endhighlight %}
+
+<div class="handout">
+
+</div>
+</div>
+
+<div class="slide">
+h1. A Functional "FizzBuzz" Answer in Haskell
+
+Note that I wrote this, so it may not be the most idiomatic Haskell example you will find!
+
+{% highlight haskell %}
+{% include what-is-fp/FizzBuzz.hs %}
+{% endhighlight %}
+
+<div class="handout">
+
+</div>
+</div>
+
+<div class="slide">
+h1. Learning Haskell
+
+* "haskell.org":http://haskell.org
+* "Learn you a Haskell":http://learnyouahaskell.com/
+* "Real World Haskell":http://book.realworldhaskell.org/
+<div class="handout">
+
+</div>
+</div>
+
+<div class="slide">
+h1. More information about functional programming
+
+* "http://aspinall.github.com/talks/what-is-fp/what-is-fp.html":http://aspinall.github.com/talks/what-is-fp/what-is-fp.html
+* "Functional Programming For The Rest of Us":http://www.defmacro.org/ramblings/fp.html - Slava Akhmechet at defmacro.org
+* "What Does Functional Programming Mean?":http://projects.tmorris.net/public/what-does-fp-mean/artifacts/0.3/chunk-html/index.html - Tony Morris at BFPG
+* "Introduction to FP":http://files.meetup.com/1443989/Intro%20to%20FP.pdf - Brad Clow at BFPG
+* "Brisbane Functional Programming Group":http://www.bfpg.org/
+* "Tony Morris' Programming Blog":http://blog.tmorris.net/category/programming/
+
+<div class="handout">
+
+</div>
+</div>
