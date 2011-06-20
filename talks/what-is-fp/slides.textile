@@ -442,6 +442,10 @@ h1. More information about functional programming
 * "Tony Morris' Programming Blog":http://blog.tmorris.net/category/programming/
 
 <div class="handout">
+These are some of the resources I used when putting this presentation together and the link to this presentation. If you print out the presentation you will get all of my handout notes, which is basically a narrative of everything I've said!
 
+I've already mentioned the Brisbane Functional Programming Group, but if you want to learn more about functional programming, your best bet is to join that group and start participating. It can be challenging at times because there are some very smart and knowledgable people there, but they really want to help people like you and I come to terms with functional programming and are more than willing to help answer questions.
+
+Finally there is Tony Morris' programming blog which is always an entertaining read. Tony has his point of view and isn't afraid to wield it, but I wouldn't have been able to put this presentation together if it wasn't for the generosity of Tony taking the time to teach people like myself a bit more about this stuff. so thank you Tony!
 </div>
 </div>
