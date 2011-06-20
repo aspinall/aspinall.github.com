@@ -386,7 +386,31 @@ Note that I wrote this, so it may not be the most idiomatic Haskell example you 
 {% endhighlight %}
 
 <div class="handout">
+This is an approximation of the functional "FizzBuzz" answer in Java and probably doesn't represent idiomatic Haskell, but it makes it easier to point out where there are significant differences.
 
+Haskell uses type inference so we don't have to declare any types, although everything is strongly and statically typed.
+
+It doesn't require parentheses around function arguments or semi-colons at the end of functions which reduces a lot of the noise from Java and other C derived languages.
+
+We can place binary functions in the infix position simply by surrounding the function name with back quotes.
+
+if-then-else is not used for control flow as it is in imperative languages like Java, it is used to select from two possible return expressions based on some boolean expression. In this case we have nested if constructs but they all ultimately resolve to return a single value or expression.
+
+Whitespace is used to distinguish new declarations from line continuations. If we placed any of the if constructs at the left margin it wouldn't compile.
+
+The map function takes two arguments, a function to convert values of type A to values of type B, and a list of values of type A, and it returns a list of values of type B. In this case we pass it a list of integers from 1 to the upper bound, and the fizzBuzzOrNumber function to convert the integer values into the corresponding strings.
+
+Finally we have the main function. Here the forM_ function accepts a list of values of type A and a function that operates on values of type A and it applies the function to every value in the list in order. We supply the result of (fizzBuzz 100) as the list and putStrLn which outputs strings to stdout followed by a newline character.
+
+You may or may not have noticed a number a significant language traits in action here. 
+
+# fizzBuzz and forM_ are higher order functions because they accept other functions as arguments, which in turn means that functions must be first class values
+# Haskell lists are a recursively defined algebraic data type
+# There are 2 instances of monads on show:
+## Haskell lists are also instances of monads
+## All IO in Haskell is contained within the IO monad
+
+Hopefully, this example isn't that scary or difficult, even though there are a number of language features being used that you may or may not be used to.
 </div>
 </div>
 
