@@ -332,7 +332,11 @@ h1. Typical "FizzBuzz" Answer in Java
 {% endhighlight %}
 
 <div class="handout">
+This is pretty much what I would expect most Java developers to write. It's not very pretty but does what it's supposed to and demonstrates the basic concepts I was looking for.
 
+It's also very dense and difficult to work out from the code what it is supposed to be doing. If I hadn't already explained the exercise to you, it would probably take you a minute or two to figure it out.
+
+Our IO is intertwined with our "business logic" and it would be very difficult to test as a result. We would have to execute the main() method and capture the output from stdout to be able to prove anything.
 </div>
 </div>
 
