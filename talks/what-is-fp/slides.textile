@@ -316,7 +316,11 @@ Write a program that prints the numbers from 1 to 100 except:
 * for each number that is a multiple of 3 and 5, print "FizzBuzz" instead of the number
 
 <div class="handout">
+So let's look at a real example. This is an exercise I used to get job candidates to do during technical telephone interviews for Java and C++ roles. We just did in Google Docs and I didn't try to compile the answer they gave. I just wanted to see that they could complete a simple programming task and I was mostly interested in seeing that they understood iteration and control flow, and not worried about missing semi-colons or anything like that.
 
+The exercise is really simple. Print the numbers 1 to 100 but for every multiple of 3 print "fizz", for every multiple of 5 print "buzz" and for every multiple of 3 and 5 print "fizzbuzz".
+
+You would be amazed at the number of people who have allegedly been to university studying computer science, and/or working as a developer for years, who could not complete this exercise satisfactorily!
 </div>
 </div>
 
