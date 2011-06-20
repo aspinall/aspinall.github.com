@@ -18,9 +18,15 @@ It's not the black art that some would have you believe!
 Let us start by defining some of the things that functional programming is not.
 
 <div class="handout">
+Today I'm going to talk about functional programming. I started looking at this last year because I was keen to understand what all the hype was about. From the little bit I did know then, I also thought it would enable me to write better, more testable, more maintainable code.
+
+Today, I would say that I know enough about it to know that I still have a long long way to go, but I'm certain that I will write better code as a result, and I'm already seeing some of those benefits.
+
+Unlike previous talks I've given here here at Coding By Numbers, I hope that this one will give you something practical you can take away and apply to the code you write tomorrow. Or at least that it will make you think about how you write your code tomorrow. 
+ 
 Let's start by dispelling some of the myths. Functional programming is still seen as a black art by some developers, something occult, which of course, it isn't.
 
-It does inherit a lot of terminology from branches of advanced mathematics, such as category theory, but you don't need to know or understand that to get started with functional programming. At it's very essence, it's quite simple so let's start by defining some of the things that functional programming is not about.
+It does inherit a lot of terminology from branches of advanced mathematics, such as category theory, but you don't need to know or understand that to get started with functional programming. At it's very essence, it's quite simple so let's clarify some of the things that functional programming is not about.
 </div>
 </div>
 
