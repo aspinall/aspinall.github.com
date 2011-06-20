@@ -290,7 +290,17 @@ h1. Language traits that aide functional programming
 * Pattern matching - on primitive values and algebraic data types
 
 <div class="handout">
+Declarative languages tend to lend themselves better to functional programming because they describe the result they want rather than the steps required to obtain the result.
 
+Functions as first class values and higher order functions make it easier to pass around functions which makes them easier to re-use.
+
+Immutable data helps enforce referential integrity and save us from ourselves, at least some of the time.
+
+Loops are handled recursively rather than iteratively.
+
+Algebraic data types also bring recursion into type definitions.
+
+And pattern matching allows you to return results based on values or structure without the need for buckets of if-then-elses statements.
 </div>
 </div>
 
