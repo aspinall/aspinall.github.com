@@ -212,12 +212,12 @@ A function:
 <div class="handout">
 What are functions?
 
-Functions always take at least one argument and return some result. They do not operate on anything other than its arguments, at least if it's a pure function, which is what we are aiming for. Pure functions have no side effects, and by side effects we mean that the only visible change in the system as a result of calling the function is whatever it returns. Pure functions are therefore guaranteed to return the same result given the same argument values.
+Functions always take at least one argument and return some result. They do not operate on anything other than their arguments, at least not if they're pure functions, which is what we are aiming for. Pure functions have no side effects, and by side effects we mean that the only visible change in the system as a result of calling the function is whatever it returns. Pure functions are therefore guaranteed to return the same result given the same argument values.
 
 Note that there can be no such thing as a void function because that would imply that either:
 # the function doesn't do anything, in which case it is pointless, or
-# it is mutating one of the arguments which we supplied, which means we don't have immutable data and can't guarantee side effect free code, or
-# it's operating on something other than the arguments which we supplied, which also means we can't guarantee sde effect free code!
+# it is mutating one of the arguments which we supplied, which means we don't have immutable data and we can't guarantee side effect free code, or
+# it's operating on something other than the arguments which we supplied, which also means we can't guarantee that it is free from side effects!
 </div>
 </div>
 
@@ -231,7 +231,7 @@ h1. Why should we care?
 bq. "referential transparency"
 
 <div class="handout">
-So at this point you might be thinking that this functional programming lark doesn't sound quite as scary as you thought it was. You're also probably thinking that you and the majority of developers in the last couple of decades have been managing very nicely with imperative object oriented programming thank you very much, so why would you be bothered to fix something that isn't broken?
+So at this point you might be thinking that this functional programming lark doesn't sound quite as scary as you thought it was. You're also possibly thinking that you and the majority of developers in the last couple of decades have been managing very nicely with imperative object oriented programming thank you very much, so why would you be bothered to fix something that isn't broken?
 
 Well, it all boils down to referential transparency, which is a fancy way of saying the last point on the previous slide. Given a pure function and a set of immutable argument values, we will always get the same result, regardless of when we call it, or how many times we call it, or what other functions we call before it. It guaranteed to return the same result every time.
 
@@ -259,7 +259,7 @@ Since your functions don't depend on anything around them, and they tend to have
 
 It also means that your code is implicitly thread safe, because there is no shared mutable state, so it is ready to take advantage of all those CPU cores!
 
-Whilst there is no shared mutable state, it isn't true to say that there is no state. It's just that the state is held on the stack in the function arguments, rather than a shared location in the heap.
+Whilst there is no shared mutable state, it isn't true to say that there is no state at all. It's just that the state is held on the stack in the function arguments, rather than a shared location in the heap.
 </div>
 </div>
 
@@ -270,11 +270,11 @@ h1. Don't I need to be using a functional language?
 !/talks/what-is-fp/images/languages.png!
 </div>
 <div class="handout">
-So... do you need to switch to a functional programming language to do functional programming? Well, I hate to disappoint you but the whole functional versus imperative programming argument is really a false dichotomy. The key difference is really whether languages are declarative or imperative and, functional programming should really be contrasted with logic programming or object oriented programming. 
+So... do you need to switch to a functional programming language to do functional programming? Well, I hate to disappoint you but the whole functional versus imperative programming argument is really a false dichotomy. 
 
 In fact you can use any of these languages to do functional programming, and that makes sense when you think back to the equivalence of lambda calculus and the Turing machine. Anything you can do in one, you can also do in the other.
 
-It is true to say however, that certain languages lend themselves better to functional programming than others, and the languages on the right, Haskell, Erlang, Clojure and other LISPs, lend themselves better to functional programming than the languages on the left, Java, C#, Ruby and Python, with the languages in the middle, Scala, OCaml and F# being somewhere in between.
+It is true to say however, that certain languages lend themselves better to functional programming than others, and the languages on the right, Haskell, Erlang, Clojure and other LISP implementations, lend themselves better to functional programming than the languages on the left, Java, C#, Ruby and Python, with the languages in the middle, Scala, OCaml and F# being somewhere in between.
 </div>
 </div>
 
