@@ -347,7 +347,13 @@ h1. A Better "FizzBuzz" Answer
 {% include what-is-fp/BetterFizzBuzz.java %}
 {% endhighlight %}
 <div class="handout">
+Here I've refactored the code to make it more testable. 
 
+I've separated the IO from the business logic, by creating a function that accepts an int and returns a List of Strings. The integer argument tells us which number we want to "fizzbuzz" up to, and the list of strings is the corresponding "fizzbuzz" sequence.
+
+And as you can see, now the main method just iterates over what is returned from our fizzBuzz() function and outputs it. This part of the code is so simple it shouldn't require any specific testing.
+
+Since the fizzBuzz() function doesn't operate on anything other than it's arguments we can test it thoroughly in solation of the IO code. Once we have some tests in place, then we can look at further refactorings.
 </div>
 </div>
 
