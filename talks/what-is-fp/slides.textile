@@ -418,10 +418,16 @@ Hopefully, this example isn't that scary or difficult, even though there are a n
 h1. Learning Haskell
 
 * "haskell.org":http://haskell.org
-* "Learn you a Haskell":http://learnyouahaskell.com/
-* "Real World Haskell":http://book.realworldhaskell.org/
+* Learn you a Haskell - "learnyouahaskell.com":http://learnyouahaskell.com/
+* Real World Haskell - "book.realworldhaskell.org":http://book.realworldhaskell.org/
 <div class="handout">
+If that has whet your appetite for learning Haskell, then the best place to start is at the haskell.org website where you can download the Haskell platform and find lots of information about it.
 
+In terms of learning Haskell I would stringly recommend Learn You A Haskell. The entire book has just been published in paper and e-book form but all the content is available free at the website.
+
+Real World Haskell is also a good resource that tries to teach Haskell through a number of "real world" case studies.
+
+And last but not least, get yourself down to the Brisbane functional programming group this Tuesday where Tony Morris is doing a second hands on session with Haskell. That will be one of your best opportunities to bootstrap your learning.
 </div>
 </div>
 
