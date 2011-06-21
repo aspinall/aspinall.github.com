@@ -3,15 +3,15 @@ layout: default
 ---
 <h3>{{ page.date | date_to_string }} - {{ page.title }}</h3>
 {{ content }}
+{% if page.next %}
+<h4>Newer Posts</h4>
+{% endif %}
 <ul>
   {% for post in site.posts %}
-  <li>
-    {{ post.date | date_to_string }} - 
     {% if post.title == page.title %}
-      {{ post.title }}
+      </ul><h4>Older Posts</h4><ul>
     {% else %}
-      <a href={{ post.url }}>{{ post.title }}</a>
+      <li>{{ post.date | date_to_string }} - <a href={{ post.url }}>{{ post.title }}</a></li>
     {% endif %}
-  </li>
   {% endfor %}
 </ul>

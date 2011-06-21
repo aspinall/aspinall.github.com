@@ -1,12 +1,14 @@
 ---
 layout: default
+postsToShow: 1
 ---
-{% for post in site.posts limit:1 %}
+{% for post in site.posts limit:page.postsToShow %}
   <h3>{{ post.date | date_to_string }} - {{ post.title }}</h3>
   {{ post.content }}
 {% endfor %}
+<h4>Older Posts</h4>
 <ul>
-  {% for post in site.posts offset:1 %}
+  {% for post in site.posts offset:page.postsToShow %}
   <li>
     {{ post.date | date_to_string }} - <a href={{ post.url }}>{{ post.title }}</a>
   </li>
