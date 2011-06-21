@@ -1,18 +1,4 @@
 ---
 layout: default
 ---
-<h5 class="date-of-post">{{ page.date | date_to_string }}</h5>
-<h3 class="title-of-post">{{ page.title }}</h3>
-<div id="article">
-	{{ content }}
-</div>
-{%  if page.previous %}
-	<div id="previous-post">
-		<< <a href={{ page.previous.url}}>{{ page.previous.title }}</a>
-	</div>
-{%  endif %}
-{%  if page.next %}
-	<div id="next-post">
-		<a href={{ page.next.url }}>{{ page.next.title }}</a> >>
-	</div>
-{%  endif %}
+{{ content }}

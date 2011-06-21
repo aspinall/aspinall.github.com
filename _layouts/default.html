@@ -22,24 +22,17 @@
     </script>
   </head>
   <body>
-    <div id="header">
-      <h1 class="title">craigaspinall.com</h1>
-      <div id="nav">
-        <ul>
-          <li><h5><a href="/index.html">blog</a></h5></li>
-        </ul>
-      </div>
-    </div>
-    <div id="section">
-      {{ content }}
-    </div>
-    <div id="footer">
-      <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
-        <img alt="Creative Commons License" style="border-width:0" src="/images/cc-by.png" />
-      </a>
-      <br />
-      This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.  
-      <p>&copy; Craig Aspinall 2011</p>
-    </div>
+    <h1>craigaspinall.com</h1>
+    <h3>{{ page.date | date_to_string }} - {{ page.title }}</h3>
+    {{ content }}
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          {{ post.date | date_to_string }} - <a href={{ post.url }}>{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+    <p>Copyright &copy;Craig Aspinall 2011</p>
   </body>
 </html>
