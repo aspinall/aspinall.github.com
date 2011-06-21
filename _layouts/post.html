@@ -9,7 +9,9 @@ layout: default
 <ul>
   {% for post in site.posts %}
     {% if post.title == page.title %}
-      </ul><h4>Older Posts</h4><ul>
+      {% if post.previous %}
+        </ul><h4>Older Posts</h4><ul>
+      {% endif %}
     {% else %}
       <li>{{ post.date | date_to_string }} - <a href={{ post.url }}>{{ post.title }}</a></li>
     {% endif %}
