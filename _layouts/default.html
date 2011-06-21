@@ -23,15 +23,7 @@
   </head>
   <body>
     <h1>craigaspinall.com</h1>
-    <h3>{{ page.date | date_to_string }} - {{ page.title }}</h3>
     {{ content }}
-    <ul>
-      {% for post in site.posts %}
-        <li>
-          {{ post.date | date_to_string }} - <a href={{ post.url }}>{{ post.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
     <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
     <p>Copyright &copy;Craig Aspinall 2011</p>
   </body>
