@@ -16,4 +16,4 @@ Your entire site is a repository that you can clone like any other git repositor
 
 If you do take advantage of Jekyll however, you can create HTML templates using "Liquid":http://www.liquidmarkup.org/ and author content in "Markdown":http://daringfireball.net/projects/markdown/ or "Textile":http://www.textism.com/tools/textile/. It even supports syntax highlighting courtesy of "Pygments":http://pygments.org/.
 
-I've moved the techincal and technology related posts from "Tumblr":http://craigaspinall.tumblr.com over to here so anyone transferring over can still access my old content, and anyone arriving here for the first time has something to read. 
+I've moved the technical and technology related posts from "Tumblr":http://craigaspinall.tumblr.com over to here so anyone transferring over can still access my old content, and anyone arriving here for the first time has something to read. 
