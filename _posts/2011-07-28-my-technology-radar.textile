@@ -1,0 +1,33 @@
+---
+title: My technology radar
+layout: post
+---
+One of the things I learned at "Uberconf":http://uberconf.com was how to build your own "technology radar":http://www.thoughtworks.com/radar, a tool that "ThoughtWorks":http://www.thoughtworks.com use to decide what technologies they should (or would like) to use either internally or on customer engagements. I've built two so far, one for myself and one for my day job, and in both cases I've found it to be a really useful thought exercise.
+
+This is my personal radar: 
+
+!/images/technology-radar.png!
+
+It is split into four technology quadrants:
+
+* Tools
+* Techniques
+* Platforms
+* Languages
+
+And into four levels of interest (with my personal spin on the meanings):
+
+* Hold - do not use on anything new
+* Assess - is it something I can use
+* Trial - look for an excuse to use it on something
+* Adopt - one of my _go to_ technologies
+
+Also things in red are on an outward trajectory and things in green are on an inward trajectory.
+
+So what I decided is that I'm putting GTD on hold so I can try out personal kanban and see how that works out for me. I'm also leaning much more heavily on Acceptence Test Driven Development and Test Driven Development and will be encouraging others to do the same, as well as learning and promoting functional programming.
+
+In the tools space, I've dropped Subversion and Mercurial in favour of Git, and I've dropped Maven in favour of Gradle, and I'll assess whether I need to use Leinengen to build my Clojure projects or whether I can do that in Gradle too. I'm siding with Jenkins over Hudson and I want to use Sonar much more effectively.
+ 
+Groovy is now my _go to_ language and Clojure is the language I am most interested in learning. I don't want to write Java code if I can avoid it so I should be looking more closely at Groovy++, Scala and Gosu for the times when I need a statically typed JVM language. I'm still interested in Haskell (primarily to learn functional programming) but I'm also keen to get more into the web space, hence JavaScript and CoffeeScript being on my radar too.
+
+Finally in the platforms space, since I am moving more towards web applications, I am looking at the cloud computing offerings from EC2, AppEngine, NineFold and CloudBees (although I'm also interested in CloudBees for the hosted Jenkins offering). I've also dropped Bitbucket and Google Code in favour of GitHub in line with my change over to Git.
