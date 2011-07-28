@@ -32,7 +32,7 @@ Narrowing it down to three talks was very difficult and the three I've picked ou
 
 # "Neal Ford":http://twitter.com/#!/neal4d for *Build Your Own Technology Radar*, which was another very thought provoking session.
 # "Frank Kim":http://twitter.com/#!/sansappsec for _Tricks of the Trade: What Every Developer Should Know About Application Security_, which was both educational and very scary as we worked through case studies of actual security breaches and Frank demo'd how easy some of the common hacks are!
-# "Hamlet D'Arcy":http://twitter/com/#!/HamletDRC for _Effective Groovy_ which was my first Uberconf session and had some great lessons for intermediate Groovy developers such as myself to learn and improve from.
+# "Hamlet D'Arcy":http://twitter.com/#!/HamletDRC for _Effective Groovy_ which was my first Uberconf session and had some great lessons for intermediate Groovy developers such as myself to learn and improve from.
 
 Last but not least I need to say thank you to "Jay Zimmerman":http://twitter.com/#!/nofluff, Mr. No Fluff himself. I know that he was very helpful in getting me to the conference and he made a point of coming over and checking how I was getting on, obviously remembering the e-mail exchange he had with my team leader. Now I know that is just typical of his attention to detail and the reason that the No Fluff Just Stuff conferences have the reputation that they do.
 
