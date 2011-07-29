@@ -3,7 +3,7 @@ layout: default
 postsToShow: 3
 ---
 {% for post in site.posts limit:page.postsToShow %}
-  <h3>{{ post.date | date_to_string }} - {{ post.title }}</h3>
+<h3>{{ post.date | date_to_string }} - <a href={{ post.url }}>{{ post.title }}</a></h3>
   {{ post.content }}
 {% endfor %}
 <h4>Older Posts</h4>
