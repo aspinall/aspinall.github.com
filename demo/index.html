@@ -4,6 +4,20 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <script src="js/jquery-1.7.js"></script>
   <script src="js/bootstrap-modal.js"></script>
+  <style>
+    #keypad {
+      width: 280px;
+      margin-left: -140px;
+    }
+    
+    #keypad table tr td {
+      border: none;
+    }
+    
+    #keypad .modal-body button {
+      padding: 10px 20px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -22,7 +36,31 @@
       <h3>Please enter your PIN:</h3>
     </div>
     <div class="modal-body">
-      <p>One fine body...</p>
+      <div class="well">
+        <input id="PIN" type="password" />
+        <table>
+          <tr>
+            <td><button class="btn" onclick="appendKey('1');">1</button></td>
+            <td><button class="btn" onclick="appendKey('2');">2</button></td>
+            <td><button class="btn" onclick="appendKey('3');">3</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn" onclick="appendKey('4');">4</button></td>
+            <td><button class="btn" onclick="appendKey('5');">5</button></td>
+            <td><button class="btn" onclick="appendKey('6');">6</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn" onclick="appendKey('7');">7</button></td>
+            <td><button class="btn" onclick="appendKey('8');">8</button></td>
+            <td><button class="btn" onclick="appendKey('9');">9</button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><button class="btn" onclick="appendKey('0');">0</button></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
     </div>
     <div class="modal-footer">
       <button class="btn primary" onclick="$('#keypad').modal('hide');switchList();">OK</button>
@@ -32,6 +70,12 @@
 
   <script>
     var selected;
+    
+    function appendKey(key) {
+      var PIN = $('#PIN');
+      var value = PIN.val();
+      PIN.val(value + key);
+    }
     
     function createAvatar(parentSelector, id) {
       var avatar = '<li><a><img id="' + id + '" class="thumbnail" ' + 
