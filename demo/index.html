@@ -17,8 +17,14 @@
   <script>
     function createAvatar(parentSelector, id) {
       var avatar = '<li><a><img id="' + id + '" class="thumbnail" ' + 
-        'src="avatars/profile-210px.jpg"/></a></li>';
+        'src="avatars/profile-210px.jpg" ' +
+        'onclick="switchList(\'' + id + '\');" ' + 
+        '/></a></li>';
       $(parentSelector).append(avatar);
+    }
+    
+    function switchList(id) {
+      
     }
     
     for (i = 0; i < 10; i++) {
