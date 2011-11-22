@@ -24,7 +24,16 @@
     }
     
     function switchList(id) {
+      var li = $('#' + id).parent().parent();
+      var target;
       
+      if (li.parent().attr('id') == 'on-duty') {
+        target = '#off-duty';
+      } else {
+        target = '#on-duty';
+      }
+      li.remove();
+      $(target).append(li);
     }
     
     for (i = 0; i < 10; i++) {
