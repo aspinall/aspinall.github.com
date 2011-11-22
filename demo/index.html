@@ -15,8 +15,9 @@
     </ul>
   </div>
   <script>
-    function createAvatar(parentSelector) {
-      var avatar = '<li><a><img class="thumbnail" src="avatars/profile-210px.jpg"/></a></li>';
+    function createAvatar(parentSelector, id) {
+      var avatar = '<li><a><img id="' + id + '" class="thumbnail" ' + 
+        'src="avatars/profile-210px.jpg"/></a></li>';
       $(parentSelector).append(avatar);
     }
     
@@ -25,7 +26,7 @@
       if (i > 1) {
         list = '#off-duty';
       }
-      createAvatar(list);
+      createAvatar(list, 'avatar-' + i);
     }
   </script>
 </body>
