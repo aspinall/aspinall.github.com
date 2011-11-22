@@ -88,7 +88,7 @@
     
     function createAvatar(parentSelector, id) {
       var avatar = '<li><a><img id="' + id + '" class="thumbnail" ' + 
-        'src="avatars/profile-210px.jpg" ' +
+        'src="avatars/' + id + '.jpg" ' +
         'onclick="requestPIN(\'' + id + '\');" ' + 
         '/></a></li>';
       $(parentSelector).append(avatar);
@@ -117,7 +117,7 @@
       $(target).append(li);
     }
     
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 8; i++) {
       var list = '#on-duty';
       if (i > 1) {
         list = '#off-duty';
