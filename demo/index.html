@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <title>ACT For Kids </title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <script src="js/jquery-1.7.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h3>On duty:</h3>
+    <ul id="on-duty" class="media-grid">
+    </ul>
+    <hr/>
+    <h3>Off duty:</h3>
+    <ul id="off-duty" class="media-grid">
+    </ul>
+  </div>
+  <script>
+    function createAvatar(parentSelector) {
+      var avatar = '<li><a><img class="thumbnail" src="avatars/profile-210px.jpg"/></a></li>';
+      $(parentSelector).append(avatar);
+    }
+    
+    for (i = 0; i < 10; i++) {
+      var list = '#on-duty';
+      if (i > 1) {
+        list = '#off-duty';
+      }
+      createAvatar(list);
+    }
+  </script>
+</body>
+</html>
