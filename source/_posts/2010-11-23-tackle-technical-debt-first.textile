@@ -1,0 +1,9 @@
+---
+layout: post
+title: Tackle the technical debt first
+---
+In my last post I talked about the large refactoring I am doing. One of the reasons that this is a large refactoring is because I have been putting it off. I wanted to deliver something to the customer. I kept telling myself that if I just went with what I had I'd soon have something to give them and then I would have some breathing room to refactor. Of course thats a complete fallacy!
+
+What I actually did was rack up technical debt. I kept adding more code that was dependent on API that I knew needed to be refactored. That meant the new code would also have to be refactored when the API changed. The net result is that I still wasn't able to handover what I wanted when I wanted to, and now I am having to take a couple of days to perform this refactoring, which is delaying the delivery even more!
+
+I've made this mistake before and I should have known better, but the pressure I (it wasn't even the customer) was putting myself under to deliver got the better of me this time. Hopefully I learned from my mistake. I think I'll print the quote by basketball coach John Wooden: "If you don't have time to do it right, when will you have time to do it over?" and pin it on the wall of my cubicle!

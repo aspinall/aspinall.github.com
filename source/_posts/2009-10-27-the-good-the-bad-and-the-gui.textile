@@ -1,0 +1,17 @@
+---
+layout: post
+title: The good, the bad, and the GUI
+---
+As a desktop Java developer, I have access to one of the best desktop user interface libraries around, "Java Swing":http://java.sun.com/javase/6/docs/technotes/guides/swing/. Like it or loathe it, there isn't a cross platform user interface library that even gets close to what Swing can achieve, both in terms of platform fidelity and custom components.
+
+The biggest problem is that it is painful to use. It has a massive API which inevitably contains inconsistencies and leads to some pretty verbose code. In theory a good GUI editor should help ease the burden but I've never been a huge fan of them. Whilst they promise to save you from writing reams of code (by generating it for you instead) I've always found that somewhere along the way the tool screws up, and then you have to dig through all those reams of ugly machine generated code to fix the problem by hand.
+
+That was until project "Matisse":http://wiki.netbeans.org/NBDemoGUIBuilder, the latest NetBeans GUI editor, came along. Now here is a tool that actually works. So far I have not had to duck under the covers to fix a problem it has made. It allows me to design the user interface quickly and easily, and then expose the components that I need to access from my controller code. So far, so good.
+
+Except this week I'm evaluating "IntelliJ":http://jetbrains.org/ IDEA instead of using "NetBeans":http://netbeans.org/. And Matisse uses a .form file to store meta data about the UI forms so it doesn't have to infer from the code. That's great whilst you stay within the walls of the NetBeans garden, but when you want to go play in the neighbour's garden, the .form file can't come with you. In fact, IDEA's GUI builder has it's own .form file that it incompatible with the NetBeans one!
+
+So I'm back to being of the opinion that you should hand code your user interface and stay away from GUI builder tools, unless you are really prepared to be locked into a single toolset for the life of the product you are working on.
+
+By way of an experiment, I converted one of the simpler application windows to use MigLayout, which promises much of the same magic that the GroupLayout does behind the smoke and mirrors of Matisse. It took me about an hour from start to finish but I now have the window behaving the way that I want it to, and with code that is reasonably easy to read, albeit still verbose (at least it is much less verbose than using GridBagLayout).
+
+Whilst MigLayout  is definitely a compromise, it might just be the best compromise if you're stuck with Java the language and have been bitten one too many times by so-called "helpful" GUI editors!

@@ -1,0 +1,15 @@
+---
+layout: post
+title: Flash - friend or foe?
+---
+I attended "Barcamp Gold Coast IV":http://www.meetup.com/barcampqld/ last weekend which was an awesome experience despite the low turn out. The lack of attendance did prompt me to host a couple of impromptu sessions though, one being a rehash of a blog post I wrote last year about RIA technologies and where I thought it was all heading.
+
+The most interesting thing was that I conducted a quick straw poll at the start of the session to gauge feeling towards Flash, with surprising results. There were a mix of people in the audience, from accountants to developers, and *every single one of them* hated Flash! Some because of it's use in advertising, some because it hogs resources on their system, but nobody wanted it on their system and some people were actively blocking Flash content from their browsers.
+
+Now I'm no fan of Flash but I was not expected such a landslide result! Given that I already thought Flash was under threat from HTML 5, this lack of consumer enthusiasm for it has to be another nail in the coffin.
+
+Since my last blog post, Google has also been successful in it's acquisition of On2, the company from whom the Flash video codec is licensed. Google can now do what they want with that codec, such as open source it or freely license it to other browser vendors, subject to any contractual obligations On2 have with Adobe and Oracle (who license the same codec for JavaFX). Is that the sound of another nail being readied?
+
+All told I think the developments of the last few months have been positive ones for internet consumers, since it should start to resolve some of the sticky issues with the HTML 5 specification process. But I think it is more bad news for Adobe who, sooner or later, are going to have to stop shoving the Flash runtime down people's throats.
+
+The only runtime people seem to want in their browsers now is the JavaScript runtime and between "Google":http://code.google.com/p/v8/, "Apple":http://www.apple.com/safari/whats-new.html#performance and "Mozilla":https://wiki.mozilla.org/JavaScript:TraceMonkey, we have three great implementations competing against each other. If the HTML 5 committee can reach an agreement on which video format the @<video>@ tag must support, then I don't see any reason left for any content provider to use Flash (or "Silverlight":http://www.silverlight.net/ or "JavaFX":http://www.javafx.com/) at all.

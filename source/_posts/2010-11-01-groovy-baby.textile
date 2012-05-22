@@ -1,0 +1,33 @@
+---
+layout: post
+title: Groovy baby!
+---
+For the last few weeks, I've been using "Groovy":http://groovy.codehaus.org/ (and the "Spock":http://code.google.com/p/spock/ BDD framework) on my current project at work, and after initially being reminded why I don't like dynamic programming languages, I have to admit that I'm slowly being converted.
+
+Those of you who know me (or have listened to the "podcast":http://www.codingbynumbers.com/) will know that I am not a big fan of dynamically typed programming languages. I like knowing the fact my code compiles makes some statement about it's correctness. Obviously it doesn't mean that your code is right, but at least stupid mistakes like typos in names are picked up by the compiler. I've always thought that people accept the compromise of dynamic typing a little too easily.
+
+
+In the past I've used Groovy to script builds and deployments, but I've never really used it to write production code before. The reason I have turned to Groovy this time is beacuse I am building a framework that is to be used by a team of testers to write their automated tests. I need something that will allow me to take the Java code I have (which includes a simple DSL), hide all the boilerplate and remove as much punctuation as possible. I evaluated "Scala":http://www.scala-lang.org/ and Groovy and much as I like Scala, I settled on Groovy for two reasons:
+
+# Groovy 1.8 includes a new "Command Expression Syntax":http://docs.codehaus.org/display/GroovyJSR/GEP+3+-+Command+Expression+based+DSL that really lends itself to the DSL I have created.
+# Groovy is already in use in the organisation.
+
+And really it came down to the second of those. Using Scala and the "Specs":http://code.google.com/p/specs/ BDD framework I am pretty sure that I could create something very similar, but Groovy seems like the more natural fit for the organisation.
+
+When I first started transitioning the codebase to Groovy I felt a lot of pain, which I have subsequently put down to my attempts to keep the static typing where I could. Things definitely got a lot easier when I jumped off the fence and planted myself firmly in the garden of dynamic typing!
+
+Another benefit of coming off the fence is that the code has become a lot more concise and less distracting (than the equivalent Java code). For example,
+
+{% codeblock lang:java %}
+public <T> T retry(final Callable<T> action)
+{% endcodeblock %}
+
+became
+
+{% codeblock lang:java %}
+def retry(action)
+{% endcodeblock %}
+
+This example also shows how I've been able to eliminate the use of interfaces and classes as substitutes for closures (action is treated as a closure), and replace generics with dynamics.
+
+I'm not completely sold on the dynamic typing argument yet, but I'm certainly a lot less sceptical than I was a few weeks ago. Only time will tell whether I become completely comfortable with it!

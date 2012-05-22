@@ -1,0 +1,7 @@
+---
+layout: post
+title: What is functional programming?
+---
+I gave a talk at our "Coding By Numbers meetup":http://www.meetup.com/CodingByNumbers/events/21665201 tonight that attempts to peel away some of the mystery surrounding that question. It was a small audience but they appeared to appreciate it and I hope I was able to show them that many of the benefits of functional programming are easily accessible.
+
+The slides and handouts are available "here":/talks/what-is-fp/what-is-fp.html.

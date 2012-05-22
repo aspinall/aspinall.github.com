@@ -1,0 +1,21 @@
+---
+layout: post
+title: Consoling oneself
+---
+The last time I used the "Groovy Console":http://groovy.codehaus.org/Groovy+Console (several years ago) it was painful, but now I have to say that it is one of the most useful tools I've come across.
+
+The thing I like about it is that you have an actual editor, so you can work multi-line statements. It means that you can write small classes and then refine them, which can be difficult in a genuine REPL. And because everything is there right in front of you, when you make the inevitable mistake, you can look back at what you have written and correct it far more easily.
+
+In fact I've found it so useful, that I've started using it whenever I want to do a quick spike to investigate an idea, or refresh my memory about some API. It's also ridiculously easy to embed a console into your application which allows you to access everything that is on your classpath (assuming that Groovy is also on your classpath of course!):
+
+{% codeblock lang:java %}
+import groovy.ui.Console
+
+def console = new Console()
+console.setVariable("foo", "bar")
+console.run()
+{% endcodeblock %}
+
+I'm using this as a debug aid in my current project, which uses a private in-memory database initialized from another system at startup. With the embedded console, I can run the initialization and then inspect the contents of the database when queries are not behaving as expected, to quickly find and fix the cause of the problem. I've also been able to very quickly prototype new ideas, then cut and paste the code into the application proper, as a starting point for the production code. For me, being able to interactively execute code in my application at runtime has been a massive productivity boost.
+
+And of course, you don't have to programming in Groovy to use it. You could just include the Groovy jar and your Console bootstrap class in a debug build of your Java project!

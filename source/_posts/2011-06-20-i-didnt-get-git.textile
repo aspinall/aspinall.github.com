@@ -1,0 +1,15 @@
+---
+layout: post
+title: I didn't get Git
+---
+OK, I admit it, I didn't get "Git":http://git-scm.com/ when I started playing around with distributed version control last year. In fact I dismissed it as being too complicated for my needs after about five minutes. Boy, what a mistake! .
+
+The main reason I was looking at distributed version control systems was because I was doing a lot of work on the train and I wanted something that could track changes locally so I could revert when I inevitably screwed something up. I also wanted to be able to push the changes to a hosted repository when I got home, so I had an offsite backup and to share the code with others. This ruled out the likes of "Subversion":http://subversion.apache.org and I ended up settling on "Mercurial":http://mercurial.selenic.com with "Bitbucket":http://bitbucket.org for free repository hosting.
+
+Whilst I still think that Mercurial and Bitbucket are fantastic tools, the process of moving this blog to "GitHub Pages":http://pages.github.com has forced me to learn Git properly and I've had a bit of an epiphany with it. Now I'm starting to think that Git is the way that all version control should be.
+
+h5. The staging area
+
+At first, having to add changes to the staging area before each commit was bugging the life out of me. That was until I made changes for more than one reason at once. Of course, it makes sense to separate these changes, and git forces to operate that way by default. Of course you can do this with Subversion by committing specific files, but git forces you to think about it.
+
+And it doesn't end there. Using @git add -p@, you can reduce the granularity of your commits to individual lines within a file. This is a huge get out of jail free card for me, as I often end up fixing one thing within a file whilst working on something else in the same file. Using this mechanism, the two changes can be committed separately, as they should!

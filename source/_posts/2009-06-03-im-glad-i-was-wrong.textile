@@ -1,0 +1,13 @@
+---
+layout: post
+title: I'm glad I was wrong!
+---
+OK, I admit, I was wrong! Oracle are going to put their weight behind JavaFX and take the fight to Adobe and I'm glad they are because I think it is a superior technology.
+
+I'm also really pleased with what they have included in V1.2, primarily:
+
+* Proper UI components such as buttons and sliders and text boxes
+* Cross platform support that includes Linux and Solaris (Microsoft might get away with supporting only Windows and Mac OS X and calling it cross platform but Sun can't!)
+* Better startup and runtime performance
+
+This is what the 1.0 release should have included but better late than never.

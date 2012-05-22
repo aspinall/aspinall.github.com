@@ -1,0 +1,34 @@
+---
+layout: post
+title: Is meta better?
+---
+Yesterday I did my first bit of meta-programming in production code. It wasn't anything particularly fancy, but it does extend the functionality of a class (that I didn't write) at runtime, to provide an additional function.
+
+There is a really handy matcher method in the "FEST-Assert":http://fest.easytesting.org/ library called @containsOnly()@, which ensures that two collections have the same contents but doesn't care about the order. Now I'm using "Spock":http://spockframework.org/, I'm trying to stick to the basic Groovy assertions because Spock uses them implicitly, they are easier to read and write, and the output when an assertion fails is excellent:
+
+{% codeblock lang:java %}
+assert collectionA == collectionB
+       |           |  |
+       [1, 2, 3]   |  [2, 3, 4]
+                   false
+{% endcodeblock %}
+
+The Groovy JDK already adds a whole bunch of useful methods to the stock Java collections, but there isn't a @containsOnly()@ method. However it is easy to provide the function using two of the existing methods:
+
+{% codeblock lang:java %}
+def containsOnly(collection) {
+    size() == collection.size() && containsAll(collection)
+}
+{% endcodeblock %}
+
+So I added it by modifying the @metaClass@ when my code is initialized:
+
+{% codeblock lang:java %}
+Collection.metaClass."containsOnly" = { Collection other ->
+    size() == other.size() && containsAll(other)
+}
+{% endcodeblock %}
+
+And it works beautifully. The question is whether or not it is better than trying to solve the problem some other way, such as using a proxy class or a utility class to provide the extra function? It would certainly be easier to track where the @containsOnly()@ method is defined, rather than it appearing by magic as it does with meta-programming (unless you know in advance where the metaClass extension is being done). On the flip side, it takes a lot more code to do the same using a proxy or utility class, and only a proxy would allow me to keep the API I want in this case.
+
+I guess in the end it's a swings and roundabouts argument. What you gain with one you lose with the other. Both introduce some overhead to future maintenance of the code. It's just that it might not be obvious to the person that comes after you where that overhead is if you're using meta-programming!
