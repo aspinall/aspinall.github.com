@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>What will happen to JavaFX under Oracle? - Craig Aspinall</title>
+  <meta name="author" content="Craig Aspinall">
+
+  
+  <meta name="description" content="One of the main reasons Oracle is buying Sun is to get it&#8217;s hands on Java. Much of it&#8217;s middleware stack is Java based and having control &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.craigaspinall.com/blog/2009/04/24/what-will-happen-to-javafx">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/Craigaspinallcom" rel="alternate" title="Craig Aspinall" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-23870858-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Craig Aspinall</a></h1>
+  
+    <h2>nani gigantum humeris insidentes</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/Craigaspinallcom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.craigaspinall.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">What Will Happen to JavaFX Under Oracle?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-24T00:00:00+10:00" pubdate data-updated="true">Apr 24<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>One of the main reasons Oracle is buying Sun is to get it&#8217;s hands on Java. Much of it&#8217;s middleware stack is Java based and having control of Java the language and the default implementation makes sense for them. I don&#8217;t really fear for Java or the <span class="caps">JVM</span>. If anything I think it will do better under Oracle&#8217;s stewardship than Sun&#8217;s, just because Oracle get things done. However, that also means that they will be prepared to do what Sun was not, kill off non-profitable areas of the business.</p>
+<p>Java targets three markets: enterprise, desktop, and mobile/embedded. Two of those markets have historically received a lot of attention from Sun and have flourished, namely enterprise and mobile/embedded, whilst until recently the desktop market has been left languishing. Obviously Oracle&#8217;s main interest is in enterprise Java, that&#8217;s the bread and butter of it&#8217;s current business. I think Java&#8217;s ubiquity on mobile phones and the associated licensing revenue means that Oracle will see a viable business unit there and keep it running.</p>
+<p>Unfortunately I don&#8217;t see how they are going to make money out of desktop Java. They can&#8217;t sell or license the technology, most of the best development tools are free and open source, and most enterprise UIs are heading more and more towards being browser based.</p>
+<p>Sun&#8217;s decision to take on Adobe Flash with JavaFX has been driving improvements in whole desktop Java ecosystem. Whilst JavaFX has a lot more to offer than Flash because it runs on the <span class="caps">JVM</span>, the user experience is still has a long way to go before it even rivals Flash and Flash already plays very nicely with Java back end systems. meaning it can be used to provide compelling front end UI for Java enterprise systems already. I would be surprised if Oracle chose to continue fighting a battle that many people think was won by Adobe a long time ago.</p>
+<p>The only saving grace for JavaFX might be as part of the mobile phone strategy (although that already has some excellent UI options such as <span class="caps">LWUIT</span>) or on the new battlefield that is emerging, televisions and set top boxes. I believe the next release of JavaFX will add the television profile, and at <span class="caps">NAB</span> this week, Adobe demo&#8217;d &#8220;Flash for Digital Home&#8221;. Here JavaFX might have a small head start, since every BluRay player already has a <span class="caps">JVM</span> capable of running JavaFX, a lot of set top boxes already run Java (I believe), and a lot of the TV manufacturers involved already have a relationship with Sun because they also manufacture mobile phone handsets (Sony, LG, Samsung etc.). Even if this saves JavaFX, it doesn&#8217;t mean they will keep it as a desktop technology.</p>
+<p>The alternative is that they toss it out to the open source community, and whilst there is a lot of interest and enthusiasm, it&#8217;s never going to get gain traction without a major corporation behind it. I hope I&#8217;m wrong. I hope that Oracle keeps JavaFX and pushes it on the desktop as well as on TVs and phones. I wouldn&#8217;t go betting my mortgage on it though!</p></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Craig Aspinall</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-24T00:00:00+10:00" pubdate data-updated="true">Apr 24<span>th</span>, 2009</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.craigaspinall.com/blog/2009/04/24/what-will-happen-to-javafx/" data-via="aspinall" data-counturl="http://www.craigaspinall.com/blog/2009/04/24/what-will-happen-to-javafx/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/06/03/im-glad-i-was-wrong/" title="Next Post: I'm glad I was wrong!">I'm glad I was wrong! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/07/29/can-kotlin-ko-contenders/">Can Kotlin K.O. contenders?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/28/my-technology-radar/">My technology radar</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/15/uberconf/">Uberconf, Uber Geeks, Uber Tired!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/23/what-is-functional-programming/">What is functional programming?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/20/i-didnt-get-git/">I didn't get Git</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/aspinall">@aspinall</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'aspinall',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("aspinall", 3, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/aspinall" class="twitter-follow-button" data-show-count="false">Follow @aspinall</a>
+  
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/113713214458786855972?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section>
+  <a href="http://au.linkedin.com/in/caspinall"><img src="http://www.linkedin.com/img/webpromo/btn_profile_greytxt_80x15.png" width="80" height="15" border="0" alt="View Craig Aspinall's profile on LinkedIn"></a>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
+</p>
+<p>
+  Copyright &copy; 2012 - Craig Aspinall -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'craigaspinall';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
