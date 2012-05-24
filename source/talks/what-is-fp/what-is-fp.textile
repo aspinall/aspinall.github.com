@@ -1,9 +1,7 @@
 ---
-layout: default
+layout: page
 title: What is functional programming?
 ---
-h3. {{ page.title}}
-
 I originally put this presentation together for a functional programming group that I started at work, for those that are interested in learning more about functional programming and ultimately applying it to their day jobs.
 
 The focus of the presentation is really about getting to the crux of what functional programming is, and away from all the FUD(Fear Uncertainty and Doubt) that surrounds it. It also presents a simple example in Java, refactoring a "naive" solution into one that is more readable, testable and maintainable, by applying functional programming princples. The presentation finishes off with an example solution to the same problem in Haskell.
