@@ -1,3 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>What is functional programming?</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="" />
+<meta name="author" content="Craig Aspinall" />
+<meta name="affiliation" content="Co-host of Coding By Numbers" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="/ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="/ui/default/slides.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/css/friendly.css" type="text/css" />
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer"></div>
+	<div id="license">
+		This work is licensed under a 
+		<a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
+			Creative Commons Attribution 3.0 Unported License</a>.  
+	</div>
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+	<h1>What is functional programming?</h1>
+	<h3>Craig Aspinall</h3>
+	<h4>Co-host of Coding By Numbers</h4>
+</div>
+
 <div class="handout">
 <p>Today I&#8217;m going to talk about functional programming. I started looking at this last year because I was keen to understand what all the hype was about. From the little bit I did know then, I also thought it would enable me to write better, more testable, more maintainable code.</p>
 <p>One year on I would say that I know enough about it to know that I still have a long long way to go, but I&#8217;m already writing better code as a result.</p>
@@ -255,8 +303,20 @@
 <h1>Typical &#8220;FizzBuzz&#8221; Answer in Java</h1>
 <div>
 <pre>
-<code class='java'>Included file 'what-is-fp/FizzBuzz.java' not found in _includes directory</code>
-</pre>
+<code class='java'>public class FizzBuzz {
+<p>public static void main(String[] args) {<br />
+		for (int i = 1; i &lt;= 100; i++)<br />
+			if ((i % 3 == 0) &amp;&amp; (i % 5 ==0))<br />
+				System.out.println(&quot;FizzBuzz&quot;);<br />
+			else if (i % 3 == 0)<br />
+				System.out.println(&quot;Fizz&quot;);<br />
+			else if (i % 5 == 0)<br />
+				System.out.println(&quot;Buzz&quot;);<br />
+			else<br />
+				System.out.println(i);<br />
+	}<br />
+}</code><br />
+  </pre></p>
 </div>
 </div>
 <div class="handout">
@@ -268,8 +328,27 @@
 <h1>A Better &#8220;FizzBuzz&#8221; Answer</h1>
 <div>
 <pre>
-<code class='java'>Included file 'what-is-fp/BetterFizzBuzz.java' not found in _includes directory</code>
-</pre>
+<code class='java'>import java.util.*;
+<p>public class BetterFizzBuzz {<br />
+	static List&lt;String&gt; fizzBuzz(int upperBound) {<br />
+		ArrayList&lt;String&gt; results = new ArrayList&lt;String&gt;();<br />
+		for (int i = 1; i &lt;= upperBound; i++)<br />
+			if ((i % 3 == 0) &amp;&amp; (i % 5 ==0))<br />
+				results.add(&quot;FizzBuzz&quot;);<br />
+			else if (i % 3 == 0)<br />
+				results.add(&quot;Fizz&quot;);<br />
+			else if (i % 5 == 0)<br />
+				results.add(&quot;Buzz&quot;);<br />
+			else<br />
+				results.add(String.valueOf(i));<br />
+		return results;<br />
+	}</p>
+<p>public static void main(String[] args) {<br />
+		for(String line: fizzBuzz(100))<br />
+			System.out.println(line);<br />
+	}<br />
+}</code><br />
+  </pre></p>
 </div>
 </div>
 <div class="handout">
@@ -282,8 +361,32 @@
 <h1>A More Functional &#8220;Fizzbuzz&#8221; Answer in Java</h1>
 <div>
 <pre>
-<code class='java'>Included file 'what-is-fp/FunctionalFizzBuzz.java' not found in _includes directory</code>
-</pre>
+<code class='java'>import java.util.*;
+<p>public class FunctionalFizzBuzz {<br />
+	static boolean isMultipleOf3(final int num) { return num % 3 == 0; }</p>
+<p>static boolean isMultipleOf5(final int num) { return num % 5 == 0; }</p>
+<p>static String fizzBuzzOrNumber(final int num) {<br />
+		if (isMultipleOf3(num) &amp;&amp; isMultipleOf5(num))<br />
+			return &quot;FizzBuzz&quot;;<br />
+		else if (isMultipleOf3(num))<br />
+			return &quot;Fizz&quot;;<br />
+		else if (isMultipleOf5(num))<br />
+			return &quot;Buzz&quot;;<br />
+		else<br />
+			return String.valueOf(num);<br />
+	}</p>
+<p>static List&lt;String&gt; fizzBuzz(final int upperBound) {<br />
+		ArrayList&lt;String&gt; results = new ArrayList&lt;String&gt;();<br />
+		for (int i = 1; i &lt;= upperBound; i++)<br />
+			results.add(fizzBuzzOrNumber(i));<br />
+		return Collections.unmodifiableList(results);<br />
+	}</p>
+<p>public static void main(String[] args) {<br />
+		for (String line: fizzBuzz(100))<br />
+			System.out.println(line);<br />
+	}<br />
+}</code><br />
+  </pre></p>
 </div>
 </div>
 <div class="handout">
@@ -301,8 +404,17 @@
 <p>Note that I wrote this, so it may not be the most idiomatic Haskell example you will find!</p>
 <div>
 <pre>
-<code class='haskell'>Included file 'what-is-fp/FizzBuzz.hs' not found in _includes directory</code>
-</pre>
+<code class='haskell'>import Control.Monad
+<p>multipleOf3 num = num `mod` 3 == 0</p>
+<p>multipleOf5 num = num `mod` 5 == 0</p>
+<p>fizzBuzzOrNumber num =<br />
+	if multipleOf3 num &amp;&amp; multipleOf5 num then &quot;FizzBuzz&quot; else<br />
+		if multipleOf3 num then &quot;Fizz&quot; else<br />
+			if multipleOf5 num then &quot;Buzz&quot;<br />
+				else show num</p>
+<p>fizzBuzz upperBound = map fizzBuzzOrNumber [1..upperBound]</p>
+<p>main = forM_ (fizzBuzz 100) putStrLn</code><br />
+  </pre></p>
 </div>
 </div>
 <div class="handout">
@@ -356,3 +468,8 @@ These are some of the resources I used when putting this presentation together a
 <p>I&#8217;ve already mentioned the Brisbane Functional Programming Group, but if you want to learn more about functional programming, your best bet is to join that group and start participating. It can be challenging at times because there are some very smart and knowledgable people there, but they really want to help people like you and I come to terms with functional programming and are more than willing to help answer questions.</p>
 <p>Finally there is Tony Morris&#8217; programming blog which is always an entertaining read. Tony has his point of view and isn&#8217;t afraid to wield it, but I wouldn&#8217;t have been able to put this presentation together if it wasn&#8217;t for the generosity of Tony taking the time to teach people like myself a bit more about this stuff. so thank you Tony!</p>
 </div>
+
+</div>
+
+</body>
+</html>
