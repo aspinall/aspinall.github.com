@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>What Is Functional Programming?</title>
+
+    <meta charset='utf-8'>
+    <script src='../slides.js'></script>
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+        
+      <article>
+        <h1>
+          What Is Functional Programming?
+        </h1>
+        <p>
+          Craig Aspinall
+        </p>
+      </article>
+
+      <article> 
+        <h3>The stuff of myth and legend!</h3>
+        <img src="images/occult.gif" />
+        <p>There is a lot of misinformation and misinterpretation around what functional programming is.</p>
+        <p>It's not the black art that some would have you believe!</p>
+        <p>Let us start by defining some of the things that functional programming is not.</p>
+        <div class="source">&copy; 2010 Universal Studios</div>
+      </article>
+      
+      <article class="fill">
+		<h3>...and some context</h3>
+		<img src="images/in-the-beginning.jpg" />
+      </article>
+
+      <article class="nobackground">
+        <img class="centered" src="images/Apache-Ant-logo.png" style="margin-top:100px; padding-left:75px" />
+        <div class="source">
+          Apache Ant and the Apache Ant logo are trademarks of The Apache Software Foundation.
+        </div>
+      </article>
+
+      <article class="smaller nobackground">
+		<h3>A "simple example build file" in Ant!</h3>
+		<pre>&lt;project&nbsp;name=&quot;MyProject&quot;&nbsp;default=&quot;dist&quot;&nbsp;basedir=&quot;.&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;description&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;simple&nbsp;example&nbsp;build&nbsp;file
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/description&gt;
+&nbsp;&nbsp;&lt;!--&nbsp;set&nbsp;global&nbsp;properties&nbsp;for&nbsp;this&nbsp;build&nbsp;--&gt;
+&nbsp;&nbsp;&lt;property&nbsp;name=&quot;src&quot;&nbsp;location=&quot;src&quot;/&gt;
+&nbsp;&nbsp;&lt;property&nbsp;name=&quot;build&quot;&nbsp;location=&quot;build&quot;/&gt;
+&nbsp;&nbsp;&lt;property&nbsp;name=&quot;dist&quot;&nbsp;&nbsp;location=&quot;dist&quot;/&gt;
+
+&nbsp;&nbsp;&lt;target&nbsp;name=&quot;init&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Create&nbsp;the&nbsp;time&nbsp;stamp&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tstamp/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Create&nbsp;the&nbsp;build&nbsp;directory&nbsp;structure&nbsp;used&nbsp;by&nbsp;compile&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;mkdir&nbsp;dir=&quot;${build}&quot;/&gt;
+&nbsp;&nbsp;&lt;/target&gt;
+
+&nbsp;&nbsp;&lt;target&nbsp;name=&quot;compile&quot;&nbsp;depends=&quot;init&quot;&nbsp;description=&quot;compile&nbsp;the&nbsp;source&nbsp;&quot;&nbsp;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Compile&nbsp;the&nbsp;java&nbsp;code&nbsp;from&nbsp;${src}&nbsp;into&nbsp;${build}&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;javac&nbsp;srcdir=&quot;${src}&quot;&nbsp;destdir=&quot;${build}&quot;/&gt;
+&nbsp;&nbsp;&lt;/target&gt;
+
+&nbsp;&nbsp;&lt;target&nbsp;name=&quot;dist&quot;&nbsp;depends=&quot;compile&quot;&nbsp;description=&quot;generate&nbsp;the&nbsp;distribution&quot;&nbsp;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Create&nbsp;the&nbsp;distribution&nbsp;directory&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;mkdir&nbsp;dir=&quot;${dist}/lib&quot;/&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Put&nbsp;everything&nbsp;in&nbsp;${build}&nbsp;into&nbsp;the&nbsp;MyProject-${DSTAMP}.jar&nbsp;file&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;jar&nbsp;jarfile=&quot;${dist}/lib/MyProject-${DSTAMP}.jar&quot;&nbsp;basedir=&quot;${build}&quot;/&gt;
+&nbsp;&nbsp;&lt;/target&gt;
+
+&nbsp;&nbsp;&lt;target&nbsp;name=&quot;clean&quot;&nbsp;description=&quot;clean&nbsp;up&quot;&nbsp;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Delete&nbsp;the&nbsp;${build}&nbsp;and&nbsp;${dist}&nbsp;directory&nbsp;trees&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;delete&nbsp;dir=&quot;${build}&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;delete&nbsp;dir=&quot;${dist}&quot;/&gt;
+&nbsp;&nbsp;&lt;/target&gt;
+&lt;/project&gt;</pre>
+      </article>
+
+      <article class="nobackground">
+        <img class="centered" src="images/xml_logo.gif" style="margin-top:175px" />
+      </article>
+      
+      <article class="nobackground">
+        <img class="centered" src="images/Maven_logo.gif" style="margin-top:225px" />
+        <div class="source">
+          Apache Maven and the Apache Maven logo are trademarks of The Apache Software Foundation.
+        </div>
+      </article>
+
+      <article class="fill">
+        <img class="centered" src="images/no-coding.png" />
+      </article>
+
+      <article class="nobackground">
+        <h3>A "simple example build file" in Maven</h3>
+        <pre>&lt;project&nbsp;xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+&nbsp;&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+&nbsp;&nbsp;xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0&nbsp;http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+&nbsp;&nbsp;&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+&nbsp;&nbsp;&lt;groupId&gt;com.craigaspinall&lt;/groupId&gt;
+&nbsp;&nbsp;&lt;artifactId&gt;example&lt;/artifactId&gt;
+&nbsp;&nbsp;&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+&nbsp;&nbsp;&lt;name&gt;example&lt;/name&gt;
+&nbsp;&nbsp;&lt;description&gt;A&nbsp;simple&nbsp;example&nbsp;build&nbsp;file&lt;/description&gt;
+&lt;/project&gt;</pre>
+      </article>
+
+      <article class="nobackground">
+        <img class="centered" src="images/gradle_logo.gif" style="margin-top:250px" />
+      </article>
+
+      <article class="fill">
+        <img class="centered" src="images/no-xml.png" />
+      </article>
+
+      <article>
+        <h3>A "simple example build file" in Gradle</h3>
+        <pre>apply plugin: "java"</pre>
+      </article>
+      
+      <article class="fill">
+        <h3>Gradle Features</h3>
+        <img src="images/binder.jpg" />
+      </article>
+      
+      <article class="fill">
+        <h3>Build Script Basics</h3>
+        <img src="images/maths-teacher.jpg" />
+      </article>
+      
+      <article>
+        <h3>A simple Gradle task</h3>
+        <pre>task&nbsp;helloworld&nbsp;&lt;&lt;&nbsp;{
+&nbsp;&nbsp;println&nbsp;&quot;hello&nbsp;world&quot;
+}</pre>
+      </article>
+
+      <article>
+        <h3>Gradle tasks are Groovy code!</h3>
+        <pre>task&nbsp;echoes&nbsp;&lt;&lt;&nbsp;{
+&nbsp;&nbsp;3.times&nbsp;{&nbsp;println&nbsp;&quot;Is&nbsp;there&nbsp;an&nbsp;echo&nbsp;in&nbsp;here?&quot;&nbsp;}
+}</pre>
+      </article>
+
+      <article>
+        <h3>Gradle builds are Groovy code too!!!</h3>
+        <pre>3.times&nbsp;{&nbsp;count&nbsp;-&gt;
+&nbsp;&nbsp;task&nbsp;&quot;task$count&quot;&nbsp;&lt;&lt;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;println&nbsp;&quot;Task&nbsp;$count&quot;
+&nbsp;&nbsp;}
+}</pre>
+      </article>
+
+      <article class="fill">
+        <h3>Danger, Will Robinson!</h3>
+        <img src="images/danger-will-robinson.jpg" />
+        <div class="source">&copy; 20th Century Fox</div>
+      </article>
+      
+      <article>
+        <h3>Adding dependencies to existing tasks</h3>
+        <pre>apply&nbsp;plugin:&nbsp;&quot;groovy&quot;
+
+task&nbsp;preclean&nbsp;&lt;&lt;&nbsp;{
+&nbsp;&nbsp;println&nbsp;&quot;I&nbsp;run&nbsp;before&nbsp;clean&quot;
+}
+
+clean.dependsOn&nbsp;preclean</pre>
+      </article>
+
+     <article>
+        <h3>Declaring tasks with dependencies</h3>
+        <pre>apply&nbsp;plugin:&nbsp;&quot;groovy&quot;
+
+task&nbsp;preclean&nbsp;&lt;&lt;&nbsp;{
+&nbsp;&nbsp;println&nbsp;&quot;I&nbsp;run&nbsp;before&nbsp;clean&quot;
+}
+
+clean.dependsOn&nbsp;preclean
+
+task&nbsp;postclean(dependsOn:&nbsp;clean)&nbsp;&lt;&lt;&nbsp;{
+&nbsp;&nbsp;println&nbsp;&quot;I&nbsp;run&nbsp;after&nbsp;clean&quot;
+}</pre>
+      </article>
+
+     <article>
+        <h3>Manipulating existing tasks</h3>
+        <pre>task&nbsp;abc&nbsp;&lt;&lt;&nbsp;{
+&nbsp;&nbsp;print&nbsp;&quot;b&quot;
+}
+
+abc.doFirst&nbsp;{
+&nbsp;&nbsp;print&nbsp;&quot;a&quot;
+}
+
+abc.doLast&nbsp;{
+&nbsp;&nbsp;println&nbsp;&quot;c&quot;
+}</pre>
+      </article>
+      
+      <article>
+        <h3>Ant tasks are first class citizens</h3>
+        <pre>task&nbsp;zip&nbsp;&lt;&lt;&nbsp;{
+&nbsp;&nbsp;ant.zip(destfile:&nbsp;'images.zip')&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;fileset(dir:&nbsp;'images')&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include(name:&nbsp;'**.*')
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+}</pre>
+      </article>
+      
+      <article>
+        <h3>Ant projects are first class citizens</h3>
+        <p>build.xml</p>
+        <pre style="margin-top:5px">&lt;project&gt;
+&nbsp;&nbsp;&lt;target&nbsp;name=&quot;hello&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;echo&gt;Hello,&nbsp;from&nbsp;Ant&lt;/echo&gt;
+&nbsp;&nbsp;&lt;/target&gt;
+&lt;/project&gt;</pre>
+        <p>build.gradle</p>
+        <pre style="margin-top:5px">ant.importBuild "build.xml"</pre>
+      </article>
+      
+      <article>
+        <h3>Ant targets can even depend on Gradle tasks!</h3>
+        <p>build2.xml</p>
+        <pre style="margin-top:5px">&lt;project&gt;
+&nbsp;&nbsp;&lt;target&nbsp;name=&quot;helloAnt&quot;&nbsp;depends=&quot;helloGradle&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;echo&gt;Hello,&nbsp;from&nbsp;Ant&lt;/echo&gt;
+&nbsp;&nbsp;&lt;/target&gt;
+&lt;/project&gt;</pre>
+        <p>build.gradle</p>
+        <pre style="margin-top:5px">ant.importBuild&nbsp;&quot;build2.xml&quot;
+
+task&nbsp;helloGradle&nbsp;&lt;&lt;&nbsp;{
+&nbsp;&nbsp;println&nbsp;&quot;Hello,&nbsp;from&nbsp;Gradle&quot;
+}</pre>
+      </article>
+      
+      <article class="fill">
+        <h3>Migrating from Maven</h3>
+        <img src="images/removing-nail.jpg" />
+      </article>
+      
+      <article>
+        <h3>Managing Maven dependencies</h3>
+        <pre>apply&nbsp;plugin:&nbsp;&quot;groovy&quot;
+
+repositories&nbsp;{
+&nbsp;&nbsp;mavenCentral()
+&nbsp;&nbsp;maven&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;url&nbsp;&quot;http://repo.mycompany.com/maven2&quot;
+&nbsp;&nbsp;}
+}
+
+dependencies&nbsp;{
+&nbsp;&nbsp;compile&nbsp;'org.hibernate:hibernate-core:3.6.7.Final'
+&nbsp;&nbsp;testCompile&nbsp;'junit:junit:4.+'
+}</pre>
+      </article>
+
+      <article>
+        <h3>Creating customizable tasks</h3>
+        <pre>class&nbsp;GreetingTask&nbsp;extends&nbsp;DefaultTask&nbsp;{
+&nbsp;&nbsp;def&nbsp;String&nbsp;greeting&nbsp;=&nbsp;'Hello&nbsp;from&nbsp;GreetingTask'
+
+&nbsp;&nbsp;@TaskAction
+&nbsp;&nbsp;def&nbsp;greet()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;println&nbsp;greeting
+&nbsp;&nbsp;}
+}
+
+task&nbsp;defaultHello(type:&nbsp;GreetingTask)
+
+task&nbsp;customHello(type:&nbsp;GreetingTask)&nbsp;{
+&nbsp;&nbsp;greeting&nbsp;=&nbsp;'Greetings&nbsp;and&nbsp;salutations&nbsp;from&nbsp;GreetingTask'
+}</pre>
+      </article>
+
+      <article class="smaller">
+        <h3>Turn your custom task into a plugin</h3>
+        <p>build.gradle</p>
+        <pre style="margin-top:5px">apply&nbsp;plugin:&nbsp;'groovy'
+
+dependencies&nbsp;{
+&nbsp;&nbsp;compile&nbsp;gradleApi()
+&nbsp;&nbsp;groovy&nbsp;localGroovy()
+}</pre>
+        <p>src/main/groovy/org/gradle/GreetingTask.groovy</p>
+        <pre style="margin-top:5px">package&nbsp;org.gradle
+
+import&nbsp;org.gradle.api.DefaultTask
+import&nbsp;org.gradle.api.tasks.TaskAction
+          
+class&nbsp;GreetingTask&nbsp;extends&nbsp;DefaultTask&nbsp;{
+&nbsp;&nbsp;def&nbsp;String&nbsp;greeting&nbsp;=&nbsp;'Hello&nbsp;from&nbsp;GreetingTask'
+
+&nbsp;&nbsp;@TaskAction
+&nbsp;&nbsp;def&nbsp;greet()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;println&nbsp;greeting
+&nbsp;&nbsp;}
+}</pre>
+      </article>
+      
+      <article class="nobackground">
+        <h3>gradle.org</h3>
+        <iframe src="http://gradle.org"></iframe>
+      </article>
+      
+      <article class="nobackground">
+        <h3>There's even a book!</h3>
+        <iframe src="http://www.amazon.com/Building-Testing-Gradle-Matthew-McCullough/dp/144930463X"></iframe>
+      </article>
+      
+      <article>
+        <h3>Thank you for listening!</h3>
+        <p>Blog: <a href="http://www.craigaspinall.com">www.craigaspinall.com</a></p>
+        <p>Twitter: <a href="http://twitter.com/aspinall">@aspinall</a></p>
+        <p>LinkedIn: <a href="http://au.linkedin.com/in/caspinall">au.linkedin.com/in/caspinall</a></p>
+        <p>E-Mail: <a href="mailto:craig.aspinall@gmail.com">craig.aspinall@gmail.com</a></p>
+        <p>Podcast: <a href="http://www.codingbynumbers.com">www.codingbynumbers.com</a></p>
+      </article>
+    </section>
+
+  </body>
+</html>
