@@ -4,7 +4,7 @@
   <title><![CDATA[Category: kotlin | Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/blog/categories/kotlin/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-14T22:44:45+10:00</updated>
+  <updated>2012-06-15T07:05:44+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -18,9 +18,12 @@
     <link href="http://www.craigaspinall.com/blog/2011/07/29/can-kotlin-ko-contenders/"/>
     <updated>2011-07-29T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2011/07/29/can-kotlin-ko-contenders</id>
-    <content type="html"><![CDATA[<p>If you follow my "Twitter feed":http://twitter.com/aspinall then you may have seen my initial reaction to "Jetbrains":http://www.jetbrains.com announcement that they were working on another JVM language was one of disdain. Not because I don't think Jetbrains can create a compelling language, but because I was concerned that the JVM language space is becoming saturated, and too much choice can be just as harmful as no choice at all!</p>
+    <content type="html"><![CDATA[<p>If you follow my "Twitter feed":http://twitter.com/aspinall then you may have seen my initial reaction to "Jetbrains":http://www.jetbrains.com announcement that they were working on another JVM language was one of disdain. Not because I don't think Jetbrains can create a compelling language, but because I was concerned that the JVM language space is becoming saturated, and too much choice can be just as harmful as no choice at all! Having had a bit more time to look into it, I don't think my initial reaction was warranted, and I shouldn't have been so dismissive of "Kotlin":http://confluence.jetbrains.net/display/Kotlin/Kotlin.</p>
 
-<p>Having had a bit more time to look into it, I don't think my initial reaction was warranted, and I shouldn't have been so dismissive of "Kotlin":http://confluence.jetbrains.net/display/Kotlin/Kotlin. When you look closely at the successful JVM languages, all of them with the exception of Scala are dynamically typed. If you want a statically typed alternative to Java that has a reasonable chance of still being around in a few years, you really only have the choice of "Scala":http://www.scala-lang.org, "Groovy++":http://code.google.com/p/groovypptest/ or "Gosu":http://gosu-lang.org/. There is clearly room for more choice in this space and Kotlin (and Red Hat's "Ceylon":http://en.wikipedia.org/wiki/Ceylon_Project) are trying to fill it. Hopefully the competition will be healthy and we'll end up with more than one good language to choose from.</p>
+<!--more-->
+
+
+<p>When you look closely at the successful JVM languages, all of them with the exception of Scala are dynamically typed. If you want a statically typed alternative to Java that has a reasonable chance of still being around in a few years, you really only have the choice of "Scala":http://www.scala-lang.org, "Groovy++":http://code.google.com/p/groovypptest/ or "Gosu":http://gosu-lang.org/. There is clearly room for more choice in this space and Kotlin (and Red Hat's "Ceylon":http://en.wikipedia.org/wiki/Ceylon_Project) are trying to fill it. Hopefully the competition will be healthy and we'll end up with more than one good language to choose from.</p>
 
 <p>So far Scala has been the main contender to challenge for the position of <em>a better Java</em>, yet it seems to divide opinion very easily. Jetbrains have labelled it too complex in their justification for creating Kotlin, a topic which Martin Odersky "has addressed before":http://lamp.epfl.ch/~odersky/blogs/isscalacomplex.html. I think the real problem is just that Scala is a different language to Java and therefore (as with all new languages) you have to put some effort into learning it and practicing with it before you can use it proficiently. Whether Kotlin is enough like Java to avoid the mental leap remains to be seen, but I wish JetBrains (and all the language creators) the best of luck in their battle royale for the title of <em>The Better Java</em>. Without them, the Java ecosystem would be a very dull place!</p>
 ]]></content>

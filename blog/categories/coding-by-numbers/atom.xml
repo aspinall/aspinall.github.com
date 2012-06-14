@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding by numbers | Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/blog/categories/coding-by-numbers/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-14T22:44:45+10:00</updated>
+  <updated>2012-06-15T07:05:44+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -14,11 +14,32 @@
 
   
   <entry>
+    <title type="html"><![CDATA[What is functional programming?]]></title>
+    <link href="http://www.craigaspinall.com/blog/2011/06/23/what-is-functional-programming/"/>
+    <updated>2011-06-23T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2011/06/23/what-is-functional-programming</id>
+    <content type="html"><![CDATA[<p>I gave a talk at our "Coding By Numbers meetup":http://www.meetup.com/CodingByNumbers/events/21665201 tonight that attempts to peel away some of the mystery surrounding that question. It was a small audience but they appeared to appreciate it and I hope I was able to show them that many of the benefits of functional programming are easily accessible.</p>
+
+<p>I originally put this presentation together for a functional programming group that I started at work, for those that are interested in learning more about functional programming and ultimately applying it to their day jobs.</p>
+
+<!--more-->
+
+
+<p>The focus of the presentation is really about getting to the crux of what functional programming is, and away from all the FUD(Fear Uncertainty and Doubt) that surrounds it. It also presents a simple example in Java, refactoring a "naive" solution into one that is more readable, testable and maintainable, by applying functional programming principles. The presentation finishes off with an example solution to the same problem in Haskell.</p>
+
+<p>The "handout":talks/what-is-fp/handout.pdf contains the slides with all of my reader notes, which is essentially a transcript of the presentation.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[The great thing about standards...]]></title>
     <link href="http://www.craigaspinall.com/blog/2010/11/22/the-great-thing-about-standards/"/>
     <updated>2010-11-22T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2010/11/22/the-great-thing-about-standards</id>
     <content type="html"><![CDATA[<p>… is that there's so many of them to choose from. They're like Java frameworks, everyone has got one! I guess it's down to control. People don't want to invest in something that they don't have control over, so they create another standard, manage to get it ratified by some standards body, and then claim that they are standards compliant. But if we're not all using the same standard, how much value does the standard have?</p>
+
+<!--more-->
+
 
 <p>I've spent a considerable amount of time this weekend creating alternative versions of the "Coding By Numbers":http://www.codingbynumbers.com/ podcast. We have been using the "AAC":http://en.wikipedia.org/wiki/Advanced_Audio_Coding format since it gives you the best bang for your buck in terms of quality versus size, but we've had a bunch of feedback asking for an "MP3":http://en.wikipedia.org/wiki/MP3 version because not all media players support AAC.</p>
 

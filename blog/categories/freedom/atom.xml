@@ -4,7 +4,7 @@
   <title><![CDATA[Category: freedom | Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/blog/categories/freedom/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-14T22:44:45+10:00</updated>
+  <updated>2012-06-15T07:05:44+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -19,6 +19,9 @@
     <updated>2011-04-24T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2011/04/24/quitting-facebook</id>
     <content type="html"><![CDATA[<p>After listening to Mark Pesce's controversial keynote presentation at LinuxConf Australia 2011 (and giving myself a couple of months to think about it), I've decided that the time has come to leave Facebook, and to encourage others to do the same. If you want to understand why, I strongly recommend you read "Mark's presentation":http://blog.futurestreetconsulting.com/2011/01/28/smoke-signals/ but here are the reasons in a nutshell.</p>
+
+<!--more-->
+
 
 <p>The most valuable piece of information about you is your social graph and the communication that occurs across that graph. That reveals more about you, your personal interests, even your secrets, than anything else that you do online. And Facebook is watching and recording it all.</p>
 
@@ -35,6 +38,9 @@
     <id>http://www.craigaspinall.com/blog/2010/11/22/the-great-thing-about-standards</id>
     <content type="html"><![CDATA[<p>… is that there's so many of them to choose from. They're like Java frameworks, everyone has got one! I guess it's down to control. People don't want to invest in something that they don't have control over, so they create another standard, manage to get it ratified by some standards body, and then claim that they are standards compliant. But if we're not all using the same standard, how much value does the standard have?</p>
 
+<!--more-->
+
+
 <p>I've spent a considerable amount of time this weekend creating alternative versions of the "Coding By Numbers":http://www.codingbynumbers.com/ podcast. We have been using the "AAC":http://en.wikipedia.org/wiki/Advanced_Audio_Coding format since it gives you the best bang for your buck in terms of quality versus size, but we've had a bunch of feedback asking for an "MP3":http://en.wikipedia.org/wiki/MP3 version because not all media players support AAC.</p>
 
 <p>A few weeks ago, my co-host "Steve":http://dalts.net/ was fortunate enough to meet with "Richard Stallman":http://stallman.org/ from the "Free Software Foundation":http://www.fsf.org/, who won't listen to any digital audio unless it is recorded in an open format such as "Ogg Vorbis":http://www.vorbis.com/. In fact he thinks we shouldn't be offering anything but open formats and he's probably right, but if people are having problems with AAC support, can you imagine the problems people would have if we only offered Ogg Vorbis?</p>
@@ -49,6 +55,9 @@
     <updated>2010-11-16T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2010/11/16/whats-the-value-of-free</id>
     <content type="html"><![CDATA[<p>I was looking something up on "Wikipedia":http://www.wikipedia.org/ when I saw this "banner":http://wikimediafoundation.org/w/index.php?title=WMFJA1/AU containing an appeal from Jimmy Wales for donations to the WikiMedia Foundation. It made me question how much we take services like Wikipedia for granted? If you decide that you should donate, how much would you give? How do you but a value on a free service?</p>
+
+<!--more-->
+
 
 <p>I have no problem discerning the value proposition with the '"Freemium":http://en.wikipedia.org/wiki/Freemium' services like "LastPass":http://www.lastpass.com, where the "extra" value I get from my $1/month are listed in bullet points before I hand over my money. However in this case you don't get any "extra" value in exchange for your cash. There is the possibility of less value being delivered if you don't make a donation, but that's not a certainty either.</p>
 
@@ -68,6 +77,9 @@
     <content type="html"><![CDATA[<p>Do you use free and open source software? Do you contribute back? I have to hold my hands up and admit that I have not contributed back as much as I feel I should have and I feel bad about it.</p>
 
 <p>The obvious way to contribute is with code, be that feature enhancements or bug fixes, but there are many ways in which to contribute back. You can work on documentation or subscribe to the mailing list and help out by answering questions and helping people with problems that you might have already solved. Even evangelizing about free and open source software is contributing in some way, and the one in which I have been most active.</p>
+
+<!--more-->
+
 
 <p>However, twice in the last couple of months, I have found and fixed bugs in open source libraries. I depend very heavily on one of those libraries ("WebDriver":http://seleniumhq.org/) for my current project and despite the best of intentions, I still haven't submitted a patch for the fix. My "excuse" is that I haven't had the time to create the patch and a unit test example to demonstrate the problem and solution, but let's face it that is a poor excuse! If I have the time to learn to use someone else's software, and I expect it to be there in the future, then surely I can make the time to send them a fix I've already written?</p>
 

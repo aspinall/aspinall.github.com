@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blogging | Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/blog/categories/blogging/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-14T22:44:45+10:00</updated>
+  <updated>2012-06-15T07:05:44+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -19,6 +19,9 @@
     <updated>2011-06-10T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2011/06/10/welcome-to-the-real-world</id>
     <content type="html"><![CDATA[<p>To hijack and abuse yet another quote from "The Matrix":http://www.imdb.com/title/tt0133093/, "welcome to the real world!" (or at least my new home in the virtual one)! After being inspired by "@TheColonial":http://twitter.com/TheColonial and his adventures with "Blogofile":http://www.blogofile.com/, I decided that I needed to move my blog to a system that was backed by a version control system.</p>
+
+<!--more-->
+
 
 <p>I had a number of reasons for doing this:</p>
 

@@ -109,185 +109,12 @@
 
 <p>As someone who is preaching about testability on a daily basis, I have to investigate further. Of course, the proof of the pudding is in the eating, so I&#8217;m going to build and deploy a simple application using it, to see whether it lives up to the promise. I&#8217;ll track the progress of that application and share any learnings here.</p>
 
-<p>The first thing I wanted to do was set up a framework for <a href="http://www.specificationbyexample.com">specifying by example</a> with my current BDD tool of choice which is <a href="http://www.concordion.org">Concordion</a>. Turns out that isn&#8217;t as straight forward as I thought, since Play! uses <a href="https://github.com/harrah/xsbt/wiki">SBT</a> (Scala Build Tool), which is new to me, and Concordion has a few quirks in the way it has to be set up. So here&#8217;s the first of my learnings, which explains how to get Concordion working in a Play! project.</p>
-
-<p>First of all you need to add a dependency on Concordion:</p>
-
-<figure class='code'><figcaption><span>Build.scala</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">object</span> <span class="nc">ApplicationBuild</span> <span class="k">extends</span> <span class="nc">Build</span> <span class="o">{</span>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'>  <span class="k">val</span> <span class="n">appDependencies</span> <span class="k">=</span> <span class="nc">Seq</span><span class="o">(</span>
-</span><span class='line'>    <span class="s">&quot;org.concordion&quot;</span> <span class="o">%</span> <span class="s">&quot;concordion&quot;</span> <span class="o">%</span> <span class="s">&quot;1.4.2&quot;</span> <span class="o">%</span> <span class="s">&quot;test&quot;</span>
-</span><span class='line'>  <span class="o">)</span>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Next, you need to instruct SBT to copy the Concordion HTML files to the target folder:</p>
-
-<figure class='code'><figcaption><span>Build.scala</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">object</span> <span class="nc">ApplicationBuild</span> <span class="k">extends</span> <span class="nc">Build</span> <span class="o">{</span>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'>   <span class="k">val</span> <span class="n">main</span> <span class="k">=</span> <span class="nc">PlayProject</span><span class="o">(</span><span class="n">appName</span><span class="o">,</span> <span class="n">appVersion</span><span class="o">,</span> <span class="n">appDependencies</span><span class="o">,</span> <span class="n">mainLang</span> <span class="k">=</span> <span class="nc">SCALA</span><span class="o">).</span><span class="n">settings</span><span class="o">(</span>
-</span><span class='line'>     <span class="n">unmanagedClasspath</span> <span class="n">in</span> <span class="nc">Test</span> <span class="o">&lt;+=</span> <span class="o">(</span><span class="n">baseDirectory</span><span class="o">)</span> <span class="n">map</span> <span class="o">{</span> <span class="n">bd</span> <span class="k">=&gt;</span> <span class="nc">Attributed</span><span class="o">.</span><span class="n">blank</span><span class="o">(</span><span class="n">bd</span> <span class="o">/</span> <span class="s">&quot;test&quot;</span><span class="o">)</span> <span class="o">}</span>
-</span><span class='line'>   <span class="o">)</span>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And last but not least, you probably want to tell Concordion to store it&#8217;s reports somewhere sensible (otherwise it puts them in the <code>java.io.tmpdir</code> folder):</p>
-
-<figure class='code'><figcaption><span>Build.scala</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">object</span> <span class="nc">ApplicationBuild</span> <span class="k">extends</span> <span class="nc">Build</span> <span class="o">{</span>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'>  <span class="nc">System</span><span class="o">.</span><span class="n">setProperty</span><span class="o">(</span><span class="s">&quot;concordion.output.dir&quot;</span><span class="o">,</span> <span class="s">&quot;target/test-reports/concordion&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>With that in place, you can create a Concordion HTML specification and store it in the <code>test</code> folder of your project:</p>
-
-<figure class='code'><figcaption><span>ConcordionExample.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
-</span><span class='line'><span class="nt">&lt;html</span> <span class="na">xmlns:concordion=</span><span class="s">&quot;http://www.concordion.org/2007/concordion&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;head&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;title&gt;</span>Concordion Example<span class="nt">&lt;/title&gt;</span>
-</span><span class='line'><span class="nt">&lt;/head&gt;</span>
-</span><span class='line'><span class="nt">&lt;body&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;h1&gt;</span>Concordion Example<span class="nt">&lt;/h1&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;p&gt;</span>The answer always equals <span class="nt">&lt;span</span> <span class="na">concordion:assertEquals=</span><span class="s">&quot;value()&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/span&gt;&lt;/p&gt;</span>
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/html&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Finally, create a Scala or Java fixture class (note that you need to have a dummy method annotated with the <a href="http://www.junit.org">JUnit</a> <code>@Test</code> annotation for the test to be picked up, I haven&#8217;t found a better way around this yet):</p>
-
-<figure class='code'><figcaption><span>ConcordionExampleTest.scala</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">import</span> <span class="nn">org.concordion.integration.junit4.ConcordionRunner</span>
-</span><span class='line'><span class="k">import</span> <span class="nn">org.junit.runner.RunWith</span>
-</span><span class='line'><span class="k">import</span> <span class="nn">org.junit.Test</span>
-</span><span class='line'>
-</span><span class='line'><span class="nd">@RunWith</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">ConcordionRunner</span><span class="o">])</span>
-</span><span class='line'><span class="k">class</span> <span class="nc">ConcordionExampleTest</span> <span class="o">{</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">value</span> <span class="k">=</span> <span class="mi">1</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nd">@Test</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">runThisTest</span><span class="o">()</span> <span class="o">{}</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>ConcordionExampleTest.java</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">import</span> <span class="nn">org.concordion.integration.junit4.ConcordionRunner</span><span class="o">;</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">org.junit.runner.RunWith</span><span class="o">;</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nd">@RunWith</span><span class="o">(</span><span class="n">ConcordionRunner</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcordionExampleTest</span> <span class="o">{</span>
-</span><span class='line'>    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">value</span><span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>            <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nd">@Test</span>
-</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">runThisTest</span><span class="o">()</span> <span class="o">{}</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then you can run <code>play test</code> and voila, one Concordion specification is executed!</p>
-
-<figure class='code'><figcaption><span>$ play test</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ play test
-</span><span class='line'>[info] Loading project definition from /Users/craigaspinall/Work/scala-concordion-poc/project
-</span><span class='line'>[info] Set current project to scala-concordion-poc (in build file:/Users/craigaspinall/Work/scala-concordion-poc/)
-</span><span class='line'>[info] Compiling 1 Scala source to /Users/craigaspinall/Work/scala-concordion-poc/target/scala-2.9.1/test-classes...
-</span><span class='line'>[info] ConcordionExampleTest
-</span><span class='line'>/Users/craigaspinall/Work/scala-concordion-poc/target/test-reports/concordion/ConcordionExample.html
-</span><span class='line'>Successes: 1, Failures: 0
-</span><span class='line'>
-</span><span class='line'>[info] + ConcordionExampleTest.runThisTest
-</span><span class='line'>[info] + ConcordionExampleTest.[Concordion Specification for 'ConcordionExample']
-</span><span class='line'>[info]
-</span><span class='line'>[info]
-</span><span class='line'>[info] Total for test ConcordionExampleTest
-</span><span class='line'>[info] Finished in 0.526 seconds
-</span><span class='line'>[info] 2 tests, 0 failures, 0 errors
-</span><span class='line'>[info] Passed: : Total 2, Failed 0, Errors 0, Passed 2, Skipped 0
-</span><span class='line'>[success] Total time: 2 s, completed 14/06/2012 8:25:08 AM</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If anyone reading this knows how to avoid the dummy test, then please leave a comment.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/06/14/playing-with-concordion/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -321,10 +148,13 @@
   </header>
 
 
-  <div class="entry-content"><p>If you follow my <a href="http://twitter.com/aspinall">Twitter feed</a> then you may have seen my initial reaction to <a href="http://www.jetbrains.com">Jetbrains</a> announcement that they were working on another <span class="caps">JVM</span> language was one of disdain. Not because I don&#8217;t think Jetbrains can create a compelling language, but because I was concerned that the <span class="caps">JVM</span> language space is becoming saturated, and too much choice can be just as harmful as no choice at all!</p>
-<p>Having had a bit more time to look into it, I don&#8217;t think my initial reaction was warranted, and I shouldn&#8217;t have been so dismissive of <a href="http://confluence.jetbrains.net/display/Kotlin/Kotlin">Kotlin</a>. When you look closely at the successful <span class="caps">JVM</span> languages, all of them with the exception of Scala are dynamically typed. If you want a statically typed alternative to Java that has a reasonable chance of still being around in a few years, you really only have the choice of <a href="http://www.scala-lang.org">Scala</a>, <a href="http://code.google.com/p/groovypptest/">Groovy++</a> or <a href="http://gosu-lang.org/">Gosu</a>. There is clearly room for more choice in this space and Kotlin (and Red Hat&#8217;s <a href="http://en.wikipedia.org/wiki/Ceylon_Project">Ceylon</a>) are trying to fill it. Hopefully the competition will be healthy and we&#8217;ll end up with more than one good language to choose from.</p>
-<p>So far Scala has been the main contender to challenge for the position of <em>a better Java</em>, yet it seems to divide opinion very easily. Jetbrains have labelled it too complex in their justification for creating Kotlin, a topic which Martin Odersky <a href="http://lamp.epfl.ch/~odersky/blogs/isscalacomplex.html">has addressed before</a>. I think the real problem is just that Scala is a different language to Java and therefore (as with all new languages) you have to put some effort into learning it and practicing with it before you can use it proficiently. Whether Kotlin is enough like Java to avoid the mental leap remains to be seen, but I wish JetBrains (and all the language creators) the best of luck in their battle royale for the title of <strong>The Better Java</strong>. Without them, the Java ecosystem would be a very dull place!</p></div>
+  <div class="entry-content"><p>If you follow my <a href="http://twitter.com/aspinall">Twitter feed</a> then you may have seen my initial reaction to <a href="http://www.jetbrains.com">Jetbrains</a> announcement that they were working on another <span class="caps">JVM</span> language was one of disdain. Not because I don&#8217;t think Jetbrains can create a compelling language, but because I was concerned that the <span class="caps">JVM</span> language space is becoming saturated, and too much choice can be just as harmful as no choice at all! Having had a bit more time to look into it, I don&#8217;t think my initial reaction was warranted, and I shouldn&#8217;t have been so dismissive of <a href="http://confluence.jetbrains.net/display/Kotlin/Kotlin">Kotlin</a>.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/07/29/can-kotlin-ko-contenders/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -358,29 +188,13 @@
   </header>
 
 
-  <div class="entry-content"><p>One of the things I learned at <a href="http://uberconf.com">Uberconf</a> was how to build your own <a href="http://www.thoughtworks.com/radar">technology radar</a>, a tool that <a href="http://www.thoughtworks.com">ThoughtWorks</a> use to decide what technologies they should (or would like) to use either internally or on customer engagements. I&#8217;ve built two so far, one for myself and one for my day job, and in both cases I&#8217;ve found it to be a really useful thought exercise.</p>
-<p>This is my personal radar:</p>
-<p><img src="/images/technology-radar.png" alt="" /></p>
-<p>It is split into four technology quadrants:</p>
-<ul>
-	<li>Tools</li>
-	<li>Techniques</li>
-	<li>Platforms</li>
-	<li>Languages</li>
-</ul>
-<p>And into four levels of interest (with my personal spin on the meanings):</p>
-<ul>
-	<li>Hold &#8211; do not use on anything new</li>
-	<li>Assess &#8211; is it something I can use</li>
-	<li>Trial &#8211; look for an excuse to use it on something</li>
-	<li>Adopt &#8211; one of my <em>go to</em> technologies</li>
-</ul>
-<p>Also things in red are on an outward trajectory and things in green are on an inward trajectory.</p>
-<p>So what I decided is that I&#8217;m putting <span class="caps">GTD</span> on hold so I can try out personal kanban and see how that works out for me. I&#8217;m also leaning much more heavily on Acceptence Test Driven Development and Test Driven Development and will be encouraging others to do the same, as well as learning and promoting functional programming.</p>
-<p>In the tools space, I&#8217;ve dropped Subversion and Mercurial in favour of Git, and I&#8217;ve dropped Maven in favour of Gradle, and I&#8217;ll assess whether I need to use Leinengen to build my Clojure projects or whether I can do that in Gradle too. I&#8217;m siding with Jenkins over Hudson and I want to use Sonar much more effectively.</p>
-<p>Groovy is now my <em>go to</em> language and Clojure is the language I am most interested in learning. I don&#8217;t want to write Java code if I can avoid it so I should be looking more closely at Groovy++, Scala and Gosu for the times when I need a statically typed <span class="caps">JVM</span> language. I&#8217;m still interested in Haskell (primarily to learn functional programming) but I&#8217;m also keen to get more into the web space, hence JavaScript and CoffeeScript being on my radar too.</p>
-<p>Finally in the platforms space, since I am moving more towards web applications, I am looking at the cloud computing offerings from EC2, AppEngine, NineFold and CloudBees (although I&#8217;m also interested in CloudBees for the hosted Jenkins offering). I&#8217;ve also dropped Bitbucket and Google Code in favour of GitHub in line with my change over to Git.</p></div>
+  <div class="entry-content"><p>One of the things I learned at <a href="http://uberconf.com">Uberconf</a> was how to build your own <a href="http://www.thoughtworks.com/radar">technology radar</a>, a tool that <a href="http://www.thoughtworks.com">ThoughtWorks</a> use to decide what technologies they should (or would like) to use either internally or on customer engagements. I&#8217;ve built two so far, one for myself and one for my day job, and in both cases I&#8217;ve found it to be a really useful thought exercise.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/07/28/my-technology-radar/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -415,33 +229,13 @@
 
 
   <div class="entry-content"><p>My first <a href="http://uberconf.com">Uberconf</a> is over. Was it worth the 16,000 mile (26,000km) round trip and a week away from my family? It was definitely worth making the trip but now I need a holiday to get over it because I&#8217;m exhausted. Next time, I&#8217;ll bring my family along for the ride and have a vacation afterwards!</p>
-<p>The conference is a learning and networking feast, with a wide variety of great content delivered professionally by awesome speakers that really understand their subject matter. The Westin Westiminster hotel was also a great venue that catered well for a conference of this size, in terms of the rooms, the delegate accommodation and the food.</p>
-<p>Almost all of the sessions I went to were good, but if I had to pick my top three sessions it would be these:</p>
-<h5><em>Encryption on the <span class="caps">JVM</span>: Boot Camp</em> by <a href="http://twitter.com/#!/matthewmccull">Matthew Mccullough</a></h5>
-<p>Matthew completely blew me away with this talk. Not because of the subject matter but <strong>how</strong> he delivered it. I have never seen anyone deliver a presentation as professionally as Matthew did. I attended two of his other talks and he was just as good in both of those, even when the wifi was conspiring against him! He is definitely the Steve Jobs of the No Fluff Just Stuff crowd!</p>
-<p>This is a subject that I knew next to nothing about before the session and I left feeling confident that I could go and implement encryption correctly and effectively afterwards. I also really enjoyed his <em>Thinking in Git</em> presentation which gave me lots more reasons to love Git!</p>
-<p>I also got the chance to sit next to Matthew for dinner one evening and he is a really nice guy too. Very engaging, humble and friendly. A definite star in our industry.</p>
-<h5><em>Complexity Theory in Software Development</em> by <a href="http://twitter.com/#!/tlberglund">Tim Berglund</a></h5>
-<p>Like Matthew, Tim is an excellent presenter and this talk was probably the most thought provoking of all those I attended. It was a whistlestop tour of what <em>complexity theory</em> is and what bearing is has on our daily lives and the software we write. It was both educational and challenging in exactly the right proportions.</p>
-<p>He also delivered a wonderful skit after dinner one evening, called <a href="http://www.youtube.com/watch?v=xZKmmdCnTUY">Oh, The Methods You&#8217;ll Compose</a>, which almost got a standing ovation from the audience! It reminded me very much of Guy Steele&#8217;s and Richard Gabriel&#8217;s <a href="http://blip.tv/file/1472720/">50 in 50</a> keynote that I was fortunate enough to see live at <a href="http://yowaustralia.com.au/"><span class="caps">YOW</span>!</a> Brisbane last year.</p>
-<h5><em>Towards a Humane Interface</em> by <a href="http://twitter.com/#!/venkat_s">Venkat Subramaniam</a></h5>
-<p>I wasn&#8217;t able to make any of Venkat&#8217;s other talks but I had been told that he was an excellent speaker and didn&#8217;t want to miss out on the opportunity to see him. This subject wouldn&#8217;t have been top of my list of his talks, but it was the only one where I didn&#8217;t have a clash!</p>
-<p>As it happened it was the last session of the conference and Venkat was in excellent form! He engaged the audience with some great anecdotes and was animated and jovial throughout. He clearly has a passion for all the work that he does and it was a great privilege to see him in action.</p>
-<p>Narrowing it down to three talks was very difficult and the three I&#8217;ve picked out are the ones I enjoyed the most, but these guys also deserve special mention:</p>
-<ol>
-	<li><a href="http://twitter.com/#!/neal4d">Neal Ford</a> for <em>Build Your Own Technology Radar</em>, which was another very thought provoking session.</li>
-	<li><a href="http://twitter.com/#!/sansappsec">Frank Kim</a> for <em>Tricks of the Trade: What Every Developer Should Know About Application Security</em>, which was both educational and very scary as we worked through case studies of actual security breaches and Frank demo&#8217;d how easy some of the common hacks are!</li>
-	<li><a href="http://twitter.com/#!/HamletDRC">Hamlet D&#8217;Arcy</a> for <em>Effective Groovy</em> which was my first Uberconf session and had some great lessons for intermediate Groovy developers such as myself to learn and improve from.</li>
-</ol>
-<p>Last but not least I need to say thank you to <a href="http://twitter.com/#!/nofluff">Jay Zimmerman</a>, Mr. No Fluff himself. I know that he was very helpful in getting me to the conference and he made a point of coming over and checking how I was getting on, obviously remembering the e-mail exchange he had with my team leader. Now I know that is just typical of his attention to detail and the reason that the No Fluff Just Stuff conferences have the reputation that they do.</p>
-<p>The only criticisms I had from the conference (and I know other attendees had the same problems) were:</p>
-<ol>
-	<li>There were 10 tracks and in many slots I wanted to attend five talks. Having too much good content is clearly an excellent problem to have, but I really feel like I missed out on more than I got (which was still a lot).</li>
-	<li>The multi session workshops meant you had the choice of missing out on 1-4 sessions at a time, or not attending the workshop.</li>
-</ol>
-<p>Clearly the conference couldn&#8217;t be any longer, neither the speakers or the delegates would survive! Maybe grouping the sessions so that all the beginner/introductory sessions ran concurrently, then the intermediate then the expert ones. Given everyone will be at different levels on different tracks, they could have the choice of going from beginner to expert in one track, or cut between them depending on their existing expertise level. Also grouping the workshops together might work better.</p>
-<p>Finally, I met a lot of very talented, very passionate and very friendly people at this conference, delegates and speakers alike. I cannot recommend it highly enough.</p></div>
+<p>The conference is a learning and networking feast, with a wide variety of great content delivered professionally by awesome speakers that really understand their subject matter. The Westin Westiminster hotel was also a great venue that catered well for a conference of this size, in terms of the rooms, the delegate accommodation and the food.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/07/15/uberconf/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -476,10 +270,13 @@
 
 
   <div class="entry-content"><p>I gave a talk at our <a href="http://www.meetup.com/CodingByNumbers/events/21665201">Coding By Numbers meetup</a> tonight that attempts to peel away some of the mystery surrounding that question. It was a small audience but they appeared to appreciate it and I hope I was able to show them that many of the benefits of functional programming are easily accessible.</p>
-<p>I originally put this presentation together for a functional programming group that I started at work, for those that are interested in learning more about functional programming and ultimately applying it to their day jobs.</p>
-<p>The focus of the presentation is really about getting to the crux of what functional programming is, and away from all the <acronym title="Fear Uncertainty and Doubt"><span class="caps">FUD</span></acronym> that surrounds it. It also presents a simple example in Java, refactoring a &#8220;naive&#8221; solution into one that is more readable, testable and maintainable, by applying functional programming principles. The presentation finishes off with an example solution to the same problem in Haskell.</p>
-<p>The <a href="talks/what-is-fp/handout.pdf">handout</a> contains the slides with all of my reader notes, which is essentially a transcript of the presentation.</p></div>
+<p>I originally put this presentation together for a functional programming group that I started at work, for those that are interested in learning more about functional programming and ultimately applying it to their day jobs.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/06/23/what-is-functional-programming/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -514,12 +311,13 @@
 
 
   <div class="entry-content"><p>OK, I admit it, I didn&#8217;t get <a href="http://git-scm.com/">Git</a> when I started playing around with distributed version control last year. In fact I dismissed it as being too complicated for my needs after about five minutes. Boy, what a mistake! .</p>
-<p>The main reason I was looking at distributed version control systems was because I was doing a lot of work on the train and I wanted something that could track changes locally so I could revert when I inevitably screwed something up. I also wanted to be able to push the changes to a hosted repository when I got home, so I had an offsite backup and to share the code with others. This ruled out the likes of <a href="http://subversion.apache.org">Subversion</a> and I ended up settling on <a href="http://mercurial.selenic.com">Mercurial</a> with <a href="http://bitbucket.org">Bitbucket</a> for free repository hosting.</p>
-<p>Whilst I still think that Mercurial and Bitbucket are fantastic tools, the process of moving this blog to <a href="http://pages.github.com">GitHub Pages</a> has forced me to learn Git properly and I&#8217;ve had a bit of an epiphany with it. Now I&#8217;m starting to think that Git is the way that all version control should be.</p>
-<h5>The staging area</h5>
-<p>At first, having to add changes to the staging area before each commit was bugging the life out of me. That was until I made changes for more than one reason at once. Of course, it makes sense to separate these changes, and git forces to operate that way by default. Of course you can do this with Subversion by committing specific files, but git forces you to think about it.</p>
-<p>And it doesn&#8217;t end there. Using <code>git add -p</code>, you can reduce the granularity of your commits to individual lines within a file. This is a huge get out of jail free card for me, as I often end up fixing one thing within a file whilst working on something else in the same file. Using this mechanism, the two changes can be committed separately, as they should!</p></div>
+<p>The main reason I was looking at distributed version control systems was because I was doing a lot of work on the train and I wanted something that could track changes locally so I could revert when I inevitably screwed something up. I also wanted to be able to push the changes to a hosted repository when I got home, so I had an offsite backup and to share the code with others. This ruled out the likes of <a href="http://subversion.apache.org">Subversion</a> and I ended up settling on <a href="http://mercurial.selenic.com">Mercurial</a> with <a href="http://bitbucket.org">Bitbucket</a> for free repository hosting.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/06/20/i-didnt-get-git/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -553,18 +351,13 @@
   </header>
 
 
-  <div class="entry-content"><p>To hijack and abuse yet another quote from <a href="http://www.imdb.com/title/tt0133093/">The Matrix</a>, &#8220;welcome to the real world!&#8221; (or at least my new home in the virtual one)! After being inspired by <a href="http://twitter.com/TheColonial">@TheColonial</a> and his adventures with <a href="http://www.blogofile.com/">Blogofile</a>, I decided that I needed to move my blog to a system that was backed by a version control system.</p>
-<p>I had a number of reasons for doing this:</p>
-<ol>
-	<li>I wanted to be in complete control of all of my data.</li>
-	<li>I wanted to be able to compose and edit posts offline.</li>
-	<li>I wanted to somewhere to host materials from the talks that I give.</li>
-</ol>
-<p>The solution I ended up going with was <a href="http://pages.github.com">GitHub Pages</a>. Firstly because it is free. Secondly because it is awesome!</p>
-<p>Your entire site is a repository that you can clone like any other git repository. The difference is that when you push changes back to GitHub, it automatically runs <a href="http://jekyllrb.com/">Jekyll</a> (a blog aware static site generator) and republishes the resulting site for you. The beauty of Jekyll is that a normal <span class="caps">HTML</span> site is also a valid Jekyll site, so normal <span class="caps">HTML</span> sites will pass through unchanged.</p>
-<p>If you do take advantage of Jekyll however, you can create <span class="caps">HTML</span> templates using <a href="http://www.liquidmarkup.org/">Liquid</a> and author content in <a href="http://daringfireball.net/projects/markdown/">Markdown</a> or <a href="http://www.textism.com/tools/textile/">Textile</a>. It even supports syntax highlighting courtesy of <a href="http://pygments.org/">Pygments</a>.</p>
-<p>I&#8217;ve moved the technical and technology related posts from <a href="http://craigaspinall.tumblr.com">Tumblr</a> over to here so anyone transferring over can still access my old content, and anyone arriving here for the first time has something to read.</p></div>
+  <div class="entry-content"><p>To hijack and abuse yet another quote from <a href="http://www.imdb.com/title/tt0133093/">The Matrix</a>, &#8220;welcome to the real world!&#8221; (or at least my new home in the virtual one)! After being inspired by <a href="http://twitter.com/TheColonial">@TheColonial</a> and his adventures with <a href="http://www.blogofile.com/">Blogofile</a>, I decided that I needed to move my blog to a system that was backed by a version control system.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/06/10/welcome-to-the-real-world/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -598,11 +391,13 @@
   </header>
 
 
-  <div class="entry-content"><p>After listening to Mark Pesce&#8217;s controversial keynote presentation at LinuxConf Australia 2011 (and giving myself a couple of months to think about it), I&#8217;ve decided that the time has come to leave Facebook, and to encourage others to do the same. If you want to understand why, I strongly recommend you read <a href="http://blog.futurestreetconsulting.com/2011/01/28/smoke-signals/">Mark&#8217;s presentation</a> but here are the reasons in a nutshell.</p>
-<p>The most valuable piece of information about you is your social graph and the communication that occurs across that graph. That reveals more about you, your personal interests, even your secrets, than anything else that you do online. And Facebook is watching and recording it all.</p>
-<p>This might not be so disturbing if Facebook had not repeatedly let members down with regards to the privacy of their data. Or if people actually understood what information they are divulging to Facebook. Whilst many have pointed to the likes of Microsoft and Google as potential dystopian &#8220;big brother&#8221; overlords, Facebook is probably much better poised in reality.</p>
-<p>So I&#8217;m making my own (sadly insignificant) stand by quitting. I encourage you to do the same.</p></div>
+  <div class="entry-content"><p>After listening to Mark Pesce&#8217;s controversial keynote presentation at LinuxConf Australia 2011 (and giving myself a couple of months to think about it), I&#8217;ve decided that the time has come to leave Facebook, and to encourage others to do the same. If you want to understand why, I strongly recommend you read <a href="http://blog.futurestreetconsulting.com/2011/01/28/smoke-signals/">Mark&#8217;s presentation</a> but here are the reasons in a nutshell.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/04/24/quitting-facebook/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -636,111 +431,13 @@
   </header>
 
 
-  <div class="entry-content"><p>I gave an introduction to Groovy at our local <span class="caps">JUG</span> this week and didn&#8217;t quite manage to make it through all the material I wanted to cover, so I decided to add the missing content here! The part I missed out in the meetup was how to extend a class at runtime via it&#8217;s metaClass.</p>
-<p>If you add a named closure to the metaClass of an existing class, then it essentially becomes available as a method on that class. In this example, I&#8217;ve added a <code>containsOnly(Collection anotherCollection)</code> method to the <code>Collection</code> class, which returns <code>true</code> if two collections have the same content but not necessarily in the same order.</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Collection</span><span class="o">.</span><span class="na">metaClass</span><span class="o">.</span><span class="na">containsOnly</span> <span class="o">=</span> <span class="o">{</span> <span class="n">Collection</span> <span class="n">otherCollection</span> <span class="o">-&gt;</span>
-</span><span class='line'>    <span class="n">delegate</span><span class="o">.</span><span class="na">containsAll</span><span class="o">(</span><span class="n">otherCollection</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">delegate</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="n">otherCollection</span><span class="o">.</span><span class="na">size</span><span class="o">()</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">]</span>
-</span><span class='line'><span class="n">b</span> <span class="o">=</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">1</span><span class="o">]</span>
-</span><span class='line'><span class="n">c</span> <span class="o">=</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">]</span>
-</span><span class='line'><span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="na">containsOnly</span><span class="o">(</span><span class="n">b</span><span class="o">)</span>
-</span><span class='line'><span class="k">assert</span> <span class="o">!</span><span class="n">b</span><span class="o">.</span><span class="na">containsOnly</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p><code>delegate</code> is an implicit argument referring to the object on which the <code>containsOnly()</code> method is being called.</p>
-<p>In the following case, I have extended the <code>Collection</code> class again to add a <code>choose(int numberOfElements)</code> method, which selects a supplied number of elements from the collection, chosen at random. Note that the <code>return</code> keyword is optional, I&#8217;ve used it here for clarity.</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Collection</span><span class="o">.</span><span class="na">metaClass</span><span class="o">.</span><span class="na">choose</span> <span class="o">=</span> <span class="o">{</span> <span class="kt">int</span> <span class="n">numberOfElements</span> <span class="o">-&gt;</span>
-</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">delegate</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="n">numberOfElements</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">delegate</span>
-</span><span class='line'>    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-</span><span class='line'>        <span class="n">List</span> <span class="n">previouslyUsed</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>        <span class="n">List</span> <span class="n">chosen</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>        <span class="k">while</span> <span class="o">(</span><span class="n">chosen</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&lt;</span> <span class="n">numberOfElements</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>            <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">().</span><span class="na">nextInt</span><span class="o">(</span><span class="n">delegate</span><span class="o">.</span><span class="na">size</span><span class="o">())</span>
-</span><span class='line'>            <span class="k">if</span> <span class="o">(!</span><span class="n">previouslyUsed</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">index</span><span class="o">))</span> <span class="o">{</span>
-</span><span class='line'>                <span class="n">chosen</span> <span class="o">&lt;&lt;</span> <span class="n">delegate</span><span class="o">[</span><span class="n">index</span><span class="o">]</span>
-</span><span class='line'>                <span class="n">previouslyUsed</span> <span class="o">&lt;&lt;</span> <span class="n">index</span>
-</span><span class='line'>            <span class="o">}</span>
-</span><span class='line'>        <span class="o">}</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">chosen</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">,</span><span class="mi">6</span><span class="o">,</span><span class="mi">7</span><span class="o">,</span><span class="mi">8</span><span class="o">,</span><span class="mi">9</span><span class="o">,</span><span class="mi">10</span><span class="o">]</span>
-</span><span class='line'><span class="n">one</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">choose</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
-</span><span class='line'><span class="k">assert</span> <span class="n">one</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">1</span>
-</span><span class='line'><span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="na">containsAll</span><span class="o">(</span><span class="n">one</span><span class="o">)</span>
-</span><span class='line'><span class="n">five</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">choose</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
-</span><span class='line'><span class="k">assert</span> <span class="n">five</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">5</span>
-</span><span class='line'><span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="na">containsAll</span><span class="o">(</span><span class="n">five</span><span class="o">)</span>
-</span><span class='line'><span class="n">twelve</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">choose</span><span class="o">(</span><span class="mi">12</span><span class="o">)</span> <span class="c1">// should only return 10!</span>
-</span><span class='line'><span class="k">assert</span> <span class="n">twelve</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">10</span>
-</span><span class='line'><span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="na">containsAll</span><span class="o">(</span><span class="n">twelve</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>My final example extends the <code>String</code> class so that you can easily cast it to a <code>Date</code> instance using a fixed conversion format. Groovy uses this syntax for casting (which is much nicer than Java):</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="s">&quot;08/08/1988&quot;</span> <span class="n">as</span> <span class="n">Date</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>Under the hood, Groovy calls the <code>asType(Class targetType)</code> method to perform the conversion, and that already supports casting to a number of different types. To add <code>Date</code> casting I had to replace the existing method definition. So that I didn&#8217;t lose the original functionality, I captured the original method and delegated to it if we&#8217;re not trying to cast to a <code>Date</code>.</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">def</span> <span class="n">oldAsType</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">metaClass</span><span class="o">.</span><span class="na">getMetaMethod</span><span class="o">(</span><span class="s">&quot;asType&quot;</span><span class="o">,</span> <span class="o">[</span><span class="n">Class</span><span class="o">]</span> <span class="n">as</span> <span class="n">Class</span><span class="o">[])</span>
-</span><span class='line'><span class="n">String</span><span class="o">.</span><span class="na">metaClass</span><span class="o">.</span><span class="na">asType</span> <span class="o">=</span> <span class="o">{</span> <span class="n">Class</span> <span class="n">targetType</span> <span class="o">-&gt;</span>
-</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">targetType</span> <span class="o">==</span> <span class="n">Date</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>        <span class="n">Date</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">&quot;dd/MM/yyyy&quot;</span><span class="o">,</span> <span class="n">delegate</span><span class="o">)</span>
-</span><span class='line'>    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-</span><span class='line'>        <span class="n">oldAsType</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="n">delegate</span><span class="o">,</span> <span class="n">targetType</span><span class="o">)</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'><span class="c1">// Now we can call...</span>
-</span><span class='line'><span class="s">&quot;08/08/1988&quot;</span> <span class="n">as</span> <span class="n">Date</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p></div>
+  <div class="entry-content"><p>I gave an introduction to Groovy at our local <span class="caps">JUG</span> this week and didn&#8217;t quite manage to make it through all the material I wanted to cover, so I decided to add the missing content here! The part I missed out in the meetup was how to extend a class at runtime via it&#8217;s metaClass.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/03/03/extending-groovy-classes-at-runtime/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -780,13 +477,13 @@
 	<li>to increase productivity</li>
 	<li>to improve quality</li>
 </ol>
-<p>For us it&#8217;s a simple case of improving quality but that doesn&#8217;t necessarily mean that our leaders have the same motives. In fairness they do overlap, but focusing too much on any one of them can be to the detriment of the others.</p>
-<p>For example, if you want to reduce costs and automated testing makes the testers four times more productive, then in theory you can remove three quarters of your testers without any loss of quality or productivity. Of course the theory and reality are quite different! Similarly, if you go all out for quality, you may need more people or tools or equipment which will result in increased costs, and progress may be slower.</p>
-<p>The catalyst for the discussions was that we just found out that the number of testers is being reduced on one of the projects we&#8217;re working on and we were horrified. We were very concerned that the work we have been doing was being used to justify cost reductions but fortunately that isn&#8217;t the case (at least not this time).</p>
-<p>Since our goal is to improve quality we expect that any cost savings we enable during development are re-investing into improving quality in other ways. This should include freeing up the testers to do more exploratory testing, but could also include things like performance, security or usability testing that often get overlooked.</p>
-<p>Even with that investment, we expect that there will still be an overall reduction in cost, simply because less defects will get to production. The cost of fixing defects increases exponentially the later in the process they are found, because more and more people become involved in the development, testing and technical support of the fix. Unfortunately the total cost of ownership is not easy to quantify and rarely gets the focus it deserves.</p>
-<p><a href="http://goo.gl/Z69dl">Episode 18</a> of the <a href="http://www.codingbynumbers.com">Coding By Numbers</a> podcast (which I co-host) has a much more in depth discussion on this subject if you want to hear more!</p></div>
+<p>For us it&#8217;s a simple case of improving quality but that doesn&#8217;t necessarily mean that our leaders have the same motives. In fairness they do overlap, but focusing too much on any one of them can be to the detriment of the others.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/28/the-role-of-automated-testing/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -804,7 +501,7 @@
   
     <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/apple' style='font-size: 112.0%'>apple</a> <a href='/blog/categories/blogging' style='font-size: 104.0%'>blogging</a> <a href='/blog/categories/browsers' style='font-size: 104.0%'>browsers</a> <a href='/blog/categories/build-automation' style='font-size: 108.0%'>build automation</a> <a href='/blog/categories/coding-by-numbers' style='font-size: 104.0%'>coding by numbers</a> <a href='/blog/categories/concordion' style='font-size: 104.0%'>concordion</a> <a href='/blog/categories/conferences' style='font-size: 108.0%'>conferences</a> <a href='/blog/categories/digital-media' style='font-size: 108.0%'>digital media</a> <a href='/blog/categories/flash' style='font-size: 104.0%'>flash</a> <a href='/blog/categories/freedom' style='font-size: 116.0%'>freedom</a> <a href='/blog/categories/functional-programming' style='font-size: 120.0%'>functional programming</a> <a href='/blog/categories/git' style='font-size: 104.0%'>git</a> <a href='/blog/categories/groovy' style='font-size: 120.0%'>groovy</a> <a href='/blog/categories/haskell' style='font-size: 108.0%'>haskell</a> <a href='/blog/categories/intellij-idea' style='font-size: 108.0%'>intellij idea</a> <a href='/blog/categories/java' style='font-size: 108.0%'>java</a> <a href='/blog/categories/javafx' style='font-size: 112.0%'>javafx</a> <a href='/blog/categories/kotlin' style='font-size: 104.0%'>kotlin</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux</a> <a href='/blog/categories/opinion' style='font-size: 160.0%'>opinion</a> <a href='/blog/categories/playframework' style='font-size: 104.0%'>playframework</a> <a href='/blog/categories/scala' style='font-size: 104.0%'>scala</a> <a href='/blog/categories/social-networking' style='font-size: 104.0%'>social networking</a> <a href='/blog/categories/talks' style='font-size: 104.0%'>talks</a> <a href='/blog/categories/technical-debt' style='font-size: 108.0%'>technical debt</a> <a href='/blog/categories/technology-radar' style='font-size: 104.0%'>technology radar</a> <a href='/blog/categories/testing' style='font-size: 108.0%'>testing</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/apple' style='font-size: 112.0%'>apple</a> <a href='/blog/categories/blogging' style='font-size: 104.0%'>blogging</a> <a href='/blog/categories/browsers' style='font-size: 104.0%'>browsers</a> <a href='/blog/categories/build-automation' style='font-size: 108.0%'>build automation</a> <a href='/blog/categories/coding-by-numbers' style='font-size: 108.0%'>coding by numbers</a> <a href='/blog/categories/concordion' style='font-size: 104.0%'>concordion</a> <a href='/blog/categories/conferences' style='font-size: 108.0%'>conferences</a> <a href='/blog/categories/digital-media' style='font-size: 108.0%'>digital media</a> <a href='/blog/categories/flash' style='font-size: 104.0%'>flash</a> <a href='/blog/categories/freedom' style='font-size: 116.0%'>freedom</a> <a href='/blog/categories/functional-programming' style='font-size: 120.0%'>functional programming</a> <a href='/blog/categories/git' style='font-size: 104.0%'>git</a> <a href='/blog/categories/groovy' style='font-size: 120.0%'>groovy</a> <a href='/blog/categories/haskell' style='font-size: 108.0%'>haskell</a> <a href='/blog/categories/intellij-idea' style='font-size: 108.0%'>intellij idea</a> <a href='/blog/categories/java' style='font-size: 108.0%'>java</a> <a href='/blog/categories/javafx' style='font-size: 112.0%'>javafx</a> <a href='/blog/categories/kotlin' style='font-size: 104.0%'>kotlin</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux</a> <a href='/blog/categories/opinion' style='font-size: 160.0%'>opinion</a> <a href='/blog/categories/playframework' style='font-size: 104.0%'>playframework</a> <a href='/blog/categories/scala' style='font-size: 104.0%'>scala</a> <a href='/blog/categories/social-networking' style='font-size: 104.0%'>social networking</a> <a href='/blog/categories/talks' style='font-size: 104.0%'>talks</a> <a href='/blog/categories/technical-debt' style='font-size: 108.0%'>technical debt</a> <a href='/blog/categories/technology-radar' style='font-size: 104.0%'>technology radar</a> <a href='/blog/categories/testing' style='font-size: 108.0%'>testing</a> </span>
 </section>
 
 <section>

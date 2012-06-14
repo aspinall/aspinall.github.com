@@ -4,7 +4,7 @@
   <title><![CDATA[Category: technical debt | Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/blog/categories/technical-debt/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-14T22:44:45+10:00</updated>
+  <updated>2012-06-15T07:05:44+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -18,7 +18,10 @@
     <link href="http://www.craigaspinall.com/blog/2010/11/23/tackle-technical-debt-first/"/>
     <updated>2010-11-23T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2010/11/23/tackle-technical-debt-first</id>
-    <content type="html"><![CDATA[<p>In my last post I talked about the large refactoring I am doing. One of the reasons that this is a large refactoring is because I have been putting it off. I wanted to deliver something to the customer. I kept telling myself that if I just went with what I had I'd soon have something to give them and then I would have some breathing room to refactor. Of course thats a complete fallacy!</p>
+    <content type="html"><![CDATA[<p>In my last post I talked about the large refactoring I am doing. One of the reasons that this is a large refactoring is because I have been putting it off. I wanted to deliver something to the customer. I kept telling myself that if I just went with what I had I'd soon have something to give them and then I would have some breathing room to refactor. Of course that's a complete fallacy!</p>
+
+<!--more-->
+
 
 <p>What I actually did was rack up technical debt. I kept adding more code that was dependent on API that I knew needed to be refactored. That meant the new code would also have to be refactored when the API changed. The net result is that I still wasn't able to handover what I wanted when I wanted to, and now I am having to take a couple of days to perform this refactoring, which is delaying the delivery even more!</p>
 
@@ -32,6 +35,9 @@
     <updated>2010-11-22T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2010/11/22/tackling-big-refactoring-jobs</id>
     <content type="html"><![CDATA[<p>For the first time last week, I actually used a spreadsheet to keep track of a large refactoring that I needed to complete. We're not talking about a huge project, less than sixty classes in total, but they needed to be broken into three projects, and a number of the classes were going to disappear altogether as their functionality is absorbed into other classes. The two additional projects are going to be simple libraries that can be re-used, and the original project will retain the domain specific tests and configuration and have dependencies on the two new libraries.</p>
+
+<!--more-->
+
 
 <p>The spreadsheet itself isn't anything complicated. It has the following columns:</p>
 

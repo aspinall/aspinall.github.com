@@ -4,7 +4,7 @@
   <title><![CDATA[Category: functional programming | Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/blog/categories/functional-programming/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-14T22:44:45+10:00</updated>
+  <updated>2012-06-15T07:05:44+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -22,6 +22,9 @@
 
 <p>I originally put this presentation together for a functional programming group that I started at work, for those that are interested in learning more about functional programming and ultimately applying it to their day jobs.</p>
 
+<!--more-->
+
+
 <p>The focus of the presentation is really about getting to the crux of what functional programming is, and away from all the FUD(Fear Uncertainty and Doubt) that surrounds it. It also presents a simple example in Java, refactoring a "naive" solution into one that is more readable, testable and maintainable, by applying functional programming principles. The presentation finishes off with an example solution to the same problem in Haskell.</p>
 
 <p>The "handout":talks/what-is-fp/handout.pdf contains the slides with all of my reader notes, which is essentially a transcript of the presentation.</p>
@@ -34,6 +37,9 @@
     <updated>2010-11-27T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2010/11/27/is-haskell-actually-simple</id>
     <content type="html"><![CDATA[<p>Whilst I was writing the previous post about learning Haskell, I was reminded of "a post by Martin Odersky":http://lamp.epfl.ch/~odersky/blogs/isscalacomplex.html about the complexity or otherwise of Scala. In that post he tries several metaphors to determine what <em>simple</em> really means, finally settling on Duplo versus Technics Lego. You can build anything with either (just as you can with turing complete languages) but a solution built with Duplo is unlikely to be as elegant as a solution built with Technics.</p>
+
+<!--more-->
+
 
 <p>I like his comparison because it shows how much <em>simplicity</em> is a concept that means different things to different people. I'm starting to think that Haskell is a really simple language, even though I'm finding it difficult to learn!</p>
 
@@ -76,6 +82,9 @@
 
 <p>What I've found so far is that I typically go through three or four stages of learning functional concepts. In the first stage I don't understand it at all. In the second stage I start learning matched pairs of input and results, so I can start to use the concept but I don't understand how the input is transformed to the output. In the third stage I start to get that understanding of how it works as well as what it does. And in the fourth stage I realise how much more there is that I don't understand yet!</p>
 
+<!--more-->
+
+
 <p>This week I really started to understand type classes and monads, only to discover that monads are just the tip of the iceberg. My brain then started to melt as I went back to stage one and two with functors and applicative functors!</p>
 
 <p>It's also beginning to dawn on me just how amazing the Haskell type system is. One of my friends once said that Haskell's type system made him cry. Not tears of pain but tears of joy at how elegant it is!</p>
@@ -88,6 +97,9 @@
     <updated>2010-11-09T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2010/11/09/take-the-red-pill</id>
     <content type="html"><![CDATA[<p>Right now I feel a bit like Neo being confronted by Morpheus and offered the choice of the blue pill or the red pill. Take the blue pill and I can go back to my comfortable world of Java and object orientation. Take the red pill - I learn Haskell and see how deep functional programming goes!</p>
+
+<!--more-->
+
 
 <p>In a previous post I mentioned that I am in the process of learning functional programming in Haskell. The exercise this week was to write a monadic parser and what struck me about it was how much I was wrestling to keep a single function in my head. With Java I can hold several classes and the interactions between them in my head, and even do a half decent job with multi-threaded code (I'm sure "Tony":http://blog.tmorris.net/ would disagree and he's probably right, but for now I am no more disillusioned than most Java programmers).</p>
 
@@ -105,6 +117,9 @@
     <updated>2010-11-04T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2010/11/04/follow-the-types</id>
     <content type="html"><![CDATA[<p>For a while I have been trying to learn "Haskell":http://www.haskell.org/ as a way of getting my head completely around functional programming. I started with ""Seven Languages in Seven Weeks":http://www.pragprog.com/titles/btlang/seven-languages-in-seven-weeks", moved on to ""Real World Haskell":http://www.realworldhaskell.org/", and now, "Tony Morris":http://blog.tmorris.net/ is very kindly donating some of his time to help me and a few other guys to get to grips with the concepts that underpin the language.</p>
+
+<!--more-->
+
 
 <p>Every week, he sets exercises for us to complete, which involves writing solutions to a bunch of functions that pass the acceptance tests that he supplied. This week we are writing a parser, but the real challenge for me is that none of the tests will pass until all of the functions have been completed. Writing around 20 functions before being able to get any feedback is almost a bigger challenge than writing the functions themselves!</p>
 

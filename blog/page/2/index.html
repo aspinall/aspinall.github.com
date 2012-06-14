@@ -105,28 +105,13 @@
   </header>
 
 
-  <div class="entry-content"><p>Whilst I was writing the previous post about learning Haskell, I was reminded of <a href="http://lamp.epfl.ch/~odersky/blogs/isscalacomplex.html">a post by Martin Odersky</a> about the complexity or otherwise of Scala. In that post he tries several metaphors to determine what <em>simple</em> really means, finally settling on Duplo versus Technics Lego. You can build anything with either (just as you can with turing complete languages) but a solution built with Duplo is unlikely to be as elegant as a solution built with Technics.</p>
-<p>I like his comparison because it shows how much <em>simplicity</em> is a concept that means different things to different people. I&#8217;m starting to think that Haskell is a really simple language, even though I&#8217;m finding it difficult to learn!</p>
-<p>One of the relative measures of complexity used in the article is the number of keywords in a language. Carlos Quintanilla&#8217;s <a href="http://carlosqt.blogspot.com/2010/07/how-many-keywords-do-you-type-in-your.html">comparison of <span class="caps">CLR</span> and <span class="caps">JVM</span> languages</a> ranges from 139 to 31 keywords. Haskell has just 20!</p>
-<p>And the more I use the language, the more it strikes me as being ruthlessly consistent. Take functions for example:</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="nf">add</span> <span class="ow">::</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
-</span><span class='line'><span class="nf">add</span> <span class="n">x</span> <span class="n">y</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>Nominally you can read this as a function called <code>add</code> that takes two <code>Int</code> parameters and returns an <code>Int</code>. Except it isn&#8217;t. It&#8217;s a function that takes an <code>Int</code> and returns another function that takes an <code>Int</code> and returns an <code>Int</code>! Which means you can do this:</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="nf">plusOne</span> <span class="ow">::</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
-</span><span class='line'><span class="nf">plusOne</span> <span class="ow">=</span> <span class="n">add</span> <span class="mi">1</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>I&#8217;ve defined a <code>plusOne</code> function by fixing the first parameter of <code>add</code> to <code>1</code>, which returns a function that will always add 1 to whatever value is passed to it. By applying the same principle again we have a function that takes no arguments and returns an <code>Int</code>.</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="nf">two</span> <span class="ow">=</span> <span class="n">plusOne</span> <span class="mi">1</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>This concept is one of the reasons why I&#8217;m struggling with Functors. It seems mind numbingly simple to me and yet so mind bogglingly powerful at the same time!</p>
-<p>And that is the paradox I keep banging my head against!</p></div>
+  <div class="entry-content"><p>Whilst I was writing the previous post about learning Haskell, I was reminded of <a href="http://lamp.epfl.ch/~odersky/blogs/isscalacomplex.html">a post by Martin Odersky</a> about the complexity or otherwise of Scala. In that post he tries several metaphors to determine what <em>simple</em> really means, finally settling on Duplo versus Technics Lego. You can build anything with either (just as you can with turing complete languages) but a solution built with Duplo is unlikely to be as elegant as a solution built with Technics.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/27/is-haskell-actually-simple/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -161,10 +146,13 @@
 
 
   <div class="entry-content"><p>My functional programming with Haskell journey continues and every time I think I understand something, I discover there&#8217;s another layer of complexity underneath the one I just peeled off! There are so many metaphors that spring to mind that I&#8217;m just going to avoid them all!</p>
-<p>What I&#8217;ve found so far is that I typically go through three or four stages of learning functional concepts. In the first stage I don&#8217;t understand it at all. In the second stage I start learning matched pairs of input and results, so I can start to use the concept but I don&#8217;t understand how the input is transformed to the output. In the third stage I start to get that understanding of how it works as well as what it does. And in the fourth stage I realise how much more there is that I don&#8217;t understand yet!</p>
-<p>This week I really started to understand type classes and monads, only to discover that monads are just the tip of the iceberg. My brain then started to melt as I went back to stage one and two with functors and applicative functors!</p>
-<p>It&#8217;s also beginning to dawn on me just how amazing the Haskell type system is. One of my friends once said that Haskell&#8217;s type system made him cry. Not tears of pain but tears of joy at how elegant it is!</p></div>
+<p>What I&#8217;ve found so far is that I typically go through three or four stages of learning functional concepts. In the first stage I don&#8217;t understand it at all. In the second stage I start learning matched pairs of input and results, so I can start to use the concept but I don&#8217;t understand how the input is transformed to the output. In the third stage I start to get that understanding of how it works as well as what it does. And in the fourth stage I realise how much more there is that I don&#8217;t understand yet!<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/26/haskells-type-system-made-me-cry/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -198,10 +186,13 @@
   </header>
 
 
-  <div class="entry-content"><p>In my last post I talked about the large refactoring I am doing. One of the reasons that this is a large refactoring is because I have been putting it off. I wanted to deliver something to the customer. I kept telling myself that if I just went with what I had I&#8217;d soon have something to give them and then I would have some breathing room to refactor. Of course thats a complete fallacy!</p>
-<p>What I actually did was rack up technical debt. I kept adding more code that was dependent on <span class="caps">API</span> that I knew needed to be refactored. That meant the new code would also have to be refactored when the <span class="caps">API</span> changed. The net result is that I still wasn&#8217;t able to handover what I wanted when I wanted to, and now I am having to take a couple of days to perform this refactoring, which is delaying the delivery even more!</p>
-<p>I&#8217;ve made this mistake before and I should have known better, but the pressure I (it wasn&#8217;t even the customer) was putting myself under to deliver got the better of me this time. Hopefully I learned from my mistake. I think I&#8217;ll print the quote by basketball coach John Wooden: &#8220;If you don&#8217;t have time to do it right, when will you have time to do it over?&#8221; and pin it on the wall of my cubicle!</p></div>
+  <div class="entry-content"><p>In my last post I talked about the large refactoring I am doing. One of the reasons that this is a large refactoring is because I have been putting it off. I wanted to deliver something to the customer. I kept telling myself that if I just went with what I had I&#8217;d soon have something to give them and then I would have some breathing room to refactor. Of course that&#8217;s a complete fallacy!<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/23/tackle-technical-debt-first/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -235,11 +226,13 @@
   </header>
 
 
-  <div class="entry-content"><p>… is that there&#8217;s so many of them to choose from. They&#8217;re like Java frameworks, everyone has got one! I guess it&#8217;s down to control. People don&#8217;t want to invest in something that they don&#8217;t have control over, so they create another standard, manage to get it ratified by some standards body, and then claim that they are standards compliant. But if we&#8217;re not all using the same standard, how much value does the standard have?</p>
-<p>I&#8217;ve spent a considerable amount of time this weekend creating alternative versions of the <a href="http://www.codingbynumbers.com/">Coding By Numbers</a> podcast. We have been using the <a href="http://en.wikipedia.org/wiki/Advanced_Audio_Coding"><span class="caps">AAC</span></a> format since it gives you the best bang for your buck in terms of quality versus size, but we&#8217;ve had a bunch of feedback asking for an <a href="http://en.wikipedia.org/wiki/MP3">MP3</a> version because not all media players support <span class="caps">AAC</span>.</p>
-<p>A few weeks ago, my co-host <a href="http://dalts.net/">Steve</a> was fortunate enough to meet with <a href="http://stallman.org/">Richard Stallman</a> from the <a href="http://www.fsf.org/">Free Software Foundation</a>, who won&#8217;t listen to any digital audio unless it is recorded in an open format such as <a href="http://www.vorbis.com/">Ogg Vorbis</a>. In fact he thinks we shouldn&#8217;t be offering anything but open formats and he&#8217;s probably right, but if people are having problems with <span class="caps">AAC</span> support, can you imagine the problems people would have if we only offered Ogg Vorbis?</p>
-<p>So there&#8217;s three standards that we now offer for the podcast, but those aren&#8217;t the only standards we could choose from. There&#8217;s also <a href="http://flac.sourceforge.net/"><span class="caps">FLAC</span></a>, <a href="http://en.wikipedia.org/wiki/MP2">MP2</a>, <a href="http://en.wikipedia.org/wiki/WAV"><span class="caps">WAV</span></a>, <a href="http://en.wikipedia.org/wiki/Windows_Media_Audio"><span class="caps">WMA</span></a> and that&#8217;s before we even start on the voice specific codecs we could use! And there&#8217;s so little real difference between them that you have to question why they all exist. Perhaps standards would be better controlled by a benevolent dictator than committees?</p></div>
+  <div class="entry-content"><p>… is that there&#8217;s so many of them to choose from. They&#8217;re like Java frameworks, everyone has got one! I guess it&#8217;s down to control. People don&#8217;t want to invest in something that they don&#8217;t have control over, so they create another standard, manage to get it ratified by some standards body, and then claim that they are standards compliant. But if we&#8217;re not all using the same standard, how much value does the standard have?<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/22/the-great-thing-about-standards/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -273,19 +266,13 @@
   </header>
 
 
-  <div class="entry-content"><p>For the first time last week, I actually used a spreadsheet to keep track of a large refactoring that I needed to complete. We&#8217;re not talking about a huge project, less than sixty classes in total, but they needed to be broken into three projects, and a number of the classes were going to disappear altogether as their functionality is absorbed into other classes. The two additional projects are going to be simple libraries that can be re-used, and the original project will retain the domain specific tests and configuration and have dependencies on the two new libraries.</p>
-<p>The spreadsheet itself isn&#8217;t anything complicated. It has the following columns:</p>
-<ul>
-	<li>Class Name</li>
-	<li>Existing Package</li>
-	<li>Target Project</li>
-	<li>Target Package</li>
-	<li>Target Class</li>
-	<li>Completed</li>
-</ul>
-<p>By setting filters on each of the columns and using some conditional formatting, I was able to manipulate the view to narrow the scope to the specific set of tasks I was working on or get a broad overview of where I was up to. It enabled me to take small steps and keep the codebase running whilst I was refactoring, which has usually been my downfall!</p>
-<p>The day to day refactoring I normally do is small enough to be held in my head and larger ones usually cause me some level of grief before they are completed, which is why I decided to take different approach this time around. What I found is that by taking the time to lay everything out first, I could see what needed to be done and in which order. It goes to prove that &#8220;just enough&#8221; planning goes a long way!</p></div>
+  <div class="entry-content"><p>For the first time last week, I actually used a spreadsheet to keep track of a large refactoring that I needed to complete. We&#8217;re not talking about a huge project, less than sixty classes in total, but they needed to be broken into three projects, and a number of the classes were going to disappear altogether as their functionality is absorbed into other classes. The two additional projects are going to be simple libraries that can be re-used, and the original project will retain the domain specific tests and configuration and have dependencies on the two new libraries.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/22/tackling-big-refactoring-jobs/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -320,13 +307,13 @@
 
 
   <div class="entry-content"><p>I haven&#8217;t bought a dead tree version of a book for years. If it&#8217;s not available as either an ebook or an audiobook then I don&#8217;t buy it. The same goes for music, and when the film industry realises that <span class="caps">DRM</span> is a fallacy, I&#8217;ll be able to do the same with video too.</p>
-<p>Ideally I want to have my entire collection of books with me wherever I go, but not just books. I want to take my music and video collection too. The iPhone kickstarted a revolution in convergence devices that go a long way towards making this possible. Whilst I can&#8217;t carry my entire music and video collection on my phone because they are too large, I can carry my favourites and still have enough space for all my ebooks.</p>
-<p>Recently I&#8217;ve encountered a couple of situations where my phone doesn&#8217;t suffice though. I write a lot of notes on paper (or 3&#215;5 index cards) and they are prone to getting lost or recycled accidentally. For this the phone keyboard is too small, and I&#8217;m not sure whether I would be more comfortable with a pen or stylus over a keyboard anyway. I also started playing the guitar again and printing guitar tab is a waste of paper and often difficult to read. Again the phone is too small to display this type of content effectively.</p>
-<p>I thought about getting an eReader like the Kindle or Nook to address this issue, but I&#8217;m not convinced they will provide everything I need. I think they would be fantastic for replacing paper content, but I&#8217;m not so sure about the note taking, even though the Kindle has a physical keyboard and the Nook has a virtual keyboard that would fill an iPhone screen.</p>
-<p>The elephant in the room is the iPad. It can do everything my phone can do but has a bigger screen. The battery life isn&#8217;t as good as an eReader and the screen will get full of fingerprints, but it will do everything I want. When it came out, I said I couldn&#8217;t see a need for one in my life because it didn&#8217;t solve any problems for me. Then I chuckled to myself as I saw lots of people buy them, play with them for two weeks and then struggle to figure out what they were going to use it for! Now I do have a use for a 10” iPhone I feel like a bit of a dummy. I hate it when Apple are right!</p>
-<p>Even so, given my feelings towards Apple right now though, I am loathed to give them more of my hard earned cash. The only semi-viable alternative I have found is the Archos 10 internet tablet. There are plenty of cheap Chinese rip offs of the iPad, but I&#8217;ve used Archos devices before and they were very good quality. Physically and technically it has very similar specifications to the iPad but it runs the Android 2.2 Froyo operating system. Given that Android phones have similar capabilities to an iPhone, I figure an Android tablet must have similar capabilities to an iPad!</p>
-<p>Only time (and finances) will tell whether I end up with an eReader, an iPad or another tablet device, but I wouldn&#8217;t be surprised if one of them turned to be my next gadget purchase, so I can remove more dead trees from my life!</p></div>
+<p>Ideally I want to have my entire collection of books with me wherever I go, but not just books. I want to take my music and video collection too. The iPhone kickstarted a revolution in convergence devices that go a long way towards making this possible. Whilst I can&#8217;t carry my entire music and video collection on my phone because they are too large, I can carry my favourites and still have enough space for all my ebooks.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/19/dead-trees-are-dead-to-me/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -360,12 +347,13 @@
   </header>
 
 
-  <div class="entry-content"><p>I was looking something up on <a href="http://www.wikipedia.org/">Wikipedia</a> when I saw this <a href="http://wikimediafoundation.org/w/index.php?title=WMFJA1/AU">banner</a> containing an appeal from Jimmy Wales for donations to the WikiMedia Foundation. It made me question how much we take services like Wikipedia for granted? If you decide that you should donate, how much would you give? How do you but a value on a free service?</p>
-<p>I have no problem discerning the value proposition with the &#8216;<a href="http://en.wikipedia.org/wiki/Freemium">Freemium</a>&#8217; services like <a href="http://www.lastpass.com">LastPass</a>, where the &#8220;extra&#8221; value I get from my $1/month are listed in bullet points before I hand over my money. However in this case you don&#8217;t get any &#8220;extra&#8221; value in exchange for your cash. There is the possibility of less value being delivered if you don&#8217;t make a donation, but that&#8217;s not a certainty either.</p>
-<p>So how much should you donate? Perhaps it should be the cost of a reasonable &#8220;dead tree&#8221; encyclopaedia? On the other hand if every user gives a nominal $1 donation, it would raise $400,000,000, which I think would see them through for a while!</p>
-<p>Of course, just like free and open source software, there is more than one way to contribute. You could also contribute with your time, by adding, editing or reviewing articles.</p>
-<p>I decided that I&#8217;d like Wikipedia to stick around, so I&#8217;ll make a small donation and start contributing where I can. If you use it, what will you do?</p></div>
+  <div class="entry-content"><p>I was looking something up on <a href="http://www.wikipedia.org/">Wikipedia</a> when I saw this <a href="http://wikimediafoundation.org/w/index.php?title=WMFJA1/AU">banner</a> containing an appeal from Jimmy Wales for donations to the WikiMedia Foundation. It made me question how much we take services like Wikipedia for granted? If you decide that you should donate, how much would you give? How do you but a value on a free service?<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/16/whats-the-value-of-free/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -399,11 +387,13 @@
   </header>
 
 
-  <div class="entry-content"><p>Following on from my previous post, one of the other things I always strive to do from the outset of a project, is ensure that everyone has their own sandbox to play in. Every developer (and the CI machine) should be able to run the project independently of each other, without any reliance on common resources such as application servers or database instances.</p>
-<p>In previous projects that has always been fairly easy because the projects were either Java desktop or web applications using free and open source software. Right now I am spending a small amount of my time helping out a ColdFusion project. I thought it was going to be painful and expensive to create a sandbox for them but actually, thanks to some friendly developer licensing, I don&#8217;t think it&#8217;s going to be such an issue.</p>
-<p>What I want is for each developer to be able to launch their own their own test environment, which means running ColdFusion in a JRun instance with a <span class="caps">SQL</span> Server database that always starts in a known state. Adobe kindly provide free developer licenses for ColdFusion and JRun as do Microsoft for <span class="caps">SQL</span> Server, so licensing isn&#8217;t an issue.</p>
-<p>We&#8217;ve already spent a little bit of time getting an Ant script together with a tool called MXUnit to give them a way of running unit tests against their code using a central server, so that is our starting point. My end goal is to have the Ant script launch all the services and execute the tests locally, thereby removing the dependency on the shared resource. I&#8217;ll share any lessons learned here.</p></div>
+  <div class="entry-content"><p>Following on from my previous post, one of the other things I always strive to do from the outset of a project, is ensure that everyone has their own sandbox to play in. Every developer (and the CI machine) should be able to run the project independently of each other, without any reliance on common resources such as application servers or database instances.<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/15/play-in-your-own-sandbox/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -439,11 +429,13 @@
 
   <div class="entry-content"><p>These days, the first thing I do whenever I start a new project is figure out how to build it. It&#8217;s a lesson I learned from <a href="http://pragprog.com/titles/prj/ship-it">Ship It!</a> by the <a href="http://pragprog.com/">Pragmatic Programmers</a> and a habit that I have gotten into.</p>
 <p>I&#8217;m not talking about clicking the &#8220;build&#8221; button in the <span class="caps">IDE</span> either. I&#8217;m talking about a build that can be run independently on any machine, preferably with a single checkout from the version control system then a single command. If you can do that, then setting up new development machines and/or continuous integration builds is a cinch!</p>
-<p>Sounds great, but how do you do it? I&#8217;ve only really got experience of doing it with Java projects, although they included a lot of <span class="caps">JNI</span> code and I was able to include that too.</p>
-<p>First up, you need to decide on a build tool. It could be as simple as a batch file but my current tool of choice is <a href="http://maven.apache.org/">Maven</a>. I&#8217;ve also used <a href="http://ant.apache.org/">Ant</a> in the past and I&#8217;m looking at <a href="http://gradle.org/">Gradle</a> for future builds. The reason I switched to Maven was for it&#8217;s dependency handling and reporting, and now it&#8217;s well integrated into the popular Java IDEs, meaning your developers can choose their favourite.</p>
-<p>Once you&#8217;ve got a build tool, you need to ask yourself what you files do you need to build your project? Obviously the source code and build script will be needed but what about resource files, test environments or any other tools that assist with the build. In the past I&#8217;ve taken this to the extreme of checking in a copy of the build tool itself and even the <span class="caps">JDK</span>. This meant that the only thing you needed to set up a new developer machine was a copy of Subversion, everything else came from the version control system!</p>
-<p>The only exception to this rule were the dependencies that I mentioned. When we were using Ant, our projects had a ‘lib&#8217; folder and the dependencies were checked in with the code. With Maven, we set up our own internal repository and shared the dependencies from there. However if you&#8217;re going to do this you need to make sure that your Maven repository is backed up with the same frequency as your source code repository!</p></div>
+<p>Sounds great, but how do you do it? I&#8217;ve only really got experience of doing it with Java projects, although they included a lot of <span class="caps">JNI</span> code and I was able to include that too. <br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/15/click-click-build/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -477,12 +469,13 @@
   </header>
 
 
-  <div class="entry-content"><p>I can&#8217;t believe I am writing this, but could Oracle be the best thing to happen to OpenJDK? I know that writing 30 posts in 30 days is driving me a little crazy, but have I really lost that many marbles before the halfway point? Just how can the company that is being <a href="http://www.businessweek.com/news/2010-07-29/oracle-sued-by-u-s-in-case-claiming-overcharges.html">sued by the US government</a> for their alleged dishonesty be doing good things with such an indispensable open source project?</p>
-<p>Well, despite my many misgivings about the <a href="http://blogs.oracle.com/javaone/2010/09/plan_b_wins.html">delays</a> to all the interesting content in JDK7, their willingness to take the flak and do what is necessary to steady the ship shows they have the guts to make tough decisions. Sun kept promising but never really delivered. If Oracle start delivering regularly then I&#8217;ll be less critical of the additional delays to JDK7.</p>
-<p>They&#8217;ve also persuaded <a href="http://www-03.ibm.com/press/us/en/pressrelease/32708.wss"><span class="caps">IBM</span></a> and <a href="http://www.apple.com/pr/library/2010/11/12openjdk.html">Apple</a> to join the OpenJDK effort, something which Sun never managed to do. This brings all the major <span class="caps">JDK</span> vendors together in one place and hopefully we will see the best features of each of the <span class="caps">JDK</span> implementations (<span class="caps">IBM</span>, Oracle/<span class="caps">BEA</span>, Oracle/Sun and Apple) being merged into the open source offering.</p>
-<p>The only question that still nags in the back of my mind is their motive. Whilst it all seems rosy on the surface, persuading <span class="caps">IBM</span> to back OpenJDK instead of Apache Harmony could have an ulterior motive. Oracle are attempting to <a href="http://www.reuters.com/article/idUSTRE67B5G720100813">sue Google</a> over the use of Java in Android, and which class libraries do you suppose Android uses? You guessed it, Apache Harmony&#8217;s! By getting <span class="caps">IBM</span> to switch to OpenJDK, it further isolates Google.</p>
-<p>I&#8217;m not quite ready to believe that is a co-incidence yet!</p></div>
+  <div class="entry-content"><p>I can&#8217;t believe I am writing this, but could Oracle be the best thing to happen to OpenJDK? I know that writing 30 posts in 30 days is driving me a little crazy, but have I really lost that many marbles before the halfway point? Just how can the company that is being <a href="http://www.businessweek.com/news/2010-07-29/oracle-sued-by-u-s-in-case-claiming-overcharges.html">sued by the US government</a> for their alleged dishonesty be doing good things with such an indispensable open source project?<br />
+</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/11/14/oracle-the-best-thing-for-openjdk/">Read more &rarr;</a>
+    </footer>
   
 
 
@@ -502,7 +495,7 @@
   
     <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/apple' style='font-size: 112.0%'>apple</a> <a href='/blog/categories/blogging' style='font-size: 104.0%'>blogging</a> <a href='/blog/categories/browsers' style='font-size: 104.0%'>browsers</a> <a href='/blog/categories/build-automation' style='font-size: 108.0%'>build automation</a> <a href='/blog/categories/coding-by-numbers' style='font-size: 104.0%'>coding by numbers</a> <a href='/blog/categories/concordion' style='font-size: 104.0%'>concordion</a> <a href='/blog/categories/conferences' style='font-size: 108.0%'>conferences</a> <a href='/blog/categories/digital-media' style='font-size: 108.0%'>digital media</a> <a href='/blog/categories/flash' style='font-size: 104.0%'>flash</a> <a href='/blog/categories/freedom' style='font-size: 116.0%'>freedom</a> <a href='/blog/categories/functional-programming' style='font-size: 120.0%'>functional programming</a> <a href='/blog/categories/git' style='font-size: 104.0%'>git</a> <a href='/blog/categories/groovy' style='font-size: 120.0%'>groovy</a> <a href='/blog/categories/haskell' style='font-size: 108.0%'>haskell</a> <a href='/blog/categories/intellij-idea' style='font-size: 108.0%'>intellij idea</a> <a href='/blog/categories/java' style='font-size: 108.0%'>java</a> <a href='/blog/categories/javafx' style='font-size: 112.0%'>javafx</a> <a href='/blog/categories/kotlin' style='font-size: 104.0%'>kotlin</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux</a> <a href='/blog/categories/opinion' style='font-size: 160.0%'>opinion</a> <a href='/blog/categories/playframework' style='font-size: 104.0%'>playframework</a> <a href='/blog/categories/scala' style='font-size: 104.0%'>scala</a> <a href='/blog/categories/social-networking' style='font-size: 104.0%'>social networking</a> <a href='/blog/categories/talks' style='font-size: 104.0%'>talks</a> <a href='/blog/categories/technical-debt' style='font-size: 108.0%'>technical debt</a> <a href='/blog/categories/technology-radar' style='font-size: 104.0%'>technology radar</a> <a href='/blog/categories/testing' style='font-size: 108.0%'>testing</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/apple' style='font-size: 112.0%'>apple</a> <a href='/blog/categories/blogging' style='font-size: 104.0%'>blogging</a> <a href='/blog/categories/browsers' style='font-size: 104.0%'>browsers</a> <a href='/blog/categories/build-automation' style='font-size: 108.0%'>build automation</a> <a href='/blog/categories/coding-by-numbers' style='font-size: 108.0%'>coding by numbers</a> <a href='/blog/categories/concordion' style='font-size: 104.0%'>concordion</a> <a href='/blog/categories/conferences' style='font-size: 108.0%'>conferences</a> <a href='/blog/categories/digital-media' style='font-size: 108.0%'>digital media</a> <a href='/blog/categories/flash' style='font-size: 104.0%'>flash</a> <a href='/blog/categories/freedom' style='font-size: 116.0%'>freedom</a> <a href='/blog/categories/functional-programming' style='font-size: 120.0%'>functional programming</a> <a href='/blog/categories/git' style='font-size: 104.0%'>git</a> <a href='/blog/categories/groovy' style='font-size: 120.0%'>groovy</a> <a href='/blog/categories/haskell' style='font-size: 108.0%'>haskell</a> <a href='/blog/categories/intellij-idea' style='font-size: 108.0%'>intellij idea</a> <a href='/blog/categories/java' style='font-size: 108.0%'>java</a> <a href='/blog/categories/javafx' style='font-size: 112.0%'>javafx</a> <a href='/blog/categories/kotlin' style='font-size: 104.0%'>kotlin</a> <a href='/blog/categories/linux' style='font-size: 104.0%'>linux</a> <a href='/blog/categories/opinion' style='font-size: 160.0%'>opinion</a> <a href='/blog/categories/playframework' style='font-size: 104.0%'>playframework</a> <a href='/blog/categories/scala' style='font-size: 104.0%'>scala</a> <a href='/blog/categories/social-networking' style='font-size: 104.0%'>social networking</a> <a href='/blog/categories/talks' style='font-size: 104.0%'>talks</a> <a href='/blog/categories/technical-debt' style='font-size: 108.0%'>technical debt</a> <a href='/blog/categories/technology-radar' style='font-size: 104.0%'>technology radar</a> <a href='/blog/categories/testing' style='font-size: 108.0%'>testing</a> </span>
 </section>
 
 <section>

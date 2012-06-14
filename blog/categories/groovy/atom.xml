@@ -4,7 +4,7 @@
   <title><![CDATA[Category: groovy | Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/blog/categories/groovy/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-14T22:44:45+10:00</updated>
+  <updated>2012-06-15T07:05:44+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -19,6 +19,9 @@
     <updated>2011-03-03T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2011/03/03/extending-groovy-classes-at-runtime</id>
     <content type="html"><![CDATA[<p>I gave an introduction to Groovy at our local JUG this week and didn't quite manage to make it through all the material I wanted to cover, so I decided to add the missing content here! The part I missed out in the meetup was how to extend a class at runtime via it's metaClass.</p>
+
+<!--more-->
+
 
 <p>If you add a named closure to the metaClass of an existing class, then it essentially becomes available as a method on that class. In this example, I've added a @containsOnly(Collection anotherCollection)@ method to the @Collection@ class, which returns @true@ if two collections have the same content but not necessarily in the same order.</p>
 
@@ -159,6 +162,9 @@
     <id>http://www.craigaspinall.com/blog/2010/11/05/mixin-it-up</id>
     <content type="html"><![CDATA[<p>A couple of days ago I talked about using Groovy's @metaClass@ to add a method to the @Collection@ class at runtime. Today, I used Groovy's mixin mechanisms to share common functionality between two classes that don't share the same ancestry.</p>
 
+<!--more-->
+
+
 <p>In my original Java code, one of the classes was actually an inner class of the other. When I converted that code to Groovy I found that Groovy's inner class support was a little bit… iffy (at least in the sense that the behaviour is not exactly the same as Java)! So I promoted the inner class to a top level class. That left me with two functions that both classes needed to share.</p>
 
 <p>The obvious options were copy and paste (over my dead body), try and force a common parent (inheritance), or refactor the shared functions into their own classes (composition). I felt the only reasonable option was composition, but I didn't want my new concise code being messed up with lots of indirect method calls! Having used Scala traits before I figured I would look for the Groovy equivalent.</p>
@@ -282,6 +288,9 @@
     <id>http://www.craigaspinall.com/blog/2010/11/04/is-meta-better</id>
     <content type="html"><![CDATA[<p>Yesterday I did my first bit of meta-programming in production code. It wasn't anything particularly fancy, but it does extend the functionality of a class (that I didn't write) at runtime, to provide an additional function.</p>
 
+<!--more-->
+
+
 <p>There is a really handy matcher method in the "FEST-Assert":http://fest.easytesting.org/ library called @containsOnly()@, which ensures that two collections have the same contents but doesn't care about the order. Now I'm using "Spock":http://spockframework.org/, I'm trying to stick to the basic Groovy assertions because Spock uses them implicitly, they are easier to read and write, and the output when an assertion fails is excellent:</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -347,6 +356,9 @@
     <id>http://www.craigaspinall.com/blog/2010/11/02/consoling-oneself</id>
     <content type="html"><![CDATA[<p>The last time I used the "Groovy Console":http://groovy.codehaus.org/Groovy+Console (several years ago) it was painful, but now I have to say that it is one of the most useful tools I've come across.</p>
 
+<!--more-->
+
+
 <p>The thing I like about it is that you have an actual editor, so you can work multi-line statements. It means that you can write small classes and then refine them, which can be difficult in a genuine REPL. And because everything is there right in front of you, when you make the inevitable mistake, you can look back at what you have written and correct it far more easily.</p>
 
 <p>In fact I've found it so useful, that I've started using it whenever I want to do a quick spike to investigate an idea, or refresh my memory about some API. It's also ridiculously easy to embed a console into your application which allows you to access everything that is on your classpath (assuming that Groovy is also on your classpath of course!):</p>
@@ -375,6 +387,9 @@
     <updated>2010-11-01T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2010/11/01/groovy-baby</id>
     <content type="html"><![CDATA[<p>For the last few weeks, I've been using "Groovy":http://groovy.codehaus.org/ (and the "Spock":http://code.google.com/p/spock/ BDD framework) on my current project at work, and after initially being reminded why I don't like dynamic programming languages, I have to admit that I'm slowly being converted.</p>
+
+<!--more-->
+
 
 <p>Those of you who know me (or have listened to the "podcast":http://www.codingbynumbers.com/) will know that I am not a big fan of dynamically typed programming languages. I like knowing the fact my code compiles makes some statement about it's correctness. Obviously it doesn't mean that your code is right, but at least stupid mistakes like typos in names are picked up by the compiler. I've always thought that people accept the compromise of dynamic typing a little too easily.</p>
 

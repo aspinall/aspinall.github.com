@@ -4,7 +4,7 @@
   <title><![CDATA[Category: concordion | Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/blog/categories/concordion/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-14T22:44:45+10:00</updated>
+  <updated>2012-06-15T07:05:44+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>I've just started experimenting with <a href="http://www.playframework.org">Play! framework 2.0</a>. I was attracted by the static typing and functional nature of <a href="http://www.scala-lang.org">Scala</a>, and the shear testability of Play! applications. It looks like you can test each component of the MVC pattern independently and without going through the UI, and I think in most cases without even starting the server.</p>
 
 <p>As someone who is preaching about testability on a daily basis, I have to investigate further. Of course, the proof of the pudding is in the eating, so I'm going to build and deploy a simple application using it, to see whether it lives up to the promise. I'll track the progress of that application and share any learnings here.</p>
+
+<!--more-->
+
 
 <p>The first thing I wanted to do was set up a framework for <a href="http://www.specificationbyexample.com">specifying by example</a> with my current BDD tool of choice which is <a href="http://www.concordion.org">Concordion</a>. Turns out that isn't as straight forward as I thought, since Play! uses <a href="https://github.com/harrah/xsbt/wiki">SBT</a> (Scala Build Tool), which is new to me, and Concordion has a few quirks in the way it has to be set up. So here's the first of my learnings, which explains how to get Concordion working in a Play! project.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: java | Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-14T22:44:45+10:00</updated>
+  <updated>2012-06-15T07:05:44+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -19,6 +19,9 @@
     <updated>2010-11-14T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2010/11/14/oracle-the-best-thing-for-openjdk</id>
     <content type="html"><![CDATA[<p>I can't believe I am writing this, but could Oracle be the best thing to happen to OpenJDK? I know that writing 30 posts in 30 days is driving me a little crazy, but have I really lost that many marbles before the halfway point? Just how can the company that is being "sued by the US government":http://www.businessweek.com/news/2010-07-29/oracle-sued-by-u-s-in-case-claiming-overcharges.html for their alleged dishonesty be doing good things with such an indispensable open source project?</p>
+
+<!--more-->
+
 
 <p>Well, despite my many misgivings about the "delays":http://blogs.oracle.com/javaone/2010/09/plan_b_wins.html to all the interesting content in JDK7, their willingness to take the flak and do what is necessary to steady the ship shows they have the guts to make tough decisions. Sun kept promising but never really delivered. If Oracle start delivering regularly then I'll be less critical of the additional delays to JDK7.</p>
 
@@ -36,6 +39,9 @@
     <updated>2009-10-27T00:00:00+10:00</updated>
     <id>http://www.craigaspinall.com/blog/2009/10/27/the-good-the-bad-and-the-gui</id>
     <content type="html"><![CDATA[<p>As a desktop Java developer, I have access to one of the best desktop user interface libraries around, "Java Swing":http://java.sun.com/javase/6/docs/technotes/guides/swing/. Like it or loathe it, there isn't a cross platform user interface library that even gets close to what Swing can achieve, both in terms of platform fidelity and custom components.</p>
+
+<!--more-->
+
 
 <p>The biggest problem is that it is painful to use. It has a massive API which inevitably contains inconsistencies and leads to some pretty verbose code. In theory a good GUI editor should help ease the burden but I've never been a huge fan of them. Whilst they promise to save you from writing reams of code (by generating it for you instead) I've always found that somewhere along the way the tool screws up, and then you have to dig through all those reams of ugly machine generated code to fix the problem by hand.</p>
 
