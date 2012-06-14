@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: talks | Craig Aspinall]]></title>
+  <link href="http://www.craigaspinall.com/blog/categories/talks/atom.xml" rel="self"/>
+  <link href="http://www.craigaspinall.com/"/>
+  <updated>2012-06-14T22:36:44+10:00</updated>
+  <id>http://www.craigaspinall.com/</id>
+  <author>
+    <name><![CDATA[Craig Aspinall]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[What is functional programming?]]></title>
+    <link href="http://www.craigaspinall.com/blog/2011/06/23/what-is-functional-programming/"/>
+    <updated>2011-06-23T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2011/06/23/what-is-functional-programming</id>
+    <content type="html"><![CDATA[<p>I gave a talk at our "Coding By Numbers meetup":http://www.meetup.com/CodingByNumbers/events/21665201 tonight that attempts to peel away some of the mystery surrounding that question. It was a small audience but they appeared to appreciate it and I hope I was able to show them that many of the benefits of functional programming are easily accessible.</p>
+
+<p>I originally put this presentation together for a functional programming group that I started at work, for those that are interested in learning more about functional programming and ultimately applying it to their day jobs.</p>
+
+<p>The focus of the presentation is really about getting to the crux of what functional programming is, and away from all the FUD(Fear Uncertainty and Doubt) that surrounds it. It also presents a simple example in Java, refactoring a "naive" solution into one that is more readable, testable and maintainable, by applying functional programming principles. The presentation finishes off with an example solution to the same problem in Haskell.</p>
+
+<p>The "handout":talks/what-is-fp/handout.pdf contains the slides with all of my reader notes, which is essentially a transcript of the presentation.</p>
+]]></content>
+  </entry>
+  
+</feed>

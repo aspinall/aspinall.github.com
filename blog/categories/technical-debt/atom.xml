@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: technical debt | Craig Aspinall]]></title>
+  <link href="http://www.craigaspinall.com/blog/categories/technical-debt/atom.xml" rel="self"/>
+  <link href="http://www.craigaspinall.com/"/>
+  <updated>2012-06-14T22:36:44+10:00</updated>
+  <id>http://www.craigaspinall.com/</id>
+  <author>
+    <name><![CDATA[Craig Aspinall]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tackle the technical debt first]]></title>
+    <link href="http://www.craigaspinall.com/blog/2010/11/23/tackle-technical-debt-first/"/>
+    <updated>2010-11-23T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2010/11/23/tackle-technical-debt-first</id>
+    <content type="html"><![CDATA[<p>In my last post I talked about the large refactoring I am doing. One of the reasons that this is a large refactoring is because I have been putting it off. I wanted to deliver something to the customer. I kept telling myself that if I just went with what I had I'd soon have something to give them and then I would have some breathing room to refactor. Of course thats a complete fallacy!</p>
+
+<p>What I actually did was rack up technical debt. I kept adding more code that was dependent on API that I knew needed to be refactored. That meant the new code would also have to be refactored when the API changed. The net result is that I still wasn't able to handover what I wanted when I wanted to, and now I am having to take a couple of days to perform this refactoring, which is delaying the delivery even more!</p>
+
+<p>I've made this mistake before and I should have known better, but the pressure I (it wasn't even the customer) was putting myself under to deliver got the better of me this time. Hopefully I learned from my mistake. I think I'll print the quote by basketball coach John Wooden: "If you don't have time to do it right, when will you have time to do it over?" and pin it on the wall of my cubicle!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tackling big refactoring jobs]]></title>
+    <link href="http://www.craigaspinall.com/blog/2010/11/22/tackling-big-refactoring-jobs/"/>
+    <updated>2010-11-22T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2010/11/22/tackling-big-refactoring-jobs</id>
+    <content type="html"><![CDATA[<p>For the first time last week, I actually used a spreadsheet to keep track of a large refactoring that I needed to complete. We're not talking about a huge project, less than sixty classes in total, but they needed to be broken into three projects, and a number of the classes were going to disappear altogether as their functionality is absorbed into other classes. The two additional projects are going to be simple libraries that can be re-used, and the original project will retain the domain specific tests and configuration and have dependencies on the two new libraries.</p>
+
+<p>The spreadsheet itself isn't anything complicated. It has the following columns:</p>
+
+<ul>
+<li>Class Name</li>
+<li>Existing Package</li>
+<li>Target Project</li>
+<li>Target Package</li>
+<li>Target Class</li>
+<li>Completed</li>
+</ul>
+
+
+<p>By setting filters on each of the columns and using some conditional formatting, I was able to manipulate the view to narrow the scope to the specific set of tasks I was working on or get a broad overview of where I was up to. It enabled me to take small steps and keep the codebase running whilst I was refactoring, which has usually been my downfall!</p>
+
+<p>The day to day refactoring I normally do is small enough to be held in my head and larger ones usually cause me some level of grief before they are completed, which is why I decided to take different approach this time around. What I found is that by taking the time to lay everything out first, I could see what needed to be done and in which order. It goes to prove that "just enough" planning goes a long way!</p>
+]]></content>
+  </entry>
+  
+</feed>

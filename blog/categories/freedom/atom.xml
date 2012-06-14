@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: freedom | Craig Aspinall]]></title>
+  <link href="http://www.craigaspinall.com/blog/categories/freedom/atom.xml" rel="self"/>
+  <link href="http://www.craigaspinall.com/"/>
+  <updated>2012-06-14T22:36:44+10:00</updated>
+  <id>http://www.craigaspinall.com/</id>
+  <author>
+    <name><![CDATA[Craig Aspinall]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Quitting Facebook]]></title>
+    <link href="http://www.craigaspinall.com/blog/2011/04/24/quitting-facebook/"/>
+    <updated>2011-04-24T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2011/04/24/quitting-facebook</id>
+    <content type="html"><![CDATA[<p>After listening to Mark Pesce's controversial keynote presentation at LinuxConf Australia 2011 (and giving myself a couple of months to think about it), I've decided that the time has come to leave Facebook, and to encourage others to do the same. If you want to understand why, I strongly recommend you read "Mark's presentation":http://blog.futurestreetconsulting.com/2011/01/28/smoke-signals/ but here are the reasons in a nutshell.</p>
+
+<p>The most valuable piece of information about you is your social graph and the communication that occurs across that graph. That reveals more about you, your personal interests, even your secrets, than anything else that you do online. And Facebook is watching and recording it all.</p>
+
+<p>This might not be so disturbing if Facebook had not repeatedly let members down with regards to the privacy of their data. Or if people actually understood what information they are divulging to Facebook. Whilst many have pointed to the likes of Microsoft and Google as potential dystopian "big brother" overlords, Facebook is probably much better poised in reality.</p>
+
+<p>So I'm making my own (sadly insignificant) stand by quitting. I encourage you to do the same.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The great thing about standards...]]></title>
+    <link href="http://www.craigaspinall.com/blog/2010/11/22/the-great-thing-about-standards/"/>
+    <updated>2010-11-22T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2010/11/22/the-great-thing-about-standards</id>
+    <content type="html"><![CDATA[<p>… is that there's so many of them to choose from. They're like Java frameworks, everyone has got one! I guess it's down to control. People don't want to invest in something that they don't have control over, so they create another standard, manage to get it ratified by some standards body, and then claim that they are standards compliant. But if we're not all using the same standard, how much value does the standard have?</p>
+
+<p>I've spent a considerable amount of time this weekend creating alternative versions of the "Coding By Numbers":http://www.codingbynumbers.com/ podcast. We have been using the "AAC":http://en.wikipedia.org/wiki/Advanced_Audio_Coding format since it gives you the best bang for your buck in terms of quality versus size, but we've had a bunch of feedback asking for an "MP3":http://en.wikipedia.org/wiki/MP3 version because not all media players support AAC.</p>
+
+<p>A few weeks ago, my co-host "Steve":http://dalts.net/ was fortunate enough to meet with "Richard Stallman":http://stallman.org/ from the "Free Software Foundation":http://www.fsf.org/, who won't listen to any digital audio unless it is recorded in an open format such as "Ogg Vorbis":http://www.vorbis.com/. In fact he thinks we shouldn't be offering anything but open formats and he's probably right, but if people are having problems with AAC support, can you imagine the problems people would have if we only offered Ogg Vorbis?</p>
+
+<p>So there's three standards that we now offer for the podcast, but those aren't the only standards we could choose from. There's also "FLAC":http://flac.sourceforge.net/, "MP2":http://en.wikipedia.org/wiki/MP2, "WAV":http://en.wikipedia.org/wiki/WAV, "WMA":http://en.wikipedia.org/wiki/Windows_Media_Audio and that's before we even start on the voice specific codecs we could use! And there's so little real difference between them that you have to question why they all exist. Perhaps standards would be better controlled by a benevolent dictator than committees?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What's the value of free?]]></title>
+    <link href="http://www.craigaspinall.com/blog/2010/11/16/whats-the-value-of-free/"/>
+    <updated>2010-11-16T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2010/11/16/whats-the-value-of-free</id>
+    <content type="html"><![CDATA[<p>I was looking something up on "Wikipedia":http://www.wikipedia.org/ when I saw this "banner":http://wikimediafoundation.org/w/index.php?title=WMFJA1/AU containing an appeal from Jimmy Wales for donations to the WikiMedia Foundation. It made me question how much we take services like Wikipedia for granted? If you decide that you should donate, how much would you give? How do you but a value on a free service?</p>
+
+<p>I have no problem discerning the value proposition with the '"Freemium":http://en.wikipedia.org/wiki/Freemium' services like "LastPass":http://www.lastpass.com, where the "extra" value I get from my $1/month are listed in bullet points before I hand over my money. However in this case you don't get any "extra" value in exchange for your cash. There is the possibility of less value being delivered if you don't make a donation, but that's not a certainty either.</p>
+
+<p>So how much should you donate? Perhaps it should be the cost of a reasonable "dead tree" encyclopaedia? On the other hand if every user gives a nominal $1 donation, it would raise $400,000,000, which I think would see them through for a while!</p>
+
+<p>Of course, just like free and open source software, there is more than one way to contribute. You could also contribute with your time, by adding, editing or reviewing articles.</p>
+
+<p>I decided that I'd like Wikipedia to stick around, so I'll make a small donation and start contributing where I can. If you use it, what will you do?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Being a good FOSS citizen]]></title>
+    <link href="http://www.craigaspinall.com/blog/2010/11/10/being-a-good-foss-citizen/"/>
+    <updated>2010-11-10T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2010/11/10/being-a-good-foss-citizen</id>
+    <content type="html"><![CDATA[<p>Do you use free and open source software? Do you contribute back? I have to hold my hands up and admit that I have not contributed back as much as I feel I should have and I feel bad about it.</p>
+
+<p>The obvious way to contribute is with code, be that feature enhancements or bug fixes, but there are many ways in which to contribute back. You can work on documentation or subscribe to the mailing list and help out by answering questions and helping people with problems that you might have already solved. Even evangelizing about free and open source software is contributing in some way, and the one in which I have been most active.</p>
+
+<p>However, twice in the last couple of months, I have found and fixed bugs in open source libraries. I depend very heavily on one of those libraries ("WebDriver":http://seleniumhq.org/) for my current project and despite the best of intentions, I still haven't submitted a patch for the fix. My "excuse" is that I haven't had the time to create the patch and a unit test example to demonstrate the problem and solution, but let's face it that is a poor excuse! If I have the time to learn to use someone else's software, and I expect it to be there in the future, then surely I can make the time to send them a fix I've already written?</p>
+
+<p>So my conscience has finally got the better of me! Just as I committed to blogging once a day for 30 days to kill my procrastination about blogging, I am making a commitment to contributing patches for the fixes I have by the end of the week to kill my procrastination about contributing back too!</p>
+]]></content>
+  </entry>
+  
+</feed>

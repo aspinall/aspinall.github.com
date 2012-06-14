@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: technology radar | Craig Aspinall]]></title>
+  <link href="http://www.craigaspinall.com/blog/categories/technology-radar/atom.xml" rel="self"/>
+  <link href="http://www.craigaspinall.com/"/>
+  <updated>2012-06-14T22:36:44+10:00</updated>
+  <id>http://www.craigaspinall.com/</id>
+  <author>
+    <name><![CDATA[Craig Aspinall]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My technology radar]]></title>
+    <link href="http://www.craigaspinall.com/blog/2011/07/28/my-technology-radar/"/>
+    <updated>2011-07-28T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2011/07/28/my-technology-radar</id>
+    <content type="html"><![CDATA[<p>One of the things I learned at "Uberconf":http://uberconf.com was how to build your own "technology radar":http://www.thoughtworks.com/radar, a tool that "ThoughtWorks":http://www.thoughtworks.com use to decide what technologies they should (or would like) to use either internally or on customer engagements. I've built two so far, one for myself and one for my day job, and in both cases I've found it to be a really useful thought exercise.</p>
+
+<p>This is my personal radar:</p>
+
+<p>!/images/technology-radar.png!</p>
+
+<p>It is split into four technology quadrants:</p>
+
+<ul>
+<li>Tools</li>
+<li>Techniques</li>
+<li>Platforms</li>
+<li>Languages</li>
+</ul>
+
+
+<p>And into four levels of interest (with my personal spin on the meanings):</p>
+
+<ul>
+<li>Hold - do not use on anything new</li>
+<li>Assess - is it something I can use</li>
+<li>Trial - look for an excuse to use it on something</li>
+<li>Adopt - one of my <em>go to</em> technologies</li>
+</ul>
+
+
+<p>Also things in red are on an outward trajectory and things in green are on an inward trajectory.</p>
+
+<p>So what I decided is that I'm putting GTD on hold so I can try out personal kanban and see how that works out for me. I'm also leaning much more heavily on Acceptence Test Driven Development and Test Driven Development and will be encouraging others to do the same, as well as learning and promoting functional programming.</p>
+
+<p>In the tools space, I've dropped Subversion and Mercurial in favour of Git, and I've dropped Maven in favour of Gradle, and I'll assess whether I need to use Leinengen to build my Clojure projects or whether I can do that in Gradle too. I'm siding with Jenkins over Hudson and I want to use Sonar much more effectively.</p>
+
+<p>Groovy is now my <em>go to</em> language and Clojure is the language I am most interested in learning. I don't want to write Java code if I can avoid it so I should be looking more closely at Groovy++, Scala and Gosu for the times when I need a statically typed JVM language. I'm still interested in Haskell (primarily to learn functional programming) but I'm also keen to get more into the web space, hence JavaScript and CoffeeScript being on my radar too.</p>
+
+<p>Finally in the platforms space, since I am moving more towards web applications, I am looking at the cloud computing offerings from EC2, AppEngine, NineFold and CloudBees (although I'm also interested in CloudBees for the hosted Jenkins offering). I've also dropped Bitbucket and Google Code in favour of GitHub in line with my change over to Git.</p>
+]]></content>
+  </entry>
+  
+</feed>

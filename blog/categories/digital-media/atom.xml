@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: digital media | Craig Aspinall]]></title>
+  <link href="http://www.craigaspinall.com/blog/categories/digital-media/atom.xml" rel="self"/>
+  <link href="http://www.craigaspinall.com/"/>
+  <updated>2012-06-14T22:36:44+10:00</updated>
+  <id>http://www.craigaspinall.com/</id>
+  <author>
+    <name><![CDATA[Craig Aspinall]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Dead trees are dead to me]]></title>
+    <link href="http://www.craigaspinall.com/blog/2010/11/19/dead-trees-are-dead-to-me/"/>
+    <updated>2010-11-19T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2010/11/19/dead-trees-are-dead-to-me</id>
+    <content type="html"><![CDATA[<p>I haven't bought a dead tree version of a book for years. If it's not available as either an ebook or an audiobook then I don't buy it. The same goes for music, and when the film industry realises that DRM is a fallacy, I'll be able to do the same with video too.</p>
+
+<p>Ideally I want to have my entire collection of books with me wherever I go, but not just books. I want to take my music and video collection too. The iPhone kickstarted a revolution in convergence devices that go a long way towards making this possible. Whilst I can't carry my entire music and video collection on my phone because they are too large, I can carry my favourites and still have enough space for all my ebooks.</p>
+
+<p>Recently I've encountered a couple of situations where my phone doesn't suffice though. I write a lot of notes on paper (or 3x5 index cards) and they are prone to getting lost or recycled accidentally. For this the phone keyboard is too small, and I'm not sure whether I would be more comfortable with a pen or stylus over a keyboard anyway. I also started playing the guitar again and printing guitar tab is a waste of paper and often difficult to read. Again the phone is too small to display this type of content effectively.</p>
+
+<p>I thought about getting an eReader like the Kindle or Nook to address this issue, but I'm not convinced they will provide everything I need. I think they would be fantastic for replacing paper content, but I'm not so sure about the note taking, even though the Kindle has a physical keyboard and the Nook has a virtual keyboard that would fill an iPhone screen.</p>
+
+<p>The elephant in the room is the iPad. It can do everything my phone can do but has a bigger screen. The battery life isn't as good as an eReader and the screen will get full of fingerprints, but it will do everything I want. When it came out, I said I couldn't see a need for one in my life because it didn't solve any problems for me. Then I chuckled to myself as I saw lots of people buy them, play with them for two weeks and then struggle to figure out what they were going to use it for! Now I do have a use for a 10” iPhone I feel like a bit of a dummy. I hate it when Apple are right!</p>
+
+<p>Even so, given my feelings towards Apple right now though, I am loathed to give them more of my hard earned cash. The only semi-viable alternative I have found is the Archos 10 internet tablet. There are plenty of cheap Chinese rip offs of the iPad, but I've used Archos devices before and they were very good quality. Physically and technically it has very similar specifications to the iPad but it runs the Android 2.2 Froyo operating system. Given that Android phones have similar capabilities to an iPhone, I figure an Android tablet must have similar capabilities to an iPad!</p>
+
+<p>Only time (and finances) will tell whether I end up with an eReader, an iPad or another tablet device, but I wouldn't be surprised if one of them turned to be my next gadget purchase, so I can remove more dead trees from my life!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Physical media is dead to me!]]></title>
+    <link href="http://www.craigaspinall.com/blog/2009/11/18/physical-media-is-dead-to-me/"/>
+    <updated>2009-11-18T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2009/11/18/physical-media-is-dead-to-me</id>
+    <content type="html"><![CDATA[<p>With the impending move to Australia coming up I decided to rip all of our music and video to the computer and abandon physical media altogether. We have a few hundred CDs and over a hundred DVDs so it wasn't a trivial nor insurmountable task to rip them all but the switch away from physical media raises a number of questions.</p>
+
+<p>The first decision I had to make was which format and quality to use to rip our existing content. I've had a number of conversations with my dad over the last few years about the quality of the encoding versus the quality of the content. The argument basically boils down to this. If there's a song or piece of music you really love, you'll enjoy listening to it on an AM radio almost as much as you would from a CD. The same goes for your favourite film. You will enjoy watching it on an analogue 14" TV from a VCR almost as much as on a 50" LED backlit 1080p TV from a BluRay disc. The bottom line is that the quality of the content is the most important part of the equation because that's where you derive the majority of the enjoyment. So long as the quality of the encoding is good enough, then very little of the enjoyment will be lost.</p>
+
+<p>Whilst I would have liked to use the open source and patent free "FLAC":http://flac.sourceforge.net/ or "Vorbis":http://www.vorbis.com/ codecs to encode the audio, I also wanted to make it as easy as possible to play the files back on as wide a range of devices as possible. That really meant the only available choice was MP3, since AAC is probably better quality for the same size but is not as widely supported. As for quality, I chose 256kbps because I can't really hear a difference between that and a CD whereas I sometimes can at 128kbps. With the DVDs, I would have liked to use H.264, but it took 4x longer to encode than standard MPEG 4, and there are still a lot of devices that don't support it properly, so I opted for the latter. Ideologically I would have used "Theora":http://theora.org/ (open source and patent free) but it is very poorly supported.</p>
+
+<p>Having liberated all of our content from it's physical medium, the ongoing challenge is to avoid acquiring any more physical media. With audio this is not too difficult, thanks to the likes of "Amazon MP3":http://www.amazon.co.uk/ and "7Digital":http://www.7digital.co.uk/ offering high quality, DRM free MP3 downloads, or if you're really pushed, iTunes DRM free AAC downloads. Video however is another matter.</p>
+
+<p>Just as the music industry has recognized that the only way to beat piracy is to make it easier to buy their content than to steal it, the TV and movie industry start making all the same mistakes! I can't find anywhere to legitimately download DRM free video content. The iTunes store offers the best choice, at least in the UK, but all the content is protected by Apple's Fairplay DRM, which means I can't play it on anything other than iTunes or Apple's portable media products. "Tesco":http://www.tescoentertainment.com/store/browse/filmtvdownloads/ and "CoolRoom":https://www.coolroom.com/ also offer video download but only in WMV format protected by Microsoft's PlaysForSure DRM technology that doesn't work on Mac or iPods!</p>
+
+<p>Case in point is the J. J. Abrams Star Trek movie that has just been released on DVD in the UK this week. I paid to watch this movie at the cinema and I enjoyed it so much I want to pay again to own a copy but I don't want any physical media. My first port of call was the iTunes store who have it for &pound;10.99 including extras but with DRM. Next stop, Google. None of the top 10 Google results for "star trek movie download" were legitimate links. One of the sponsored links was "FindAnyFilm":http://www.findanyfilm.com/ which lead me to CoolRoom where I can also download it for &pound;11.99 without the extras but with DRM that won't work on anything I own!</p>
+
+<p>The simplest way for me to get this movie would be to bittorrent it, and I would have the option of a HD version to boot. When will the movie industry realise that it is currently easier to pirate their product than it is to buy it legitimately, and that is why piracy is rife? Why are they making it so hard for us to give them our money? The best legitimate option I have is to buy it on DVD (&pound;8.00 from "Morrisons":http://www.morrisons.co.uk/), rip it straight to the computer and place the DVD in storage. That's time and effort I would gladly pay an extra &pound;2.99 to avoid if they would just get rid of the stupid DRM!</p>
+]]></content>
+  </entry>
+  
+</feed>

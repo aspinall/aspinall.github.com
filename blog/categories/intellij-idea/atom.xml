@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: intellij idea | Craig Aspinall]]></title>
+  <link href="http://www.craigaspinall.com/blog/categories/intellij-idea/atom.xml" rel="self"/>
+  <link href="http://www.craigaspinall.com/"/>
+  <updated>2012-06-14T22:36:44+10:00</updated>
+  <id>http://www.craigaspinall.com/</id>
+  <author>
+    <name><![CDATA[Craig Aspinall]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A week with IntelliJ IDEA]]></title>
+    <link href="http://www.craigaspinall.com/blog/2009/11/02/a-week-with-idea/"/>
+    <updated>2009-11-02T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2009/11/02/a-week-with-idea</id>
+    <content type="html"><![CDATA[<p>Since the start of last week I have been using the beta release of "IntelliJ IDEA Community Edition":http://jetbrains.org/ and I have to admit I'm really rather impressed. It hasn't been completely plain sailing but I'm prepared to give it the benefit of the doubt given that it is still in beta and it's only fair to expect a few hiccups along the way.</p>
+
+<p>One of the things I like most about IDEA is it's keyboard centric and code centric approach. To call it a glorified text editor is doing it a disservice, but the feeling I get when I'm using it takes me back to my first job using vi on HP-UX terminals to write software for telephony switches. I don't mean that it's primitive, far from it, just that it gets back to basics and puts the emphasis back on writing code.</p>
+
+<p>And yet it provides a tremendous amount of support. The code insight and refactorings are excellent. The inspections help keep you on the straight and narrow as far as good coding practice goes. It's Maven and version control support is top notch too. The biggest problem is remembering all the keyboard shortcuts in the mammoth keymap.</p>
+
+<p>The distraction free, code and keyboard centric approach means that it also works very well on my 13&quot; MacBook screen, and for the first time I can remember, I'm actually enjoying coding with it's limited screen real estate!</p>
+
+<p>In fact the only thing I'm missing from "NetBeans":http://netbeans.org/ is auto closing a line when you enter a semicolon!</p>
+
+<p>Will it sell more copies? I don't know. As I said in my last post, there's usually the best option and there's the option that's good enough. I think IntelliJ is probably the Apple of the Java IDE world, in that the attention to detail in IDEA is much better than Eclipse and NetBeans. But both those IDEs are good enough for the purposes of most developers. If IntelliJ ever make IDEA Ultimate Edition available for free then the others might be in serious trouble though.</p>
+
+<p>If I were writing web apps every day, then I would definitely trial the Ultimate Edition and if the extra plugins are as good as the Community Edition, I would pay for it out of my own pocket, which is about as big an endorsement as I can give it! I'm also going to continue using it as my preferred Java IDE.</p>
+
+<p>Having said all that I still doubt that this move will significantly increase it's market. I hope I'm wrong, but in the current economic climate especially, people are going to be prepared to compromise!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IntelliJ IDEA is open sourced. Why?]]></title>
+    <link href="http://www.craigaspinall.com/blog/2009/10/21/intellij-idea-open-sourced/"/>
+    <updated>2009-10-21T00:00:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2009/10/21/intellij-idea-open-sourced</id>
+    <content type="html"><![CDATA[<p>The cool kid, "IntelliJ IDEA":http://jetbrains.org/, has finally come to play with the young upstarts, "NetBeans":http://netbeans.org/ and "Eclipse":http://eclipse.org/, in the free and open source Java IDE playground. This is great news but the big question is why now? And why has he left his most shiny toys at home? Is he going to be accepted? Will he be sent packing with a bloody nose? Here's my initial thoughts.</p>
+
+<p>Firstly, let me make some disclaimers:</p>
+
+<h1>Sadly, I have never used IDEA before. The last paid IDE I used was JBuilder 7 and since then I have always used Eclipse and NetBeans.</h1>
+
+<h1>I am not against paying for software. I'll spend my own money and my employers money on software that does a job right for me.</h1>
+
+<h1>My day job involves mostly Java SE and Swing on the desktop.</h1>
+
+<h1>My day job also means that I work mostly in Windows and Mac OS X, but also in Linux and occasionally Solaris.</h1>
+
+<h1>At home, I only use a Mac.</h1>
+
+<h1>I'm not sold on massive plugins that do everything for you, at least not to begin with. I like to understand how things work so that I know what the plugin should do and can fix it if it goes wrong!</h1>
+
+<p>Now I know that before this week I had never used IDEA but it is very highly rated by people whose opinion I respect. I have downloaded and installed it and will post again when I have been using it for a little while and have formed my own opinion of how it compares to NetBeans and Eclipse. For now I'm assuming that it offers more than both of these and I have to ask myself why JetBrains have open sourced IDEA now?</p>
+
+<p>My gut reaction is that the commercial Java IDE market is dying. I suspect that IDEA sales are in decline and this is JetBrains last ditch effort to save IDEA as a commercial venture. NetBeans and Eclipse are more than ‘good enough' for the majority of tasks that most Java developers face, so they have no need or desire to pay for an IDE, regardless of how good it may be. Listening to the "Java Posse interview":http://javaposse.com/index.php?post_id=537909 with the IDEA evangelist, Roman Strobl, and lead developer, Dmitry Jemerov, JetBrains strategy is to win developers over with the free Community Edition and expect them to upgrade to the Ultimate Edition.</p>
+
+<p>Will it work? My gut reaction is no, for several reasons.</p>
+
+<h1>Borland failed. IDEA may be better than JBuilder ever was (although to listen to "Joe Nuxoll":http://joeracer.blogspot.com/ on the "Java Posse":http://javaposse.com/ you would think it was the best Java application ever written!) but Borland was the king of developer tools and it was beaten by Microsoft and the open source alternatives.</h1>
+
+<h1>All the Java EE goodies haven't been open sourced, and the majority of Java developers they are trying to appeal to will be writing Java EE applications. If they can't switch over wholesale to the Community Edition, why should they even install it. Especially when the equivalent plugins are also free and open source for NetBeans and Eclipse. They can install the trial of the Ultimate Edition and use it for 30 days, but they can do that already and would have done so if they were so inclined.</h1>
+
+<h1>Personally I find it very irritating when software vendors carve up their products so the free (or inexpensive) version has almost enough functionality to be useful but not quite. I think "Adobe":http://adobe.com/ has hit the sweet spot with "Photoshop Elements":http://www.adobe.com/products/photoshopelwin/. It has all the functionality that 80% of Photoshop customers need, and the remaining 20% have to buy the full version. For me, IDEA will probably do everything I want but I am probably in the minority and if it does, I have no need to upgrade anyway.</h1>
+
+<p>I hope I'm wrong and that JetBrains can continue to make money out of IDEA. Software doesn't get that much respect without reason. If they can't make money on IDEA I hope the make money on their other products because I would hate to see an innovative software vendor like them go out of business. I also hope that they fully open source IDEA if it doesn't work out for them. Competition drives innovation and neither NetBeans or Eclipse wouldn't be as good as they are if it wasn't for IDEA leading the way.</p>
+]]></content>
+  </entry>
+  
+</feed>
