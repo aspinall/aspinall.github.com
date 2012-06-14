@@ -412,8 +412,8 @@
 		if multipleOf3 num then &quot;Fizz&quot; else<br />
 			if multipleOf5 num then &quot;Buzz&quot;<br />
 				else show num</p>
-<p>fizzBuzz upperBound = map fizzBuzzOrNumber [1..upperBound]</p>
-<p>main = forM_ (fizzBuzz 100) putStrLn</code><br />
+<p>fizzBuzz numbers = map fizzBuzzOrNumber numbers</p>
+<p>main = forM_ (fizzBuzz [1..100]) putStrLn</code><br />
   </pre></p>
 </div>
 </div>

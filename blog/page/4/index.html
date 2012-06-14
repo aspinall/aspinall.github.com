@@ -9,7 +9,7 @@
   <meta name="author" content="Craig Aspinall">
 
   
-  <meta name="description" content="My initial reaction to the announcements from this year&#8217;s JavaOne was one of sadness, since it&#8217;s clear that Oracle has sapped the &hellip;">
+  <meta name="description" content="For the last few weeks, I&#8217;ve been using Groovy (and the Spock BDD framework) on my current project at work, and after initially being reminded &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,59 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/01/groovy-baby/">Groovy Baby!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-01T00:00:00+10:00" pubdate data-updated="true">Nov 1<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For the last few weeks, I&#8217;ve been using <a href="http://groovy.codehaus.org/">Groovy</a> (and the <a href="http://code.google.com/p/spock/">Spock</a> <span class="caps">BDD</span> framework) on my current project at work, and after initially being reminded why I don&#8217;t like dynamic programming languages, I have to admit that I&#8217;m slowly being converted.</p>
+<p>Those of you who know me (or have listened to the <a href="http://www.codingbynumbers.com/">podcast</a>) will know that I am not a big fan of dynamically typed programming languages. I like knowing the fact my code compiles makes some statement about it&#8217;s correctness. Obviously it doesn&#8217;t mean that your code is right, but at least stupid mistakes like typos in names are picked up by the compiler. I&#8217;ve always thought that people accept the compromise of dynamic typing a little too easily.</p>
+<p>In the past I&#8217;ve used Groovy to script builds and deployments, but I&#8217;ve never really used it to write production code before. The reason I have turned to Groovy this time is beacuse I am building a framework that is to be used by a team of testers to write their automated tests. I need something that will allow me to take the Java code I have (which includes a simple <span class="caps">DSL</span>), hide all the boilerplate and remove as much punctuation as possible. I evaluated <a href="http://www.scala-lang.org/">Scala</a> and Groovy and much as I like Scala, I settled on Groovy for two reasons:</p>
+<ol>
+	<li>Groovy 1.8 includes a new <a href="http://docs.codehaus.org/display/GroovyJSR/GEP+3+-+Command+Expression+based+DSL">Command Expression Syntax</a> that really lends itself to the <span class="caps">DSL</span> I have created.</li>
+	<li>Groovy is already in use in the organisation.</li>
+</ol>
+<p>And really it came down to the second of those. Using Scala and the <a href="http://code.google.com/p/specs/">Specs</a> <span class="caps">BDD</span> framework I am pretty sure that I could create something very similar, but Groovy seems like the more natural fit for the organisation.</p>
+<p>When I first started transitioning the codebase to Groovy I felt a lot of pain, which I have subsequently put down to my attempts to keep the static typing where I could. Things definitely got a lot easier when I jumped off the fence and planted myself firmly in the garden of dynamic typing!</p>
+<p>Another benefit of coming off the fence is that the code has become a lot more concise and less distracting (than the equivalent Java code). For example,</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">retry</span><span class="o">(</span><span class="kd">final</span> <span class="n">Callable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">action</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>became</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">def</span> <span class="nf">retry</span><span class="o">(</span><span class="n">action</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>This example also shows how I&#8217;ve been able to eliminate the use of interfaces and classes as substitutes for closures (action is treated as a closure), and replace generics with dynamics.</p>
+<p>I&#8217;m not completely sold on the dynamic typing argument yet, but I&#8217;m certainly a lot less sceptical than I was a few weeks ago. Only time will tell whether I become completely comfortable with it!</p></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -437,59 +490,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/10/21/intellij-idea-open-sourced/">IntelliJ IDEA Is Open Sourced. Why?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-21T00:00:00+10:00" pubdate data-updated="true">Oct 21<span>st</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The cool kid, <a href="http://jetbrains.org/">IntelliJ <span class="caps">IDEA</span></a>, has finally come to play with the young upstarts, <a href="http://netbeans.org/">NetBeans</a> and <a href="http://eclipse.org/">Eclipse</a>, in the free and open source Java <span class="caps">IDE</span> playground. This is great news but the big question is why now? And why has he left his most shiny toys at home? Is he going to be accepted? Will he be sent packing with a bloody nose? Here&#8217;s my initial thoughts.</p>
-<p>Firstly, let me make some disclaimers:</p>
-<ol>
-	<li>Sadly, I have never used <span class="caps">IDEA</span> before. The last paid <span class="caps">IDE</span> I used was JBuilder 7 and since then I have always used Eclipse and NetBeans.</li>
-	<li>I am not against paying for software. I&#8217;ll spend my own money and my employers money on software that does a job right for me.</li>
-	<li>My day job involves mostly Java SE and Swing on the desktop.</li>
-	<li>My day job also means that I work mostly in Windows and Mac OS X, but also in Linux and occasionally Solaris.</li>
-	<li>At home, I only use a Mac.</li>
-	<li>I&#8217;m not sold on massive plugins that do everything for you, at least not to begin with. I like to understand how things work so that I know what the plugin should do and can fix it if it goes wrong!</li>
-</ol>
-<p>Now I know that before this week I had never used <span class="caps">IDEA</span> but it is very highly rated by people whose opinion I respect. I have downloaded and installed it and will post again when I have been using it for a little while and have formed my own opinion of how it compares to NetBeans and Eclipse. For now I&#8217;m assuming that it offers more than both of these and I have to ask myself why JetBrains have open sourced <span class="caps">IDEA</span> now?</p>
-<p>My gut reaction is that the commercial Java <span class="caps">IDE</span> market is dying. I suspect that <span class="caps">IDEA</span> sales are in decline and this is JetBrains last ditch effort to save <span class="caps">IDEA</span> as a commercial venture. NetBeans and Eclipse are more than ‘good enough&#8217; for the majority of tasks that most Java developers face, so they have no need or desire to pay for an <span class="caps">IDE</span>, regardless of how good it may be. Listening to the <a href="http://javaposse.com/index.php?post_id=537909">Java Posse interview</a> with the <span class="caps">IDEA</span> evangelist, Roman Strobl, and lead developer, Dmitry Jemerov, JetBrains strategy is to win developers over with the free Community Edition and expect them to upgrade to the Ultimate Edition.</p>
-<p>Will it work? My gut reaction is no, for several reasons.</p>
-<ol>
-	<li>Borland failed. <span class="caps">IDEA</span> may be better than JBuilder ever was (although to listen to <a href="http://joeracer.blogspot.com/">Joe Nuxoll</a> on the <a href="http://javaposse.com/">Java Posse</a> you would think it was the best Java application ever written!) but Borland was the king of developer tools and it was beaten by Microsoft and the open source alternatives.</li>
-	<li>All the Java EE goodies haven&#8217;t been open sourced, and the majority of Java developers they are trying to appeal to will be writing Java EE applications. If they can&#8217;t switch over wholesale to the Community Edition, why should they even install it. Especially when the equivalent plugins are also free and open source for NetBeans and Eclipse. They can install the trial of the Ultimate Edition and use it for 30 days, but they can do that already and would have done so if they were so inclined.</li>
-	<li>Personally I find it very irritating when software vendors carve up their products so the free (or inexpensive) version has almost enough functionality to be useful but not quite. I think <a href="http://adobe.com/">Adobe</a> has hit the sweet spot with <a href="http://www.adobe.com/products/photoshopelwin/">Photoshop Elements</a>. It has all the functionality that 80% of Photoshop customers need, and the remaining 20% have to buy the full version. For me, <span class="caps">IDEA</span> will probably do everything I want but I am probably in the minority and if it does, I have no need to upgrade anyway.</li>
-</ol>
-<p>I hope I&#8217;m wrong and that JetBrains can continue to make money out of <span class="caps">IDEA</span>. Software doesn&#8217;t get that much respect without reason. If they can&#8217;t make money on <span class="caps">IDEA</span> I hope the make money on their other products because I would hate to see an innovative software vendor like them go out of business. I also hope that they fully open source <span class="caps">IDEA</span> if it doesn&#8217;t work out for them. Competition drives innovation and neither NetBeans or Eclipse wouldn&#8217;t be as good as they are if it wasn&#8217;t for <span class="caps">IDEA</span> leading the way.</p></div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -507,6 +507,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/06/14/playing-with-concordion/">Play!ing with Concordion</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2011/07/29/can-kotlin-ko-contenders/">Can Kotlin K.O. contenders?</a>
       </li>
     
@@ -520,10 +524,6 @@
     
       <li class="post">
         <a href="/blog/2011/06/23/what-is-functional-programming/">What is functional programming?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/06/20/i-didnt-get-git/">I didn&#8217;t get Git</a>
       </li>
     
   </ul>

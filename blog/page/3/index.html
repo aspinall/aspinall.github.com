@@ -9,7 +9,7 @@
   <meta name="author" content="Craig Aspinall">
 
   
-  <meta name="description" content="When I started on my current project and got a new developer workstation, I took advantage of an official Ubuntu distribution sanctioned for use &hellip;">
+  <meta name="description" content="I have a dilemma. I love Apple products. I love the hardware. I love the software. I love the presentation. I love that their products are &#8220; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,45 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/14/is-apple-an-abusive-partner/">Is Apple an Abusive Partner?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-14T00:00:00+10:00" pubdate data-updated="true">Nov 14<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have a dilemma. I love Apple products. I love the hardware. I love the software. I love the presentation. I love that their products are &#8220;friendly&#8221;. But I also see an ugly side to Apple. The side that is cold, ruthless and oppressive.The side that decides what is good for it&#8217;s customers and what isn&#8217;t. Do I want to continue is a relationship with a partner that gives me beautiful things but makes all my decisions for me?</p>
+<p>Alarm bells started ringing when Apple started making arbitrary decisions about approvals to the App Store. <a href="http://techcrunch.com/2009/07/27/apple-is-growing-rotten-to-the-core-and-its-likely-atts-fault/">Blocking Google Voice</a> was a big mental hurdle for me. Apple&#8217;s excuse that it replicated functionality that already existed in the incumbent phone application seemed to be stretching the truth.</p>
+<p>The next warning was <a href="http://daringfireball.net/2010/04/iphone_agreement_bans_flash_compiler">section 3.3.1</a> of the <span class="caps">SDK</span> license, which prevented anyone from using anything other than sanctioned programming languages to create applications for iOS devices. This sent them into a bitter war with Adobe. Apple had already refused to allow Flash into iOS, prompting Adobe to invest in cross compiling to native iOS devices. Almost antagonistically, Apple introduced the new restriction just before Adobe launched their new Creative Suite!</p>
+<p>The latest slap in the face was the announcement to <a href="http://developer.apple.com/library/mac/#releasenotes/Java/JavaSnowLeopardUpdate3LeopardUpdate8RN/NewandNoteworthy/NewandNoteworthy.html%23//apple_ref/doc/uid/TP40010380-CH4-SW1">drop support for Java</a> from OS X 10.7. It felt like Apple was systematically removing anything but it&#8217;s own technology from their system. Up until now, I liked being in Apple&#8217;s walled garden because things just work there, but when the walls are closing in, it&#8217;s time to find a way out!</p>
+<p>There are some positive signs however. The restrictions in section 3.3.1 <a href="http://www.apple.com/pr/library/2010/09/09statement.html">have been relaxed</a> and Apple is going to <a href="http://www.apple.com/pr/library/2010/11/12openjdk.html">contribute to the OpenJDK effort</a>, which I think is definitely the &#8220;right thing&#8221; to do. The question is whether these concessions are just to lull us into a false sense of security before the next sucker punch, like the Mac App Store for example?</p></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -541,59 +580,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/01/groovy-baby/">Groovy Baby!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-01T00:00:00+10:00" pubdate data-updated="true">Nov 1<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>For the last few weeks, I&#8217;ve been using <a href="http://groovy.codehaus.org/">Groovy</a> (and the <a href="http://code.google.com/p/spock/">Spock</a> <span class="caps">BDD</span> framework) on my current project at work, and after initially being reminded why I don&#8217;t like dynamic programming languages, I have to admit that I&#8217;m slowly being converted.</p>
-<p>Those of you who know me (or have listened to the <a href="http://www.codingbynumbers.com/">podcast</a>) will know that I am not a big fan of dynamically typed programming languages. I like knowing the fact my code compiles makes some statement about it&#8217;s correctness. Obviously it doesn&#8217;t mean that your code is right, but at least stupid mistakes like typos in names are picked up by the compiler. I&#8217;ve always thought that people accept the compromise of dynamic typing a little too easily.</p>
-<p>In the past I&#8217;ve used Groovy to script builds and deployments, but I&#8217;ve never really used it to write production code before. The reason I have turned to Groovy this time is beacuse I am building a framework that is to be used by a team of testers to write their automated tests. I need something that will allow me to take the Java code I have (which includes a simple <span class="caps">DSL</span>), hide all the boilerplate and remove as much punctuation as possible. I evaluated <a href="http://www.scala-lang.org/">Scala</a> and Groovy and much as I like Scala, I settled on Groovy for two reasons:</p>
-<ol>
-	<li>Groovy 1.8 includes a new <a href="http://docs.codehaus.org/display/GroovyJSR/GEP+3+-+Command+Expression+based+DSL">Command Expression Syntax</a> that really lends itself to the <span class="caps">DSL</span> I have created.</li>
-	<li>Groovy is already in use in the organisation.</li>
-</ol>
-<p>And really it came down to the second of those. Using Scala and the <a href="http://code.google.com/p/specs/">Specs</a> <span class="caps">BDD</span> framework I am pretty sure that I could create something very similar, but Groovy seems like the more natural fit for the organisation.</p>
-<p>When I first started transitioning the codebase to Groovy I felt a lot of pain, which I have subsequently put down to my attempts to keep the static typing where I could. Things definitely got a lot easier when I jumped off the fence and planted myself firmly in the garden of dynamic typing!</p>
-<p>Another benefit of coming off the fence is that the code has become a lot more concise and less distracting (than the equivalent Java code). For example,</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">retry</span><span class="o">(</span><span class="kd">final</span> <span class="n">Callable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">action</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>became</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">def</span> <span class="nf">retry</span><span class="o">(</span><span class="n">action</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>This example also shows how I&#8217;ve been able to eliminate the use of interfaces and classes as substitutes for closures (action is treated as a closure), and replace generics with dynamics.</p>
-<p>I&#8217;m not completely sold on the dynamic typing argument yet, but I&#8217;m certainly a lot less sceptical than I was a few weeks ago. Only time will tell whether I become completely comfortable with it!</p></div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -611,6 +597,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/06/14/playing-with-concordion/">Play!ing with Concordion</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2011/07/29/can-kotlin-ko-contenders/">Can Kotlin K.O. contenders?</a>
       </li>
     
@@ -624,10 +614,6 @@
     
       <li class="post">
         <a href="/blog/2011/06/23/what-is-functional-programming/">What is functional programming?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/06/20/i-didnt-get-git/">I didn&#8217;t get Git</a>
       </li>
     
   </ul>

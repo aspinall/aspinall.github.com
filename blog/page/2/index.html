@@ -9,7 +9,7 @@
   <meta name="author" content="Craig Aspinall">
 
   
-  <meta name="description" content="My functional programming with Haskell journey continues and every time I think I understand something, I discover there&#8217;s another layer of &hellip;">
+  <meta name="description" content="Whilst I was writing the previous post about learning Haskell, I was reminded of a post by Martin Odersky about the complexity or otherwise of Scala &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,61 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/27/is-haskell-actually-simple/">Is Haskell Actually a Simple Language?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-27T00:00:00+10:00" pubdate data-updated="true">Nov 27<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Whilst I was writing the previous post about learning Haskell, I was reminded of <a href="http://lamp.epfl.ch/~odersky/blogs/isscalacomplex.html">a post by Martin Odersky</a> about the complexity or otherwise of Scala. In that post he tries several metaphors to determine what <em>simple</em> really means, finally settling on Duplo versus Technics Lego. You can build anything with either (just as you can with turing complete languages) but a solution built with Duplo is unlikely to be as elegant as a solution built with Technics.</p>
+<p>I like his comparison because it shows how much <em>simplicity</em> is a concept that means different things to different people. I&#8217;m starting to think that Haskell is a really simple language, even though I&#8217;m finding it difficult to learn!</p>
+<p>One of the relative measures of complexity used in the article is the number of keywords in a language. Carlos Quintanilla&#8217;s <a href="http://carlosqt.blogspot.com/2010/07/how-many-keywords-do-you-type-in-your.html">comparison of <span class="caps">CLR</span> and <span class="caps">JVM</span> languages</a> ranges from 139 to 31 keywords. Haskell has just 20!</p>
+<p>And the more I use the language, the more it strikes me as being ruthlessly consistent. Take functions for example:</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="nf">add</span> <span class="ow">::</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
+</span><span class='line'><span class="nf">add</span> <span class="n">x</span> <span class="n">y</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>Nominally you can read this as a function called <code>add</code> that takes two <code>Int</code> parameters and returns an <code>Int</code>. Except it isn&#8217;t. It&#8217;s a function that takes an <code>Int</code> and returns another function that takes an <code>Int</code> and returns an <code>Int</code>! Which means you can do this:</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="nf">plusOne</span> <span class="ow">::</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
+</span><span class='line'><span class="nf">plusOne</span> <span class="ow">=</span> <span class="n">add</span> <span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>I&#8217;ve defined a <code>plusOne</code> function by fixing the first parameter of <code>add</code> to <code>1</code>, which returns a function that will always add 1 to whatever value is passed to it. By applying the same principle again we have a function that takes no arguments and returns an <code>Int</code>.</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="nf">two</span> <span class="ow">=</span> <span class="n">plusOne</span> <span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>This concept is one of the reasons why I&#8217;m struggling with Functors. It seems mind numbingly simple to me and yet so mind bogglingly powerful at the same time!</p>
+<p>And that is the paradox I keep banging my head against!</p></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -433,45 +488,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/14/is-apple-an-abusive-partner/">Is Apple an Abusive Partner?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-14T00:00:00+10:00" pubdate data-updated="true">Nov 14<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I have a dilemma. I love Apple products. I love the hardware. I love the software. I love the presentation. I love that their products are &#8220;friendly&#8221;. But I also see an ugly side to Apple. The side that is cold, ruthless and oppressive.The side that decides what is good for it&#8217;s customers and what isn&#8217;t. Do I want to continue is a relationship with a partner that gives me beautiful things but makes all my decisions for me?</p>
-<p>Alarm bells started ringing when Apple started making arbitrary decisions about approvals to the App Store. <a href="http://techcrunch.com/2009/07/27/apple-is-growing-rotten-to-the-core-and-its-likely-atts-fault/">Blocking Google Voice</a> was a big mental hurdle for me. Apple&#8217;s excuse that it replicated functionality that already existed in the incumbent phone application seemed to be stretching the truth.</p>
-<p>The next warning was <a href="http://daringfireball.net/2010/04/iphone_agreement_bans_flash_compiler">section 3.3.1</a> of the <span class="caps">SDK</span> license, which prevented anyone from using anything other than sanctioned programming languages to create applications for iOS devices. This sent them into a bitter war with Adobe. Apple had already refused to allow Flash into iOS, prompting Adobe to invest in cross compiling to native iOS devices. Almost antagonistically, Apple introduced the new restriction just before Adobe launched their new Creative Suite!</p>
-<p>The latest slap in the face was the announcement to <a href="http://developer.apple.com/library/mac/#releasenotes/Java/JavaSnowLeopardUpdate3LeopardUpdate8RN/NewandNoteworthy/NewandNoteworthy.html%23//apple_ref/doc/uid/TP40010380-CH4-SW1">drop support for Java</a> from OS X 10.7. It felt like Apple was systematically removing anything but it&#8217;s own technology from their system. Up until now, I liked being in Apple&#8217;s walled garden because things just work there, but when the walls are closing in, it&#8217;s time to find a way out!</p>
-<p>There are some positive signs however. The restrictions in section 3.3.1 <a href="http://www.apple.com/pr/library/2010/09/09statement.html">have been relaxed</a> and Apple is going to <a href="http://www.apple.com/pr/library/2010/11/12openjdk.html">contribute to the OpenJDK effort</a>, which I think is definitely the &#8220;right thing&#8221; to do. The question is whether these concessions are just to lull us into a false sense of security before the next sucker punch, like the Mac App Store for example?</p></div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -489,6 +505,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/06/14/playing-with-concordion/">Play!ing with Concordion</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2011/07/29/can-kotlin-ko-contenders/">Can Kotlin K.O. contenders?</a>
       </li>
     
@@ -502,10 +522,6 @@
     
       <li class="post">
         <a href="/blog/2011/06/23/what-is-functional-programming/">What is functional programming?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/06/20/i-didnt-get-git/">I didn&#8217;t get Git</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="Craig Aspinall">
 
   
-  <meta name="description" content="If you follow my Twitter feed then you may have seen my initial reaction to Jetbrains announcement that they were working on another JVM language was &hellip;">
+  <meta name="description" content="I&#8217;ve just started experimenting with Play! framework 2.0. I was attracted by the static typing and functional nature of Scala, and the shear &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,222 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/14/playing-with-concordion/">Play!ing With Concordion</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-14T07:42:00+10:00" pubdate data-updated="true">Jun 14<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;ve just started experimenting with <a href="http://www.playframework.org">Play! framework 2.0</a>. I was attracted by the static typing and functional nature of <a href="http://www.scala-lang.org">Scala</a>, and the shear testability of Play! applications. It looks like you can test each component of the MVC pattern independently and without going through the UI, and I think in most cases without even starting the server.</p>
+
+<p>As someone who is preaching about testability on a daily basis, I have to investigate further. Of course, the proof of the pudding is in the eating, so I&#8217;m going to build and deploy a simple application using it, to see whether it lives up to the promise. I&#8217;ll track the progress of that application and share any learnings here.</p>
+
+<p>The first thing I wanted to do was set up a framework for <a href="http://www.specificationbyexample.com">specifying by example</a> with my current BDD tool of choice which is <a href="http://www.concordion.org">Concordion</a>. Turns out that isn&#8217;t as straight forward as I thought, since Play! uses <a href="https://github.com/harrah/xsbt/wiki">SBT</a> (Scala Build Tool), which is new to me, and Concordion has a few quirks in the way it has to be set up. So here&#8217;s the first of my learnings, which explains how to get Concordion working in a Play! project.</p>
+
+<p>First of all you need to add a dependency on Concordion:</p>
+
+<figure class='code'><figcaption><span>Build.scala</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">object</span> <span class="nc">ApplicationBuild</span> <span class="k">extends</span> <span class="nc">Build</span> <span class="o">{</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'>  <span class="k">val</span> <span class="n">appDependencies</span> <span class="k">=</span> <span class="nc">Seq</span><span class="o">(</span>
+</span><span class='line'>    <span class="s">&quot;org.concordion&quot;</span> <span class="o">%</span> <span class="s">&quot;concordion&quot;</span> <span class="o">%</span> <span class="s">&quot;1.4.2&quot;</span> <span class="o">%</span> <span class="s">&quot;test&quot;</span>
+</span><span class='line'>  <span class="o">)</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Next, you need to instruct SBT to copy the Concordion HTML files to the target folder:</p>
+
+<figure class='code'><figcaption><span>Build.scala</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">object</span> <span class="nc">ApplicationBuild</span> <span class="k">extends</span> <span class="nc">Build</span> <span class="o">{</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'>   <span class="k">val</span> <span class="n">main</span> <span class="k">=</span> <span class="nc">PlayProject</span><span class="o">(</span><span class="n">appName</span><span class="o">,</span> <span class="n">appVersion</span><span class="o">,</span> <span class="n">appDependencies</span><span class="o">,</span> <span class="n">mainLang</span> <span class="k">=</span> <span class="nc">SCALA</span><span class="o">).</span><span class="n">settings</span><span class="o">(</span>
+</span><span class='line'>     <span class="n">unmanagedClasspath</span> <span class="n">in</span> <span class="nc">Test</span> <span class="o">&lt;+=</span> <span class="o">(</span><span class="n">baseDirectory</span><span class="o">)</span> <span class="n">map</span> <span class="o">{</span> <span class="n">bd</span> <span class="k">=&gt;</span> <span class="nc">Attributed</span><span class="o">.</span><span class="n">blank</span><span class="o">(</span><span class="n">bd</span> <span class="o">/</span> <span class="s">&quot;test&quot;</span><span class="o">)</span> <span class="o">}</span>
+</span><span class='line'>   <span class="o">)</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And last but not least, you probably want to tell Concordion to store it&#8217;s reports somewhere sensible (otherwise it puts them in the <code>java.io.tmpdir</code> folder):</p>
+
+<figure class='code'><figcaption><span>Build.scala</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">object</span> <span class="nc">ApplicationBuild</span> <span class="k">extends</span> <span class="nc">Build</span> <span class="o">{</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'>  <span class="nc">System</span><span class="o">.</span><span class="n">setProperty</span><span class="o">(</span><span class="s">&quot;concordion.output.dir&quot;</span><span class="o">,</span> <span class="s">&quot;target/test-reports/concordion&quot;</span><span class="o">)</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>With that in place, you can create a Concordion HTML specification and store it in the <code>test</code> folder of your project:</p>
+
+<figure class='code'><figcaption><span>ConcordionExample.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+</span><span class='line'><span class="nt">&lt;html</span> <span class="na">xmlns:concordion=</span><span class="s">&quot;http://www.concordion.org/2007/concordion&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>Concordion Example<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;h1&gt;</span>Concordion Example<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;p&gt;</span>The answer always equals <span class="nt">&lt;span</span> <span class="na">concordion:assertEquals=</span><span class="s">&quot;value()&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/span&gt;&lt;/p&gt;</span>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Finally, create a Scala or Java fixture class (note that you need to have a dummy method annotated with the <a href="http://www.junit.org">JUnit</a> <code>@Test</code> annotation for the test to be picked up, I haven&#8217;t found a better way around this yet):</p>
+
+<figure class='code'><figcaption><span>ConcordionExampleTest.scala</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">import</span> <span class="nn">org.concordion.integration.junit4.ConcordionRunner</span>
+</span><span class='line'><span class="k">import</span> <span class="nn">org.junit.runner.RunWith</span>
+</span><span class='line'><span class="k">import</span> <span class="nn">org.junit.Test</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@RunWith</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">ConcordionRunner</span><span class="o">])</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">ConcordionExampleTest</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">value</span> <span class="k">=</span> <span class="mi">1</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nd">@Test</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">runThisTest</span><span class="o">()</span> <span class="o">{}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>ConcordionExampleTest.java</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">import</span> <span class="nn">org.concordion.integration.junit4.ConcordionRunner</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.junit.runner.RunWith</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@RunWith</span><span class="o">(</span><span class="n">ConcordionRunner</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcordionExampleTest</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">value</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>            <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Test</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">runThisTest</span><span class="o">()</span> <span class="o">{}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then you can run <code>play test</code> and voila, one Concordion specification is executed!</p>
+
+<figure class='code'><figcaption><span>$ play test</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ play test
+</span><span class='line'>[info] Loading project definition from /Users/craigaspinall/Work/scala-concordion-poc/project
+</span><span class='line'>[info] Set current project to scala-concordion-poc (in build file:/Users/craigaspinall/Work/scala-concordion-poc/)
+</span><span class='line'>[info] Compiling 1 Scala source to /Users/craigaspinall/Work/scala-concordion-poc/target/scala-2.9.1/test-classes...
+</span><span class='line'>[info] ConcordionExampleTest
+</span><span class='line'>/Users/craigaspinall/Work/scala-concordion-poc/target/test-reports/concordion/ConcordionExample.html
+</span><span class='line'>Successes: 1, Failures: 0
+</span><span class='line'>
+</span><span class='line'>[info] + ConcordionExampleTest.runThisTest
+</span><span class='line'>[info] + ConcordionExampleTest.[Concordion Specification for 'ConcordionExample']
+</span><span class='line'>[info]
+</span><span class='line'>[info]
+</span><span class='line'>[info] Total for test ConcordionExampleTest
+</span><span class='line'>[info] Finished in 0.526 seconds
+</span><span class='line'>[info] 2 tests, 0 failures, 0 errors
+</span><span class='line'>[info] Passed: : Total 2, Failed 0, Errors 0, Passed 2, Skipped 0
+</span><span class='line'>[success] Total time: 2 s, completed 14/06/2012 8:25:08 AM</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If anyone reading this knows how to avoid the dummy test, then please leave a comment.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -576,61 +792,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/27/is-haskell-actually-simple/">Is Haskell Actually a Simple Language?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-27T00:00:00+10:00" pubdate data-updated="true">Nov 27<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Whilst I was writing the previous post about learning Haskell, I was reminded of <a href="http://lamp.epfl.ch/~odersky/blogs/isscalacomplex.html">a post by Martin Odersky</a> about the complexity or otherwise of Scala. In that post he tries several metaphors to determine what <em>simple</em> really means, finally settling on Duplo versus Technics Lego. You can build anything with either (just as you can with turing complete languages) but a solution built with Duplo is unlikely to be as elegant as a solution built with Technics.</p>
-<p>I like his comparison because it shows how much <em>simplicity</em> is a concept that means different things to different people. I&#8217;m starting to think that Haskell is a really simple language, even though I&#8217;m finding it difficult to learn!</p>
-<p>One of the relative measures of complexity used in the article is the number of keywords in a language. Carlos Quintanilla&#8217;s <a href="http://carlosqt.blogspot.com/2010/07/how-many-keywords-do-you-type-in-your.html">comparison of <span class="caps">CLR</span> and <span class="caps">JVM</span> languages</a> ranges from 139 to 31 keywords. Haskell has just 20!</p>
-<p>And the more I use the language, the more it strikes me as being ruthlessly consistent. Take functions for example:</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="nf">add</span> <span class="ow">::</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
-</span><span class='line'><span class="nf">add</span> <span class="n">x</span> <span class="n">y</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>Nominally you can read this as a function called <code>add</code> that takes two <code>Int</code> parameters and returns an <code>Int</code>. Except it isn&#8217;t. It&#8217;s a function that takes an <code>Int</code> and returns another function that takes an <code>Int</code> and returns an <code>Int</code>! Which means you can do this:</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="nf">plusOne</span> <span class="ow">::</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
-</span><span class='line'><span class="nf">plusOne</span> <span class="ow">=</span> <span class="n">add</span> <span class="mi">1</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>I&#8217;ve defined a <code>plusOne</code> function by fixing the first parameter of <code>add</code> to <code>1</code>, which returns a function that will always add 1 to whatever value is passed to it. By applying the same principle again we have a function that takes no arguments and returns an <code>Int</code>.</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='haskell'><span class='line'><span class="nf">two</span> <span class="ow">=</span> <span class="n">plusOne</span> <span class="mi">1</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>This concept is one of the reasons why I&#8217;m struggling with Functors. It seems mind numbingly simple to me and yet so mind bogglingly powerful at the same time!</p>
-<p>And that is the paradox I keep banging my head against!</p></div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -646,6 +807,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/06/14/playing-with-concordion/">Play!ing with Concordion</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2011/07/29/can-kotlin-ko-contenders/">Can Kotlin K.O. contenders?</a>
       </li>
     
@@ -659,10 +824,6 @@
     
       <li class="post">
         <a href="/blog/2011/06/23/what-is-functional-programming/">What is functional programming?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/06/20/i-didnt-get-git/">I didn&#8217;t get Git</a>
       </li>
     
   </ul>
