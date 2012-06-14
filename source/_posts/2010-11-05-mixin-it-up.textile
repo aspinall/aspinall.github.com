@@ -4,7 +4,7 @@ title: Mixin it up
 categories: [groovy]
 ---
 A couple of days ago I talked about using Groovy's @metaClass@ to add a method to the @Collection@ class at runtime. Today, I used Groovy's mixin mechanisms to share common functionality between two classes that don't share the same ancestry.
-
+<!--more-->
 In my original Java code, one of the classes was actually an inner class of the other. When I converted that code to Groovy I found that Groovy's inner class support was a little bit… iffy (at least in the sense that the behaviour is not exactly the same as Java)! So I promoted the inner class to a top level class. That left me with two functions that both classes needed to share.
 
 The obvious options were copy and paste (over my dead body), try and force a common parent (inheritance), or refactor the shared functions into their own classes (composition). I felt the only reasonable option was composition, but I didn't want my new concise code being messed up with lots of indirect method calls! Having used Scala traits before I figured I would look for the Groovy equivalent.

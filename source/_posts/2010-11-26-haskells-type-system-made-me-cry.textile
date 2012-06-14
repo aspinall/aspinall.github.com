@@ -6,7 +6,7 @@ categories: [functional programming, haskell]
 My functional programming with Haskell journey continues and every time I think I understand something, I discover there's another layer of complexity underneath the one I just peeled off! There are so many metaphors that spring to mind that I'm just going to avoid them all!
 
 What I've found so far is that I typically go through three or four stages of learning functional concepts. In the first stage I don't understand it at all. In the second stage I start learning matched pairs of input and results, so I can start to use the concept but I don't understand how the input is transformed to the output. In the third stage I start to get that understanding of how it works as well as what it does. And in the fourth stage I realise how much more there is that I don't understand yet!
-
+<!--more-->
 This week I really started to understand type classes and monads, only to discover that monads are just the tip of the iceberg. My brain then started to melt as I went back to stage one and two with functors and applicative functors!
 
 It's also beginning to dawn on me just how amazing the Haskell type system is. One of my friends once said that Haskell's type system made him cry. Not tears of pain but tears of joy at how elegant it is!

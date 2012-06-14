@@ -4,7 +4,7 @@ title: What's the value of free?
 categories: [freedom, opinion]
 ---
 I was looking something up on "Wikipedia":http://www.wikipedia.org/ when I saw this "banner":http://wikimediafoundation.org/w/index.php?title=WMFJA1/AU containing an appeal from Jimmy Wales for donations to the WikiMedia Foundation. It made me question how much we take services like Wikipedia for granted? If you decide that you should donate, how much would you give? How do you but a value on a free service?
-
+<!--more-->
 I have no problem discerning the value proposition with the '"Freemium":http://en.wikipedia.org/wiki/Freemium' services like "LastPass":http://www.lastpass.com, where the "extra" value I get from my $1/month are listed in bullet points before I hand over my money. However in this case you don't get any "extra" value in exchange for your cash. There is the possibility of less value being delivered if you don't make a donation, but that's not a certainty either.
 
 So how much should you donate? Perhaps it should be the cost of a reasonable "dead tree" encyclopaedia? On the other hand if every user gives a nominal $1 donation, it would raise $400,000,000, which I think would see them through for a while!

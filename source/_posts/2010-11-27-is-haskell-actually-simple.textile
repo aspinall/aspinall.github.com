@@ -4,7 +4,7 @@ title: Is Haskell actually a simple language?
 categories: [haskell, functional programming]
 ---
 Whilst I was writing the previous post about learning Haskell, I was reminded of "a post by Martin Odersky":http://lamp.epfl.ch/~odersky/blogs/isscalacomplex.html about the complexity or otherwise of Scala. In that post he tries several metaphors to determine what _simple_ really means, finally settling on Duplo versus Technics Lego. You can build anything with either (just as you can with turing complete languages) but a solution built with Duplo is unlikely to be as elegant as a solution built with Technics.
-
+<!--more-->
 I like his comparison because it shows how much _simplicity_ is a concept that means different things to different people. I'm starting to think that Haskell is a really simple language, even though I'm finding it difficult to learn!
 
 One of the relative measures of complexity used in the article is the number of keywords in a language. Carlos Quintanilla's "comparison of CLR and JVM languages":http://carlosqt.blogspot.com/2010/07/how-many-keywords-do-you-type-in-your.html ranges from 139 to 31 keywords. Haskell has just 20!

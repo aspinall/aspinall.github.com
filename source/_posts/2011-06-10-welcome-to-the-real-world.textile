@@ -4,7 +4,7 @@ title: "Welcome to the real world!"
 categories: [blogging]
 ---
 To hijack and abuse yet another quote from "The Matrix":http://www.imdb.com/title/tt0133093/, "welcome to the real world!" (or at least my new home in the virtual one)! After being inspired by "@TheColonial":http://twitter.com/TheColonial and his adventures with "Blogofile":http://www.blogofile.com/, I decided that I needed to move my blog to a system that was backed by a version control system.
-
+<!--more-->
 I had a number of reasons for doing this:
 
 # I wanted to be in complete control of all of my data.

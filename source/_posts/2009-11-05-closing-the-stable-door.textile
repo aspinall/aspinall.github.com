@@ -4,7 +4,7 @@ title: JavaFX - a case of closing the stable door?
 categories: [javafx, opinion]
 ---
 Since the news that Oracle was buying Sun, I've not been convinced about the future of JavaFX. In the last couple of months I've come to the conclusion that it doesn't matter what Sun or Oracle does with JavaFX, it's future as an RIA technology looks pretty bleak anyway. And it's not alone. Adobe Flash and Microsoft Silverlight are in the path of the same train that is starting to build up a head of steam, namely the combination of HTML 5, CSS 3 and JavaScript. Let's take a look at the evidence and see why I have jumped to this conclusion!
-
+<!--more-->
 Two of the biggest proponents of the HTML 5 and associated standards are Google and Apple. Let's start by looking at their recent behaviour.
 
 About a year ago, Google launched their Chrome browser with the express intent of creating a platform to deliver HTML 5 applications. A few months ago, they announced Chrome OS, a lightweight operating system whose whole user interface appears to be web based. The next release of their Android operating system for mobile devices is also going to feature a HTML 5 browser. Apple have also been making sure that HTML 5 support is in all their products. Version 4 of their desktop Safari browser supports HTML 5 as does Safari on the iPhone. So they are both doing their utmost to ensure that people can use HTML 5.

@@ -4,7 +4,7 @@ title: Play in your own sandbox
 categories: [build automation]
 ---
 Following on from my previous post, one of the other things I always strive to do from the outset of a project, is ensure that everyone has their own sandbox to play in. Every developer (and the CI machine) should be able to run the project independently of each other, without any reliance on common resources such as application servers or database instances.
-
+<!--more-->
 In previous projects that has always been fairly easy because the projects were either Java desktop or web applications using free and open source software. Right now I am spending a small amount of my time helping out a ColdFusion project. I thought it was going to be painful and expensive to create a sandbox for them but actually, thanks to some friendly developer licensing, I don't think it's going to be such an issue.
 
 What I want is for each developer to be able to launch their own their own test environment, which means running ColdFusion in a JRun instance with a SQL Server database that always starts in a known state. Adobe kindly provide free developer licenses for ColdFusion and JRun as do Microsoft for SQL Server, so licensing isn't an issue. 

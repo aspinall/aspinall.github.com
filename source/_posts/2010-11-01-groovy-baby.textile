@@ -4,7 +4,7 @@ title: Groovy baby!
 categories: [groovy]
 ---
 For the last few weeks, I've been using "Groovy":http://groovy.codehaus.org/ (and the "Spock":http://code.google.com/p/spock/ BDD framework) on my current project at work, and after initially being reminded why I don't like dynamic programming languages, I have to admit that I'm slowly being converted.
-
+<!--more-->
 Those of you who know me (or have listened to the "podcast":http://www.codingbynumbers.com/) will know that I am not a big fan of dynamically typed programming languages. I like knowing the fact my code compiles makes some statement about it's correctness. Obviously it doesn't mean that your code is right, but at least stupid mistakes like typos in names are picked up by the compiler. I've always thought that people accept the compromise of dynamic typing a little too easily.
 
 

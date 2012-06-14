@@ -4,7 +4,7 @@ title: Take the red pill...
 categories: [functional programming]
 ---
 Right now I feel a bit like Neo being confronted by Morpheus and offered the choice of the blue pill or the red pill. Take the blue pill and I can go back to my comfortable world of Java and object orientation. Take the red pill - I learn Haskell and see how deep functional programming goes!
-
+<!--more-->
 In a previous post I mentioned that I am in the process of learning functional programming in Haskell. The exercise this week was to write a monadic parser and what struck me about it was how much I was wrestling to keep a single function in my head. With Java I can hold several classes and the interactions between them in my head, and even do a half decent job with multi-threaded code (I'm sure "Tony":http://blog.tmorris.net/ would disagree and he's probably right, but for now I am no more disillusioned than most Java programmers).
 
 I think the part of the reason I struggled is because Haskell code is a lot more dense than Java code i.e. less code does more. The type system in particular, is so rich that trying to keep track of what types were in play at each point in the function was a challenge in itself. Whilst I was working on the exercises, I got to a point where I knew the understanding I needed was just beyond my grasp, and the penny dropped just as I answered the last question!

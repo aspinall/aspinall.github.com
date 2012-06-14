@@ -3,10 +3,10 @@ layout: post
 title: Meetings are toxic
 categories: [opinion]
 ---
-That is the title of a chapter in Jason Fried and David Heinemeier Hansson's ("37signals":http://37signals.com/) book, "Rework":http://37signals.com/rework/, and I have to admit that I agree with them. I'll also admit that I'm a little jaded by the number of unproductive meetings that I've attended in my career, so my view may be tainted!
+_Meetings are toxic_ is the title of a chapter in Jason Fried and David Heinemeier Hansson's ("37signals":http://37signals.com/) book, "Rework":http://37signals.com/rework/, and I have to admit that I agree with them. I'll also admit that I'm a little jaded by the number of unproductive meetings that I've attended in my career, so my view may be tainted!
 
 One of the key points in the book is that meetings are terribly expensive. A one hour meeting between 10 people is a 10 hour meeting. That's before you factor in the cost of stopping what your doing, or any preparation work. It's at least a day and a half of productivity gone! Sadly most people don't think about that when they book meetings.
-
+<!--more-->
 There are three problems with most meetings that I attend:
 
 # *The wrong people:* There are usually too many people and often key individuals (decision makers and/or subject matter experts) are missing. What's the point of holding a meeting if you can't get the information you need and reach a decision?

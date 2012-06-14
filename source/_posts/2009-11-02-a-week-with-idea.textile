@@ -4,7 +4,7 @@ title: A week with IntelliJ IDEA
 categories: [intellij idea]
 ---
 Since the start of last week I have been using the beta release of "IntelliJ IDEA Community Edition":http://jetbrains.org/ and I have to admit I'm really rather impressed. It hasn't been completely plain sailing but I'm prepared to give it the benefit of the doubt given that it is still in beta and it's only fair to expect a few hiccups along the way.
-
+<!--more-->
 One of the things I like most about IDEA is it's keyboard centric and code centric approach. To call it a glorified text editor is doing it a disservice, but the feeling I get when I'm using it takes me back to my first job using vi on HP-UX terminals to write software for telephony switches. I don't mean that it's primitive, far from it, just that it gets back to basics and puts the emphasis back on writing code.
 
 And yet it provides a tremendous amount of support. The code insight and refactorings are excellent. The inspections help keep you on the straight and narrow as far as good coding practice goes. It's Maven and version control support is top notch too. The biggest problem is remembering all the keyboard shortcuts in the mammoth keymap.

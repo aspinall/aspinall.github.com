@@ -4,7 +4,7 @@ title: Is Apple an abusive partner?
 categories: [apple, opinion]
 ---
 I have a dilemma. I love Apple products. I love the hardware. I love the software. I love the presentation. I love that their products are "friendly". But I also see an ugly side to Apple. The side that is cold, ruthless and oppressive.The side that decides what is good for it's customers and what isn't. Do I want to continue is a relationship with a partner that gives me beautiful things but makes all my decisions for me?
-
+<!--more-->
 Alarm bells started ringing when Apple started making arbitrary decisions about approvals to the App Store. "Blocking Google Voice":http://techcrunch.com/2009/07/27/apple-is-growing-rotten-to-the-core-and-its-likely-atts-fault/ was a big mental hurdle for me. Apple's excuse that it replicated functionality that already existed in the incumbent phone application seemed to be stretching the truth.
 
 The next warning was "section 3.3.1":http://daringfireball.net/2010/04/iphone_agreement_bans_flash_compiler of the SDK license, which prevented anyone from using anything other than sanctioned programming languages to create applications for iOS devices. This sent them into a bitter war with Adobe. Apple had already refused to allow Flash into iOS, prompting Adobe to invest in cross compiling to native iOS devices. Almost antagonistically, Apple introduced the new restriction just before Adobe launched their new Creative Suite!

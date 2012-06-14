@@ -4,7 +4,7 @@ title: Captain Sensible at the helm?
 categories: [opinion]
 ---
 My initial reaction to the announcements from this year's JavaOne was one of sadness, since it's clear that Oracle has sapped the pioneering spirit that made Sun special. Having had a few days to reflect on it though, I don't think it is as bad as my gut reaction would have me believe.
-
+<!--more-->
 Oracle obviously has a clear focus of it's intent with Java. It has been through all of Sun's projects like Captain Sensible, culling anything that does not align with their goals. I'm guessing that Java the platform is much more important to them than Java the language, since they've dropped JavaFX Script and the interesting language features from Java 7. It appears that they are happy for the likes of Groovy and Scala to continue innovating in that space.
 
 I'm not surprised that some key individuals left when Oracle took over if my interpretation is correct. It must have felt like the fun police arriving! On the whole though, I think Oracle's ruthless business mindset will put Java on a steady course, which means it will be around for a very long time... I'm just not sure I'm all that interested anymore!

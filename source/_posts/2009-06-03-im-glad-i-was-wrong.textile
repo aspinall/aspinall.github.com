@@ -4,7 +4,7 @@ title: I'm glad I was wrong!
 categories: [javafx]
 ---
 OK, I admit, I was wrong! Oracle are going to put their weight behind JavaFX and take the fight to Adobe and I'm glad they are because I think it is a superior technology.
-
+<!--more-->
 I'm also really pleased with what they have included in V1.2, primarily:
 
 * Proper UI components such as buttons and sliders and text boxes

@@ -4,7 +4,7 @@ title: Is meta better?
 categories: [groovy]
 ---
 Yesterday I did my first bit of meta-programming in production code. It wasn't anything particularly fancy, but it does extend the functionality of a class (that I didn't write) at runtime, to provide an additional function.
-
+<!--more-->
 There is a really handy matcher method in the "FEST-Assert":http://fest.easytesting.org/ library called @containsOnly()@, which ensures that two collections have the same contents but doesn't care about the order. Now I'm using "Spock":http://spockframework.org/, I'm trying to stick to the basic Groovy assertions because Spock uses them implicitly, they are easier to read and write, and the output when an assertion fails is excellent:
 
 {% codeblock lang:java %}

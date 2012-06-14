@@ -8,7 +8,7 @@ These days, the first thing I do whenever I start a new project is figure out ho
 I'm not talking about clicking the "build" button in the IDE either. I'm talking about a build that can be run independently on any machine, preferably with a single checkout from the version control system then a single command. If you can do that, then setting up new development machines and/or continuous integration builds is a cinch!
 
 Sounds great, but how do you do it? I've only really got experience of doing it with Java projects, although they included a lot of JNI code and I was able to include that too. 
-
+<!--more-->
 First up, you need to decide on a build tool. It could be as simple as a batch file but my current tool of choice is "Maven":http://maven.apache.org/. I've also used "Ant":http://ant.apache.org/ in the past and I'm looking at "Gradle":http://gradle.org/ for future builds. The reason I switched to Maven was for it's dependency handling and reporting, and now it's well integrated into the popular Java IDEs, meaning your developers can choose their favourite.
 
 Once you've got a build tool, you need to ask yourself what you files do you need to build your project? Obviously the source code and build script will be needed but what about resource files, test environments or any other tools that assist with the build. In the past I've taken this to the extreme of checking in a copy of the build tool itself and even the JDK. This meant that the only thing you needed to set up a new developer machine was a copy of Subversion, everything else came from the version control system!

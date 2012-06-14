@@ -4,7 +4,7 @@ title: The good, the bad, and the GUI
 categories: [java]
 ---
 As a desktop Java developer, I have access to one of the best desktop user interface libraries around, "Java Swing":http://java.sun.com/javase/6/docs/technotes/guides/swing/. Like it or loathe it, there isn't a cross platform user interface library that even gets close to what Swing can achieve, both in terms of platform fidelity and custom components.
-
+<!--more-->
 The biggest problem is that it is painful to use. It has a massive API which inevitably contains inconsistencies and leads to some pretty verbose code. In theory a good GUI editor should help ease the burden but I've never been a huge fan of them. Whilst they promise to save you from writing reams of code (by generating it for you instead) I've always found that somewhere along the way the tool screws up, and then you have to dig through all those reams of ugly machine generated code to fix the problem by hand.
 
 That was until project "Matisse":http://wiki.netbeans.org/NBDemoGUIBuilder, the latest NetBeans GUI editor, came along. Now here is a tool that actually works. So far I have not had to duck under the covers to fix a problem it has made. It allows me to design the user interface quickly and easily, and then expose the components that I need to access from my controller code. So far, so good.

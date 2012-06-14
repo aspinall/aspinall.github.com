@@ -10,7 +10,7 @@ Over the last week I've had a lot of discussions about the underlying motive of 
 # to improve quality
 
 For us it's a simple case of improving quality but that doesn't necessarily mean that our leaders have the same motives. In fairness they do overlap, but focusing too much on any one of them can be to the detriment of the others.
-
+<!--more-->
 For example, if you want to reduce costs and automated testing makes the testers four times more productive, then in theory you can remove three quarters of your testers without any loss of quality or productivity. Of course the theory and reality are quite different! Similarly, if you go all out for quality, you may need more people or tools or equipment which will result in increased costs, and progress may be slower.
 
 The catalyst for the discussions was that we just found out that the number of testers is being reduced on one of the projects we're working on and we were horrified. We were very concerned that the work we have been doing was being used to justify cost reductions but fortunately that isn't the case (at least not this time).

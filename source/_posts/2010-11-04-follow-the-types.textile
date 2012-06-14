@@ -4,7 +4,7 @@ title: Follow the types (not the white rabbit)!
 categories: [functional programming]
 ---
 For a while I have been trying to learn "Haskell":http://www.haskell.org/ as a way of getting my head completely around functional programming. I started with ""Seven Languages in Seven Weeks":http://www.pragprog.com/titles/btlang/seven-languages-in-seven-weeks", moved on to ""Real World Haskell":http://www.realworldhaskell.org/", and now, "Tony Morris":http://blog.tmorris.net/ is very kindly donating some of his time to help me and a few other guys to get to grips with the concepts that underpin the language.
-
+<!--more-->
 Every week, he sets exercises for us to complete, which involves writing solutions to a bunch of functions that pass the acceptance tests that he supplied. This week we are writing a parser, but the real challenge for me is that none of the tests will pass until all of the functions have been completed. Writing around 20 functions before being able to get any feedback is almost a bigger challenge than writing the functions themselves!
 
 Tony's advice was to "follow the types" and I'm sure he is right. If you follow the type signatures and you have a vague notion of what the function is supposed to do, there are only a limited number of options open to you. The HaskellWiki also says that ""Once your code compiles it usually works":http://www.haskell.org/haskellwiki/Why_Haskell_just_works". I'm halfway through the functions and really hoping that is true! Perhaps I'll report back in a future post.

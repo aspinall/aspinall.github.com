@@ -6,7 +6,7 @@ categories: [conferences]
 My first "Uberconf":http://uberconf.com is over. Was it worth the 16,000 mile (26,000km) round trip and a week away from my family? It was definitely worth making the trip but now I need a holiday to get over it because I'm exhausted. Next time, I'll bring my family along for the ride and have a vacation afterwards!
 
 The conference is a learning and networking feast, with a wide variety of great content delivered professionally by awesome speakers that really understand their subject matter. The Westin Westiminster hotel was also a great venue that catered well for a conference of this size, in terms of the rooms, the delegate accommodation and the food.
-
+<!--more-->
 Almost all of the sessions I went to were good, but if I had to pick my top three sessions it would be these: 
 
 h5. _Encryption on the JVM: Boot Camp_ by "Matthew Mccullough":http://twitter.com/#!/matthewmccull

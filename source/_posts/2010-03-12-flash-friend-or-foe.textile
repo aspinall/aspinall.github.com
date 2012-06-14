@@ -4,7 +4,7 @@ title: Flash - friend or foe?
 categories: [conferences, flash, opinion]
 ---
 I attended "Barcamp Gold Coast IV":http://www.meetup.com/barcampqld/ last weekend which was an awesome experience despite the low turn out. The lack of attendance did prompt me to host a couple of impromptu sessions though, one being a rehash of a blog post I wrote last year about RIA technologies and where I thought it was all heading.
-
+<!--more-->
 The most interesting thing was that I conducted a quick straw poll at the start of the session to gauge feeling towards Flash, with surprising results. There were a mix of people in the audience, from accountants to developers, and *every single one of them* hated Flash! Some because of it's use in advertising, some because it hogs resources on their system, but nobody wanted it on their system and some people were actively blocking Flash content from their browsers.
 
 Now I'm no fan of Flash but I was not expected such a landslide result! Given that I already thought Flash was under threat from HTML 5, this lack of consumer enthusiasm for it has to be another nail in the coffin.
