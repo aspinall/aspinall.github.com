@@ -10,6 +10,6 @@ fizzBuzzOrNumber num =
 			if multipleOf5 num then "Buzz"
 				else show num
 
-fizzBuzz upperBound = map fizzBuzzOrNumber [1..upperBound]
+fizzBuzz numbers = map fizzBuzzOrNumber numbers
 
-main = forM_ (fizzBuzz 100) putStrLn
+main = forM_ (fizzBuzz [1..100]) putStrLn
