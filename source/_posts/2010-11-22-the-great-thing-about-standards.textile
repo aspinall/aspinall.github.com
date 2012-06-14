@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The great thing about standards...
+categories: [freedom, coding by numbers, opinion]
 ---
 … is that there's so many of them to choose from. They're like Java frameworks, everyone has got one! I guess it's down to control. People don't want to invest in something that they don't have control over, so they create another standard, manage to get it ratified by some standards body, and then claim that they are standards compliant. But if we're not all using the same standard, how much value does the standard have?
 

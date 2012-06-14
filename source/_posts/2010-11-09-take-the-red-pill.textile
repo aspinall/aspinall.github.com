@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Take the red pill...
+categories: [functional programming]
 ---
 Right now I feel a bit like Neo being confronted by Morpheus and offered the choice of the blue pill or the red pill. Take the blue pill and I can go back to my comfortable world of Java and object orientation. Take the red pill - I learn Haskell and see how deep functional programming goes!
 

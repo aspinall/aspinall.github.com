@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Groovy baby!
+categories: [groovy]
 ---
 For the last few weeks, I've been using "Groovy":http://groovy.codehaus.org/ (and the "Spock":http://code.google.com/p/spock/ BDD framework) on my current project at work, and after initially being reminded why I don't like dynamic programming languages, I have to admit that I'm slowly being converted.
 

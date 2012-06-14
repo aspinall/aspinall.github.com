@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Click. Click. Build.
+categories: [build automation]
 ---
 These days, the first thing I do whenever I start a new project is figure out how to build it. It's a lesson I learned from "Ship It!":http://pragprog.com/titles/prj/ship-it by the "Pragmatic Programmers":http://pragprog.com/ and a habit that I have gotten into. 
 

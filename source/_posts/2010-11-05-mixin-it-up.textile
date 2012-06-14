@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Mixin it up
+categories: [groovy]
 ---
 A couple of days ago I talked about using Groovy's @metaClass@ to add a method to the @Collection@ class at runtime. Today, I used Groovy's mixin mechanisms to share common functionality between two classes that don't share the same ancestry.
 

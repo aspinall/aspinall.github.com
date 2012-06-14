@@ -1,6 +1,7 @@
 ---
 layout: post
 title: I didn't get Git
+categories: [git]
 ---
 OK, I admit it, I didn't get "Git":http://git-scm.com/ when I started playing around with distributed version control last year. In fact I dismissed it as being too complicated for my needs after about five minutes. Boy, what a mistake! .
 

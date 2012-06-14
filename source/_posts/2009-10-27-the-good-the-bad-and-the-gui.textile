@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The good, the bad, and the GUI
+categories: [java]
 ---
 As a desktop Java developer, I have access to one of the best desktop user interface libraries around, "Java Swing":http://java.sun.com/javase/6/docs/technotes/guides/swing/. Like it or loathe it, there isn't a cross platform user interface library that even gets close to what Swing can achieve, both in terms of platform fidelity and custom components.
 

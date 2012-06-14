@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Being a good FOSS citizen
+categories: [freedom]
 ---
 Do you use free and open source software? Do you contribute back? I have to hold my hands up and admit that I have not contributed back as much as I feel I should have and I feel bad about it.
 

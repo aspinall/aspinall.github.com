@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaFX - a case of closing the stable door?
+categories: [javafx, opinion]
 ---
 Since the news that Oracle was buying Sun, I've not been convinced about the future of JavaFX. In the last couple of months I've come to the conclusion that it doesn't matter what Sun or Oracle does with JavaFX, it's future as an RIA technology looks pretty bleak anyway. And it's not alone. Adobe Flash and Microsoft Silverlight are in the path of the same train that is starting to build up a head of steam, namely the combination of HTML 5, CSS 3 and JavaScript. Let's take a look at the evidence and see why I have jumped to this conclusion!
 

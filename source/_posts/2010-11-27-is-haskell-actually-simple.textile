@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Is Haskell actually a simple language?
+categories: [haskell, functional programming]
 ---
 Whilst I was writing the previous post about learning Haskell, I was reminded of "a post by Martin Odersky":http://lamp.epfl.ch/~odersky/blogs/isscalacomplex.html about the complexity or otherwise of Scala. In that post he tries several metaphors to determine what _simple_ really means, finally settling on Duplo versus Technics Lego. You can build anything with either (just as you can with turing complete languages) but a solution built with Duplo is unlikely to be as elegant as a solution built with Technics.
 

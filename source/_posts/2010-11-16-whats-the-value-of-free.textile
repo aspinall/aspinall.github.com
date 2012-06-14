@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What's the value of free?
+categories: [freedom, opinion]
 ---
 I was looking something up on "Wikipedia":http://www.wikipedia.org/ when I saw this "banner":http://wikimediafoundation.org/w/index.php?title=WMFJA1/AU containing an appeal from Jimmy Wales for donations to the WikiMedia Foundation. It made me question how much we take services like Wikipedia for granted? If you decide that you should donate, how much would you give? How do you but a value on a free service?
 

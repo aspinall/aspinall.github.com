@@ -1,6 +1,7 @@
 ---
 title: My technology radar
 layout: post
+categories: [technology radar]
 ---
 One of the things I learned at "Uberconf":http://uberconf.com was how to build your own "technology radar":http://www.thoughtworks.com/radar, a tool that "ThoughtWorks":http://www.thoughtworks.com use to decide what technologies they should (or would like) to use either internally or on customer engagements. I've built two so far, one for myself and one for my day job, and in both cases I've found it to be a really useful thought exercise.
 

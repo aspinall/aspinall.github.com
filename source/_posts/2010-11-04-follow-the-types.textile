@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Follow the types (not the white rabbit)!
+categories: [functional programming]
 ---
 For a while I have been trying to learn "Haskell":http://www.haskell.org/ as a way of getting my head completely around functional programming. I started with ""Seven Languages in Seven Weeks":http://www.pragprog.com/titles/btlang/seven-languages-in-seven-weeks", moved on to ""Real World Haskell":http://www.realworldhaskell.org/", and now, "Tony Morris":http://blog.tmorris.net/ is very kindly donating some of his time to help me and a few other guys to get to grips with the concepts that underpin the language.
 

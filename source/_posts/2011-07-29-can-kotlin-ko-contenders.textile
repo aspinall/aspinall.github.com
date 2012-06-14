@@ -1,6 +1,7 @@
 ---
 title: Can Kotlin K.O. contenders?
 layout: post
+categories: [kotlin, scala]
 ---
 If you follow my "Twitter feed":http://twitter.com/aspinall then you may have seen my initial reaction to "Jetbrains":http://www.jetbrains.com announcement that they were working on another JVM language was one of disdain. Not because I don't think Jetbrains can create a compelling language, but because I was concerned that the JVM language space is becoming saturated, and too much choice can be just as harmful as no choice at all!
 

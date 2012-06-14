@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tackle the technical debt first
+categories: [technical debt]
 ---
 In my last post I talked about the large refactoring I am doing. One of the reasons that this is a large refactoring is because I have been putting it off. I wanted to deliver something to the customer. I kept telling myself that if I just went with what I had I'd soon have something to give them and then I would have some breathing room to refactor. Of course thats a complete fallacy!
 

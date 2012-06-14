@@ -1,6 +1,7 @@
 ---
 layout: post
 title: IntelliJ IDEA is open sourced. Why?
+categories: [intellij idea]
 ---
 The cool kid, "IntelliJ IDEA":http://jetbrains.org/, has finally come to play with the young upstarts, "NetBeans":http://netbeans.org/ and "Eclipse":http://eclipse.org/, in the free and open source Java IDE playground. This is great news but the big question is why now? And why has he left his most shiny toys at home? Is he going to be accepted? Will he be sent packing with a bloody nose? Here's my initial thoughts.
 

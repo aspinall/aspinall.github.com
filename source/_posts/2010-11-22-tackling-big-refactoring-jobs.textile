@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tackling big refactoring jobs
+categories: [technical debt]
 ---
 For the first time last week, I actually used a spreadsheet to keep track of a large refactoring that I needed to complete. We're not talking about a huge project, less than sixty classes in total, but they needed to be broken into three projects, and a number of the classes were going to disappear altogether as their functionality is absorbed into other classes. The two additional projects are going to be simple libraries that can be re-used, and the original project will retain the domain specific tests and configuration and have dependencies on the two new libraries.
 

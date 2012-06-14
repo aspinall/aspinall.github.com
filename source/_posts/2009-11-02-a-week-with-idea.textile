@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A week with IntelliJ IDEA
+categories: [intellij idea]
 ---
 Since the start of last week I have been using the beta release of "IntelliJ IDEA Community Edition":http://jetbrains.org/ and I have to admit I'm really rather impressed. It hasn't been completely plain sailing but I'm prepared to give it the benefit of the doubt given that it is still in beta and it's only fair to expect a few hiccups along the way.
 

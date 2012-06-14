@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Dead trees are dead to me
+categories: [digital media, opinion]
 ---
 I haven't bought a dead tree version of a book for years. If it's not available as either an ebook or an audiobook then I don't buy it. The same goes for music, and when the film industry realises that DRM is a fallacy, I'll be able to do the same with video too.
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Extending classses at runtime with Groovy
+categories: groovy
 ---
 I gave an introduction to Groovy at our local JUG this week and didn't quite manage to make it through all the material I wanted to cover, so I decided to add the missing content here! The part I missed out in the meetup was how to extend a class at runtime via it's metaClass.
 

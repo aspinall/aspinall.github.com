@@ -3,7 +3,7 @@ layout: post
 title: "Play!ing with Concordion"
 date: 2012-06-14 07:42
 comments: true
-categories: 
+categories: [playframework, concordion, testing]
 ---
 I've just started experimenting with [Play! framework 2.0](http://www.playframework.org). I was attracted by the static typing and functional nature of [Scala](http://www.scala-lang.org), and the shear testability of Play! applications. It looks like you can test each component of the MVC pattern independently and without going through the UI, and I think in most cases without even starting the server.
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Consoling oneself
+categories: [groovy]
 ---
 The last time I used the "Groovy Console":http://groovy.codehaus.org/Groovy+Console (several years ago) it was painful, but now I have to say that it is one of the most useful tools I've come across.
 

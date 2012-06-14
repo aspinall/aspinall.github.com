@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Flash - friend or foe?
+categories: [conferences, flash, opinion]
 ---
 I attended "Barcamp Gold Coast IV":http://www.meetup.com/barcampqld/ last weekend which was an awesome experience despite the low turn out. The lack of attendance did prompt me to host a couple of impromptu sessions though, one being a rehash of a blog post I wrote last year about RIA technologies and where I thought it was all heading.
 

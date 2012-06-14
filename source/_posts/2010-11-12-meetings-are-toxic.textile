@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Meetings are toxic
+categories: [opinion]
 ---
 That is the title of a chapter in Jason Fried and David Heinemeier Hansson's ("37signals":http://37signals.com/) book, "Rework":http://37signals.com/rework/, and I have to admit that I agree with them. I'll also admit that I'm a little jaded by the number of unproductive meetings that I've attended in my career, so my view may be tainted!
 

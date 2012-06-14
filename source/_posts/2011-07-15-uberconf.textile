@@ -1,6 +1,7 @@
 ---
 title: Uberconf, Uber Geeks, Uber Tired!
 layout: post
+categories: [conferences]
 ---
 My first "Uberconf":http://uberconf.com is over. Was it worth the 16,000 mile (26,000km) round trip and a week away from my family? It was definitely worth making the trip but now I need a holiday to get over it because I'm exhausted. Next time, I'll bring my family along for the ride and have a vacation afterwards!
 

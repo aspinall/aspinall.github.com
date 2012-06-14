@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Oracle, the best thing to happen to OpenJDK?
+categories: [java, opinion]
 ---
 I can't believe I am writing this, but could Oracle be the best thing to happen to OpenJDK? I know that writing 30 posts in 30 days is driving me a little crazy, but have I really lost that many marbles before the halfway point? Just how can the company that is being "sued by the US government":http://www.businessweek.com/news/2010-07-29/oracle-sued-by-u-s-in-case-claiming-overcharges.html for their alleged dishonesty be doing good things with such an indispensable open source project?
 

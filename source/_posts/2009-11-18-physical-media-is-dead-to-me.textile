@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Physical media is dead to me!
+categories: [digital media, opinion]
 ---
 With the impending move to Australia coming up I decided to rip all of our music and video to the computer and abandon physical media altogether. We have a few hundred CDs and over a hundred DVDs so it wasn't a trivial nor insurmountable task to rip them all but the switch away from physical media raises a number of questions.
 

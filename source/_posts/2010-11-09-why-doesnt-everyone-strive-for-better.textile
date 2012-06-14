@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why doesn't everyone strive for better?
+categories: [opinion]
 ---
 Why don't some people want to do better at their jobs? I don't understand. I'm talking people involved in developing software here, but I'm sure the same problem affects many occupations.
 

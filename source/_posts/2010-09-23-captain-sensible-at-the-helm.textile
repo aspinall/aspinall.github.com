@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Captain Sensible at the helm?
+categories: [opinion]
 ---
 My initial reaction to the announcements from this year's JavaOne was one of sadness, since it's clear that Oracle has sapped the pioneering spirit that made Sun special. Having had a few days to reflect on it though, I don't think it is as bad as my gut reaction would have me believe.
 

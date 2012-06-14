@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The role of automated testing
+categories: testing
 ---
 Over the last week I've had a lot of discussions about the underlying motive of the roles that my colleagues and I are currently performing. We are responsible for improving the quality of software being produced by the teams we are involved with, and the main focus of our recent work has been creating automation tools to assist the testers. There are three possible motives for our roles:
 

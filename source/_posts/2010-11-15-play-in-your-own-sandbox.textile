@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Play in your own sandbox
+categories: [build automation]
 ---
 Following on from my previous post, one of the other things I always strive to do from the outset of a project, is ensure that everyone has their own sandbox to play in. Every developer (and the CI machine) should be able to run the project independently of each other, without any reliance on common resources such as application servers or database instances.
 

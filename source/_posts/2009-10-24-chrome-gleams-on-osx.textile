@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Chrome gleams on OS X
+categories: [apple, browsers]
 ---
 At long last, Google has released an official version of it's Chrome browser for Mac OS X. It's only a "developer preview":http://www.google.com/chrome/intl/en/eula_dev.html?dl=mac but that won't stop me from making it my default browser! I've been using Chrome as my default browser on Windows for months and I really like it.
 

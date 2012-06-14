@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Haskell's type system made me cry
+categories: [functional programming, haskell]
 ---
 My functional programming with Haskell journey continues and every time I think I understand something, I discover there's another layer of complexity underneath the one I just peeled off! There are so many metaphors that spring to mind that I'm just going to avoid them all!
 

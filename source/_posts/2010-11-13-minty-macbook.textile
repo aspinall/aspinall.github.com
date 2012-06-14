@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Mmmmm... Minty Macbook!
+categories: [apple, linux]
 ---
 When I started on my current project and got a new developer workstation, I took advantage of an official "Ubuntu":http://www.ubuntu.com/ distribution sanctioned for use within the company. Apart from a few wrinkles with the authentication against the Windows domains, it has been a real pleasure to use, so when I rebuilt my MacBook recently, I decided that I would use "Bootcamp":http://www.apple.com/support/bootcamp/ and tri-boot it (Max OS X, Windows 7 and Linux).
 
