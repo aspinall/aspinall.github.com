@@ -6,7 +6,7 @@ url: http://www.craigaspinall.com
 title: Craig Aspinall
 subtitle: nani gigantum humeris insidentes
 author: Craig Aspinall
-simple_search: http://google.com/search
+simple_search:
 description:
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
@@ -16,7 +16,7 @@ description:
 date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: http://feeds.feedburner.com/Craigaspinallcom
+subscribe_rss: http://feeds.feedburner.com/craigaspinallcom
 subscribe_email:
 # RSS feeds can list your email address if you like
 email:
@@ -45,7 +45,7 @@ titlecase: true       # Converts page and post titles to titlecase
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [custom/asides/tag_cloud.html, asides/twitter.html, asides/googleplus.html, custom/asides/linkedin.html]
+default_asides: [asides/twitter.html, custom/asides/tag_cloud.html, asides/googleplus.html, custom/asides/linkedin.html]
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
