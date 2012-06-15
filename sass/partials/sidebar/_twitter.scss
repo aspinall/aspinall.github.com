@@ -27,8 +27,9 @@
       text-decoration: none;
     }
   }
-  a[href*='twitter.com/search']{
-    @extend .aside-alt-link;
-    @include hover-link;
-  }
+// Commented out to unify the look and feel of all sidebar links
+//  a[href*='twitter.com/search']{
+//    @extend .aside-alt-link;
+//    @include hover-link;
+//  }
 }
