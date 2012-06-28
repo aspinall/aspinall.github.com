@@ -4,7 +4,7 @@
   <title><![CDATA[Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-18T07:33:23+10:00</updated>
+  <updated>2012-06-28T16:29:33+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Something to prove]]></title>
+    <link href="http://www.craigaspinall.com/blog/2012/06/26/something-to-prove/"/>
+    <updated>2012-06-26T06:57:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2012/06/26/something-to-prove</id>
+    <content type="html"><![CDATA[<p>I am building a simple web application and have set myself the challenge of being able to continuously deploy it to the cloud. To do that, I need to be confident that any changes I make don&#8217;t break existing functionality. However, the bulk of the application will run in the client using a combination of HTML, CSS and Javascript, and testing those technologies is much more difficult than your typical Java (or JVM based) application. After banging my head against this on and off for several weeks, I was forced to stop and ask myself the question &#8220;what is it  that I am actually trying to prove&#8221;?</p>
+
+<!-- more -->
+
+
+<p>I guess at an abstract level I&#8217;m trying to prove that there are no unintended side effects for any changes that I make to the application. The application in question is a big visible clock that can be used when facilitating meetings, workshops or events. It&#8217;s simple in that there is very little logic and no persistence layer, but difficult to test because most of the logic resides on the client, in what most web frameworks would consider to be the view layer.</p>
+
+<p>Whilst <a href="http://aspiringcraftsman.com/2007/08/25/interactive-application-architecture/">researching</a> how to achieve this, I came across the <a href="http://atomicobject.com/files/PresenterFirstAgile2006.pdf">Presenter First</a> process and corresponding derivative of the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter">Model-View-Presenter</a> pattern (which is actually the <a href="http://martinfowler.com/eaaDev/PassiveScreen.html">Passive View</a> pattern I believe). The goal of Presenter First is to make interactive applications suitable for test driven development, which it does by making the &#8220;view&#8221; as thin (read dumb or simple) as possible, and pushing all the presentation logic in to the <em>presenter</em>, thereby completely isolating the view from the underlying domain model (unlike the traditional Model-View-Controller or Model-View-Presenter pattern). By defining very clear interfaces between the <em>presenter</em> and the <em>model</em>, and between the <em>presenter</em> and the <em>view</em>, testability increases tremendously, which is good news for me!</p>
+
+<p>It means that both the model and the view can be mocked, and the interactive behaviour of the application can be tested in isolation. Similarly the business logic can be tested in isolation. The only questions are whether or not the view should be tested and if so, is it possible to automate that testing?</p>
+
+<p>It is certainly true that it can be very difficult to build robust and maintainable automated tests for views. They tend to change more frequently than, and independently of, the underlying application behaviour. The real question is whether or not there is enough value in doing so to get a return on the investment you make in building and maintaining the tests?</p>
+
+<p>In this case I could take the risk and not test the view automatically because both the risk and impact of defects in the view are low. I could run a manual <em>sanity check</em> after each commit and confirm that everything still looks OK in production, safe in the knowledge that I can easily roll back the changes in the event that there are issues.</p>
+
+<p>But mine is a small application that is not mission critical to anyone, what about something that is mission critical? I feel like I owe it to the teams that I coach to do this anyway and get an idea of the potential return on investment (or lack thereof) for automating tests for the view. Therefore, in reality, that is what I am trying to prove and where the value will come from, not the testing itself!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Play!ing with Concordion]]></title>
@@ -606,19 +630,6 @@ In previous projects that has always been fairly easy because the projects were 
 First up, you need to decide on a build tool. It could be as simple as a batch file but my current tool of choice is <a href="http://maven.apache.org/">Maven</a>. I&#8217;ve also used <a href="http://ant.apache.org/">Ant</a> in the past and I&#8217;m looking at <a href="http://gradle.org/">Gradle</a> for future builds. The reason I switched to Maven was for it&#8217;s dependency handling and reporting, and now it&#8217;s well integrated into the popular Java IDEs, meaning your developers can choose their favourite.</p>
 <p>Once you&#8217;ve got a build tool, you need to ask yourself what you files do you need to build your project? Obviously the source code and build script will be needed but what about resource files, test environments or any other tools that assist with the build. In the past I&#8217;ve taken this to the extreme of checking in a copy of the build tool itself and even the <span class="caps">JDK</span>. This meant that the only thing you needed to set up a new developer machine was a copy of Subversion, everything else came from the version control system!</p>
 <p>The only exception to this rule were the dependencies that I mentioned. When we were using Ant, our projects had a ‘lib&#8217; folder and the dependencies were checked in with the code. With Maven, we set up our own internal repository and shared the dependencies from there. However if you&#8217;re going to do this you need to make sure that your Maven repository is backed up with the same frequency as your source code repository!</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Oracle, the best thing to happen to OpenJDK?]]></title>
-    <link href="http://www.craigaspinall.com/blog/2010/11/14/oracle-the-best-thing-for-openjdk/"/>
-    <updated>2010-11-14T00:00:00+10:00</updated>
-    <id>http://www.craigaspinall.com/blog/2010/11/14/oracle-the-best-thing-for-openjdk</id>
-    <content type="html"><![CDATA[<p>I can&#8217;t believe I am writing this, but could Oracle be the best thing to happen to OpenJDK? I know that writing 30 posts in 30 days is driving me a little crazy, but have I really lost that many marbles before the halfway point? Just how can the company that is being <a href="http://www.businessweek.com/news/2010-07-29/oracle-sued-by-u-s-in-case-claiming-overcharges.html">sued by the US government</a> for their alleged dishonesty be doing good things with such an indispensable open source project?<br />
-<!--more--><br />
-Well, despite my many misgivings about the <a href="http://blogs.oracle.com/javaone/2010/09/plan_b_wins.html">delays</a> to all the interesting content in JDK7, their willingness to take the flak and do what is necessary to steady the ship shows they have the guts to make tough decisions. Sun kept promising but never really delivered. If Oracle start delivering regularly then I&#8217;ll be less critical of the additional delays to JDK7.</p>
-<p>They&#8217;ve also persuaded <a href="http://www-03.ibm.com/press/us/en/pressrelease/32708.wss"><span class="caps">IBM</span></a> and <a href="http://www.apple.com/pr/library/2010/11/12openjdk.html">Apple</a> to join the OpenJDK effort, something which Sun never managed to do. This brings all the major <span class="caps">JDK</span> vendors together in one place and hopefully we will see the best features of each of the <span class="caps">JDK</span> implementations (<span class="caps">IBM</span>, Oracle/<span class="caps">BEA</span>, Oracle/Sun and Apple) being merged into the open source offering.</p>
-<p>The only question that still nags in the back of my mind is their motive. Whilst it all seems rosy on the surface, persuading <span class="caps">IBM</span> to back OpenJDK instead of Apache Harmony could have an ulterior motive. Oracle are attempting to <a href="http://www.reuters.com/article/idUSTRE67B5G720100813">sue Google</a> over the use of Java in Android, and which class libraries do you suppose Android uses? You guessed it, Apache Harmony&#8217;s! By getting <span class="caps">IBM</span> to switch to OpenJDK, it further isolates Google.</p>
-<p>I&#8217;m not quite ready to believe that is a co-incidence yet!</p>]]></content>
   </entry>
   
 </feed>

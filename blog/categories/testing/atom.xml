@@ -4,7 +4,7 @@
   <title><![CDATA[Category: testing | Craig Aspinall]]></title>
   <link href="http://www.craigaspinall.com/blog/categories/testing/atom.xml" rel="self"/>
   <link href="http://www.craigaspinall.com/"/>
-  <updated>2012-06-18T07:33:23+10:00</updated>
+  <updated>2012-06-28T16:29:33+10:00</updated>
   <id>http://www.craigaspinall.com/</id>
   <author>
     <name><![CDATA[Craig Aspinall]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Something to prove]]></title>
+    <link href="http://www.craigaspinall.com/blog/2012/06/26/something-to-prove/"/>
+    <updated>2012-06-26T06:57:00+10:00</updated>
+    <id>http://www.craigaspinall.com/blog/2012/06/26/something-to-prove</id>
+    <content type="html"><![CDATA[<p>I am building a simple web application and have set myself the challenge of being able to continuously deploy it to the cloud. To do that, I need to be confident that any changes I make don't break existing functionality. However, the bulk of the application will run in the client using a combination of HTML, CSS and Javascript, and testing those technologies is much more difficult than your typical Java (or JVM based) application. After banging my head against this on and off for several weeks, I was forced to stop and ask myself the question "what is it  that I am actually trying to prove"?</p>
+
+<!-- more -->
+
+
+<p>I guess at an abstract level I'm trying to prove that there are no unintended side effects for any changes that I make to the application. The application in question is a big visible clock that can be used when facilitating meetings, workshops or events. It's simple in that there is very little logic and no persistence layer, but difficult to test because most of the logic resides on the client, in what most web frameworks would consider to be the view layer.</p>
+
+<p>Whilst <a href="http://aspiringcraftsman.com/2007/08/25/interactive-application-architecture/">researching</a> how to achieve this, I came across the <a href="http://atomicobject.com/files/PresenterFirstAgile2006.pdf">Presenter First</a> process and corresponding derivative of the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter">Model-View-Presenter</a> pattern (which is actually the <a href="http://martinfowler.com/eaaDev/PassiveScreen.html">Passive View</a> pattern I believe). The goal of Presenter First is to make interactive applications suitable for test driven development, which it does by making the "view" as thin (read dumb or simple) as possible, and pushing all the presentation logic in to the <em>presenter</em>, thereby completely isolating the view from the underlying domain model (unlike the traditional Model-View-Controller or Model-View-Presenter pattern). By defining very clear interfaces between the <em>presenter</em> and the <em>model</em>, and between the <em>presenter</em> and the <em>view</em>, testability increases tremendously, which is good news for me!</p>
+
+<p>It means that both the model and the view can be mocked, and the interactive behaviour of the application can be tested in isolation. Similarly the business logic can be tested in isolation. The only questions are whether or not the view should be tested and if so, is it possible to automate that testing?</p>
+
+<p>It is certainly true that it can be very difficult to build robust and maintainable automated tests for views. They tend to change more frequently than, and independently of, the underlying application behaviour. The real question is whether or not there is enough value in doing so to get a return on the investment you make in building and maintaining the tests?</p>
+
+<p>In this case I could take the risk and not test the view automatically because both the risk and impact of defects in the view are low. I could run a manual <em>sanity check</em> after each commit and confirm that everything still looks OK in production, safe in the knowledge that I can easily roll back the changes in the event that there are issues.</p>
+
+<p>But mine is a small application that is not mission critical to anyone, what about something that is mission critical? I feel like I owe it to the teams that I coach to do this anyway and get an idea of the potential return on investment (or lack thereof) for automating tests for the view. Therefore, in reality, that is what I am trying to prove and where the value will come from, not the testing itself!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Play!ing with Concordion]]></title>
