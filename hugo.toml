@@ -1,0 +1,4 @@
+baseURL = 'https://aspinall.github.io/'
+languageCode = 'en-us'
+title = 'aspinall.github.io'
+theme = "hermit-v2"
