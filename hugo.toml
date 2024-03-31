@@ -2,3 +2,10 @@ baseURL = 'https://aspinall.github.io/'
 languageCode = 'en-GB'
 title = 'aspinall.github.io'
 theme = "etch"
+
+
+[params]
+  # description = "Your site description"
+  # copyright = "Copyright © 2020 Your Name"
+  dark = "off"
+  # highlight = true
