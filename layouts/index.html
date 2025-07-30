@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ .Content }}
+
+<h2>Latest Posts</h2>
+
+{{ if .Site.RegularPages }}
+<div class="post-list">
+  {{ range first 5 .Site.RegularPages }}
+  <article>
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <div class="post-meta">
+      Published on {{ .Date.Format "January 2, 2006" }}
+      {{ if .Params.tags }}
+      | Tags: 
+      {{ range $index, $tag := .Params.tags }}
+        {{ if $index }}, {{ end }}
+        <a href="/tags/{{ $tag | urlize }}">{{ $tag }}</a>
+      {{ end }}
+      {{ end }}
+    </div>
+    {{ if .Summary }}
+    <p>{{ .Summary }}</p>
+    {{ end }}
+  </article>
+  {{ end }}
+</div>
+
+<p><a href="/posts/">View all posts →</a></p>
+{{ else }}
+<p>No posts yet. Check back soon!</p>
+{{ end }}
+{{ end }}
